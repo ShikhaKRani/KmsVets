@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  KmsVets
 //
 //  Created by SUBHASH KUMAR on 12/09/20.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        self.setTitleForNavigation(title: "KMS Vets", isHidden: false)
     }
 
-
 }
-
