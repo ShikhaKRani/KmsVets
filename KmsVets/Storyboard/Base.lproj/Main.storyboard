@@ -47,6 +47,17 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwc-nG-LC8">
+                                <rect key="frame" x="157" y="772" width="100" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ZS2-iQ-NTy"/>
+                                    <constraint firstAttribute="width" constant="100" id="ibe-DB-zM3"/>
+                                </constraints>
+                                <state key="normal" title="Chart">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -54,6 +65,8 @@
                             <constraint firstItem="0m6-md-Db4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ZJh-k4-w09"/>
                             <constraint firstItem="aAa-Qt-eC4" firstAttribute="leading" secondItem="0m6-md-Db4" secondAttribute="leading" id="dME-tG-jMi"/>
                             <constraint firstItem="aAa-Qt-eC4" firstAttribute="trailing" secondItem="0m6-md-Db4" secondAttribute="trailing" id="hZ5-bN-FJx"/>
+                            <constraint firstItem="zwc-nG-LC8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="j1x-Eg-zX9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zwc-nG-LC8" secondAttribute="bottom" constant="50" id="kq4-BO-Oe1"/>
                             <constraint firstItem="aAa-Qt-eC4" firstAttribute="top" secondItem="0m6-md-Db4" secondAttribute="bottom" constant="40" id="oqH-5M-IsZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0m6-md-Db4" secondAttribute="trailing" constant="20" id="pZt-C9-mNH"/>
                         </constraints>
@@ -61,13 +74,46 @@
                     </view>
                     <navigationItem key="navigationItem" id="zL2-NV-FXk"/>
                     <connections>
+                        <outlet property="chartBtn" destination="zwc-nG-LC8" id="Pef-bK-AqC"/>
                         <outlet property="loginBtn" destination="aAa-Qt-eC4" id="Gyc-mI-b36"/>
                         <outlet property="medicineImageView" destination="0m6-md-Db4" id="FAf-4y-87T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-509" y="22"/>
+            <point key="canvasLocation" x="-510.14492753623193" y="21.428571428571427"/>
+        </scene>
+        <!--My Chart View Controller-->
+        <scene sceneID="nDF-Tw-Jfd">
+            <objects>
+                <viewController storyboardIdentifier="MyChartViewController" id="oSf-ia-SNc" customClass="MyChartViewController" customModule="KMS_Vets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yk0-Nl-0eh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vTw-gB-1X3" customClass="HorizontalBarChartView" customModule="Charts">
+                                <rect key="frame" x="87" y="353" width="240" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="I0q-Sd-y9H"/>
+                                    <constraint firstAttribute="height" constant="200" id="kFF-4U-1Ju"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vTw-gB-1X3" firstAttribute="centerX" secondItem="nf2-Hi-AfQ" secondAttribute="centerX" id="EZR-Q9-mTo"/>
+                            <constraint firstItem="vTw-gB-1X3" firstAttribute="centerY" secondItem="nf2-Hi-AfQ" secondAttribute="centerY" id="qYZ-13-Xam"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nf2-Hi-AfQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="_horizontalChartView" destination="vTw-gB-1X3" id="NHV-B5-FTa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ZB-bE-gj4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-520" y="694"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="cyg-BW-AYl">

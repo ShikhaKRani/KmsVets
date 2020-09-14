@@ -12,6 +12,8 @@ class SplashViewController: BaseViewController {
 
     @IBOutlet weak var medicineImageView: UIImageView!
     @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var chartBtn: UIButton!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,9 @@ class SplashViewController: BaseViewController {
         self.loginBtn.layer.cornerRadius = 10
         self.loginBtn.layer.masksToBounds = true
         self.loginBtn.addTarget(self, action: #selector(redirectToLoginScreen(sender:)), for: .touchUpInside)
+        self.chartBtn.addTarget(self, action: #selector(redirectToChartScreen(sender:)), for: .touchUpInside)
+
+        
     }
     
 
@@ -40,4 +45,15 @@ class SplashViewController: BaseViewController {
             self.navigationController?.pushViewController(loginViewController, animated: true)
         }
     }
+    
+    
+    //chart
+    @objc func redirectToChartScreen(sender : UIButton) {
+           
+           let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+           if let chartVC = storyBoard.instantiateViewController(withIdentifier: "MyChartViewController") as? MyChartViewController {
+              
+               self.navigationController?.pushViewController(chartVC, animated: true)
+           }
+       }
 }
