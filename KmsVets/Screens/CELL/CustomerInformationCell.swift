@@ -17,7 +17,7 @@ class CustomerInformationCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        // Initialization code        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -25,5 +25,4 @@ class CustomerInformationCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

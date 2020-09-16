@@ -34,7 +34,7 @@ class BaseViewController: UIViewController {
         self.title = title ?? "KMS Vets"
         
     }
-        
+    
     func setThemeColor() -> UIColor {
         return UIColor(red: 01/255, green: 61/255, blue: 55/255, alpha: 1)
     }

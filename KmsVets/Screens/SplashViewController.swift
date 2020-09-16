@@ -23,19 +23,14 @@ class SplashViewController: BaseViewController {
         
         self.medicineImageView.layer.masksToBounds = true
         self.medicineImageView.layer.cornerRadius = 20
-
         
         self.loginBtn.layer.cornerRadius = 10
         self.loginBtn.layer.masksToBounds = true
         self.loginBtn.addTarget(self, action: #selector(redirectToLoginScreen(sender:)), for: .touchUpInside)
         self.chartBtn.addTarget(self, action: #selector(redirectToChartScreen(sender:)), for: .touchUpInside)
-
+        self.chartBtn.isHidden = true
         
     }
-    
-
-    
-
     
     @objc func redirectToLoginScreen(sender : UIButton) {
         

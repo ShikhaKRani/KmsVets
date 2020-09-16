@@ -14,16 +14,28 @@ import IQKeyboardManagerSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         IQKeyboardManager.shared.enable = true
-
+        
+        let USERID = UserDefaults.standard.string(forKey: "UserID")
+        
+        if USERID == nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "SplashViewController") as! SplashViewController
+            let navController = UINavigationController.init(rootViewController: vc)
+            self.window?.rootViewController = navController
+        }
+        else {
+            let storyboard = UIStoryboard(name: "SideMenu", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+            let navController = UINavigationController.init(rootViewController: vc)
+            self.window?.rootViewController = navController
+        }
+        
         return true
     }
-
     
-
 }
 

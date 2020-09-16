@@ -9,8 +9,9 @@ target 'KmsVets' do
 
 	pod 'Alamofire', '~> 5.2'
   pod 'IQKeyboardManagerSwift'
-
+  pod 'SideMenu'
   pod 'Charts'
+  pod ‘SDWebImage’, ‘~> 4.0’
 
   # Pods for KmsVets
 
