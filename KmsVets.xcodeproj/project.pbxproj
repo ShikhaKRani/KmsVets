@@ -16,6 +16,7 @@
 		BF1D97F0250F8BCA00446CA8 /* CustomerInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D97EF250F8BCA00446CA8 /* CustomerInformationCell.swift */; };
 		BF1D97F3250F8D5900446CA8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D97F2250F8D5900446CA8 /* Constant.swift */; };
 		BF1D97F7250F9EFA00446CA8 /* MyChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D97F6250F9EFA00446CA8 /* MyChartViewController.swift */; };
+		BF27A1E5251337E500F4AA65 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF27A1E4251337E500F4AA65 /* ProfileViewController.swift */; };
 		BF527170250E1F1900BD60D2 /* GetOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52716F250E1F1900BD60D2 /* GetOTPViewController.swift */; };
 		BF527173250E39D900BD60D2 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF527172250E39D900BD60D2 /* APIClient.swift */; };
 		BF786711250CEF8900D8D17E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF786710250CEF8900D8D17E /* LoginViewController.swift */; };
@@ -41,6 +42,7 @@
 		BF1D97EF250F8BCA00446CA8 /* CustomerInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerInformationCell.swift; sourceTree = "<group>"; };
 		BF1D97F2250F8D5900446CA8 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		BF1D97F6250F9EFA00446CA8 /* MyChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChartViewController.swift; sourceTree = "<group>"; };
+		BF27A1E4251337E500F4AA65 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BF52716F250E1F1900BD60D2 /* GetOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOTPViewController.swift; sourceTree = "<group>"; };
 		BF527172250E39D900BD60D2 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		BF786710250CEF8900D8D17E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				BF52716F250E1F1900BD60D2 /* GetOTPViewController.swift */,
 				BF1D97EC250F675A00446CA8 /* CustomerBasicInfoViewController.swift */,
 				BF1D97F6250F9EFA00446CA8 /* MyChartViewController.swift */,
+				BF27A1E4251337E500F4AA65 /* ProfileViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				BF02B53A2511EF1A0076B05E /* BannerCollCell.swift in Sources */,
 				BF527170250E1F1900BD60D2 /* GetOTPViewController.swift in Sources */,
 				BFBA3505250CEC13004C37C2 /* HomeViewController.swift in Sources */,
+				BF27A1E5251337E500F4AA65 /* ProfileViewController.swift in Sources */,
 				BF786713250CEFBE00D8D17E /* SplashViewController.swift in Sources */,
 				BF1D97ED250F675A00446CA8 /* CustomerBasicInfoViewController.swift in Sources */,
 			);
