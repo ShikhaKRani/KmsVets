@@ -38,7 +38,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XU0-jh-OXX">
                                 <rect key="frame" x="0.0" y="89" width="414" height="175"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="175" id="0qM-Iw-m5g"/>
                                     <constraint firstAttribute="height" constant="175" id="FWt-TB-hB1"/>
@@ -50,7 +50,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="BannerCollCell" reuseIdentifier="BannerCollCell" id="nj4-eI-SdQ" customClass="BannerCollCell" customModule="StarCars" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="BannerCollCell" reuseIdentifier="BannerCollCell" id="nj4-eI-SdQ" customClass="BannerCollCell" customModule="KMS_Vets" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="20" width="346" height="135"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -80,13 +80,13 @@
                                 </connections>
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="U0d-Dl-k6d">
-                                <rect key="frame" x="187.5" y="262" width="39" height="37"/>
+                                <rect key="frame" x="187.5" y="264" width="39" height="37"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ed-zg-Z66">
-                                <rect key="frame" x="0.0" y="297" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="299" width="414" height="40"/>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="XDh-IG-xic"/>
@@ -96,7 +96,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="U0d-Dl-k6d" firstAttribute="centerX" secondItem="XU0-jh-OXX" secondAttribute="centerX" id="Ccp-cQ-CFn"/>
-                            <constraint firstItem="U0d-Dl-k6d" firstAttribute="top" secondItem="XU0-jh-OXX" secondAttribute="bottom" constant="-2" id="K3J-VE-THe"/>
+                            <constraint firstItem="U0d-Dl-k6d" firstAttribute="top" secondItem="XU0-jh-OXX" secondAttribute="bottom" id="K3J-VE-THe"/>
                             <constraint firstItem="1Ed-zg-Z66" firstAttribute="top" secondItem="U0d-Dl-k6d" secondAttribute="bottom" constant="-2" id="OOG-YP-McG"/>
                             <constraint firstItem="XU0-jh-OXX" firstAttribute="leading" secondItem="6fU-nZ-Pzn" secondAttribute="leading" id="cDd-h4-Uky"/>
                             <constraint firstItem="XU0-jh-OXX" firstAttribute="trailing" secondItem="6fU-nZ-Pzn" secondAttribute="trailing" id="g86-jy-W3w"/>
@@ -132,6 +132,9 @@
                     </navigationBar>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="menuWidth">
+                            <real key="value" value="300"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="cjS-cr-efe" kind="relationship" relationship="rootViewController" id="pnp-co-ue7"/>
@@ -144,16 +147,17 @@
         <!--Side Menu View Controller-->
         <scene sceneID="mNX-be-UO4">
             <objects>
-                <viewController storyboardIdentifier="SideMenuViewController" id="cjS-cr-efe" customClass="SideMenuViewController" customModule="StarCars" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SideMenuViewController" id="cjS-cr-efe" customClass="SideMenuViewController" customModule="KMS_Vets" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yWO-y9-UIW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TIu-BE-jVA">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.96854275469999995" green="0.96868163350000003" blue="0.96851247549999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideMenuTblCell" rowHeight="74" id="ckm-oX-tlT" customClass="SideMenuTblCell" customModule="StarCars" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideMenuTblCell" rowHeight="74" id="ckm-oX-tlT" customClass="SideMenuTblCell" customModule="KMS_Vets" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ckm-oX-tlT" id="rEd-KL-C7J">
@@ -162,9 +166,9 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pn1-iX-2Ct">
                                                     <rect key="frame" x="5" y="5" width="404" height="64"/>
-                                                    <color key="backgroundColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.96854275469999995" green="0.96868163350000003" blue="0.96851247549999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home.png" translatesAutoresizingMaskIntoConstraints="NO" id="urC-NF-3n3">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medicine.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="urC-NF-3n3">
                                                     <rect key="frame" x="10" y="5" width="30" height="64"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="Fwf-6Y-WJU"/>
@@ -174,11 +178,11 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsF-er-JeZ">
                                                     <rect key="frame" x="55" y="26" width="46.5" height="22.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
-                                                    <color key="textColor" red="0.96854275469999995" green="0.96868163350000003" blue="0.96851247549999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.96854275469999995" green="0.96868163350000003" blue="0.96851247549999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="urC-NF-3n3" secondAttribute="bottom" constant="5" id="0es-Zj-dGX"/>
                                                 <constraint firstItem="IsF-er-JeZ" firstAttribute="centerY" secondItem="urC-NF-3n3" secondAttribute="centerY" id="KA9-tG-dAq"/>
@@ -192,33 +196,38 @@
                                                 <constraint firstItem="urC-NF-3n3" firstAttribute="leading" secondItem="rEd-KL-C7J" secondAttribute="leading" constant="10" id="vfx-Yv-wZx"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.96854275469999995" green="0.96868163350000003" blue="0.96851247549999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="cellIcon" destination="urC-NF-3n3" id="OWZ-bU-4P1"/>
                                             <outlet property="cellTitleLbl" destination="IsF-er-JeZ" id="P8b-Yj-tVm"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideMenuImgCell" rowHeight="200" id="pbQ-fK-vhG" customClass="SideMenuImgCell" customModule="StarCars" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideMenuImgCell" rowHeight="200" id="pbQ-fK-vhG" customClass="SideMenuImgCell" customModule="KMS_Vets" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="102" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pbQ-fK-vhG" id="aao-vt-EOl">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appstore.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bbr-o6-o3N">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medicine.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="Bbr-o6-o3N">
                                                     <rect key="frame" x="132" y="25" width="150" height="150"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="1Nk-Gr-1FG"/>
                                                         <constraint firstAttribute="height" constant="150" id="d1B-qW-1v3"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.96854275469999995" green="0.96868163350000003" blue="0.96851247549999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="Bbr-o6-o3N" firstAttribute="centerX" secondItem="aao-vt-EOl" secondAttribute="centerX" id="5N1-yl-NWY"/>
                                                 <constraint firstItem="Bbr-o6-o3N" firstAttribute="centerY" secondItem="aao-vt-EOl" secondAttribute="centerY" id="6r5-Qm-YPG"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="cellLargeIcon" destination="Bbr-o6-o3N" id="rLB-Bb-foL"/>
                                         </connections>
@@ -230,7 +239,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="CWu-ZK-gZm" firstAttribute="trailing" secondItem="TIu-BE-jVA" secondAttribute="trailing" id="6Y6-SO-cOu"/>
                             <constraint firstItem="CWu-ZK-gZm" firstAttribute="bottom" secondItem="TIu-BE-jVA" secondAttribute="bottom" id="i2q-tw-aQ9"/>
@@ -250,8 +259,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="appstore.png" width="128" height="128"/>
-        <image name="home.png" width="128" height="128"/>
+        <image name="medicine.jpeg" width="540" height="360.75"/>
         <image name="more" width="25" height="25"/>
     </resources>
 </document>

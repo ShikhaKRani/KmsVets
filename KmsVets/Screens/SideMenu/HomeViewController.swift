@@ -25,6 +25,7 @@ class HomeViewController: BaseViewController {
         self.fetchBannerImageFromServer()
         self.pageControl.numberOfPages = 3
         self.pageControl.currentPage = 0
+        self.imgCollectionView.bringSubviewToFront(self.pageControl)
         
     }
     
@@ -99,8 +100,8 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerCollCell", for: indexPath) as! BannerCollCell
         let dict = self.bannerData[indexPath.row]
             
-        let urlString  =  "\(BaseUrl.IMG_URL)/\(dict["image"] ?? "")"
-            cell.bannerCellImg.sd_setImage(with: URL(string: urlString), placeholderImage: UIImage(named: "more") ,options: .refreshCached, completed: nil)
+        let urlString  =  "\(AppURL.SLIDER_URL)/\(dict["image"] ?? "")"
+            cell.bannerCellImg.sd_setImage(with: URL(string: urlString), placeholderImage: UIImage(named: "medicine.jpeg") ,options: .refreshCached, completed: nil)
         return cell
     }
     
@@ -124,9 +125,7 @@ extension HomeViewController {
     //MARK:- Side Menu Set up
     
     func settingUpSideMenuUI() {
-        
         SideMenuManager.default.addPanGestureToPresent(toView: self.navigationController!.navigationBar)
-        SideMenuManager.default.menuWidth = (UIScreen.main.bounds.size.width/4)*2
         setupSideMenu()
 
     }
@@ -134,6 +133,7 @@ extension HomeViewController {
         SideMenuManager.default.leftMenuNavigationController = storyboard?.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? SideMenuNavigationController
         SideMenuManager.default.addPanGestureToPresent(toView: navigationController!.navigationBar)
         SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: view)
+
     }
     //MARK:- Side Menu Set up
 }

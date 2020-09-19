@@ -12,7 +12,10 @@ target 'KmsVets' do
   pod 'SideMenu'
   pod 'Charts'
   pod ‘SDWebImage’, ‘~> 4.0’
-
+  pod 'Toast-Swift', '~> 5.0.0'
+  pod 'FSCalendar'
+  pod 'DropDown'
+  pod 'EzPopup'
   # Pods for KmsVets
 
 end

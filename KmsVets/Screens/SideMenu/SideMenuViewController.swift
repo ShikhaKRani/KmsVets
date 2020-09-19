@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SideMenu
 
 
 class SideMenuTblCell: UITableViewCell {
@@ -18,39 +19,32 @@ class SideMenuImgCell: UITableViewCell {
 }
 
 
-
-
 class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     
     @IBOutlet var sidemenuTblVw: UITableView!
     
     var dataArr : Array<Dictionary<String,AnyObject>> = [
-        ["title":"Home" as AnyObject,"image": "home" as AnyObject]
-        ,["title":"Profile" as AnyObject,"image": "userprofile" as AnyObject]
-        ,["title":"History" as AnyObject,"image": "history" as AnyObject]
-        ,["title":"About Us" as AnyObject,"image": "aboutus" as AnyObject]
-        ,["title":"Contact Us" as AnyObject,"image": "phone" as AnyObject]
-        ,["title":"FAQ" as AnyObject,"image": "faqs" as AnyObject],
-         ["title":"Logout" as AnyObject,"image": "logout" as AnyObject]]
+        ["title":"My Profile" as AnyObject,"image": "home" as AnyObject]
+        ,["title":"My Order" as AnyObject,"image": "userprofile" as AnyObject]
+        ,["title":"My Service Order" as AnyObject,"image": "history" as AnyObject]
+        ,["title":"Booking for a new Puppy" as AnyObject,"image": "aboutus" as AnyObject]
+        ,["title":"New puppy history" as AnyObject,"image": "phone" as AnyObject]
+        ,["title":"Booking for a surgery" as AnyObject,"image": "faqs" as AnyObject]
+        ,["title":"Surgery History" as AnyObject,"image": "logout" as AnyObject]
+        ,["title":"Asking a Question" as AnyObject,"image": "logout" as AnyObject]
+        ,["title":"Question History" as AnyObject,"image": "logout" as AnyObject]
+        ,["title":"Contact Us" as AnyObject,"image": "logout" as AnyObject]
+        ,["title":"About Us" as AnyObject,"image": "logout" as AnyObject]
+        ,["title":"Suggestion/Complaint" as AnyObject,"image": "logout" as AnyObject]
+        ,["title":"Logout" as AnyObject,"image": "logout" as AnyObject]]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .white
         
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -105,16 +99,15 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
         let menuItem =  dataArr[indexPath.row]["title"] as? String ?? ""
         
         switch menuItem {
-        case "Home":
+        case "My Profile":
             
-            //            let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home_VC") as! Home_VC
-            //            //        navigationController?.pushViewController(vc, animated: true)
-            //            //        self.present(vc, animated: true, completion: nil)
-            //            self.navigationController?.pushViewController(vc, animated: true)
-            //
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+            if let getProfile = storyBoard.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController {
+                self.navigationController?.pushViewController(getProfile, animated: true)
+            }
             
             break
-        case "Profile":
+        case "My Order":
             
             //            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProfileVc") as! ProfileVc
             //            //        navigationController?.pushViewController(vc, animated: true)
@@ -126,7 +119,7 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
             
             break
             
-        case "History":
+        case "My Service Order":
             //            let vc = self.storyboard?.instantiateViewController(withIdentifier: "HistoryVC") as! HistoryVC
             //            //        navigationController?.pushViewController(vc, animated: true)
             //            //        self.present(vc, animated: true, completion: nil)
@@ -134,11 +127,12 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
             //
             
             break
-        case "About Us":
-            //            let vc = self.storyboard?.instantiateViewController(withIdentifier: "aboutUsVc") as! aboutUsVc
-            //            //        navigationController?.pushViewController(vc, animated: true)
-            //            //        self.present(vc, animated: true, completion: nil)
-            //            self.navigationController?.pushViewController(vc, animated: true)
+        case "Booking for a new Puppy":
+               
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+            if let getbookingpuppy = storyBoard.instantiateViewController(withIdentifier: "BookingNewPuppyViewController") as? BookingNewPuppyViewController {
+                self.navigationController?.pushViewController(getbookingpuppy, animated: true)
+            }
             break
         case "FAQ":
             //            let vc = self.storyboard?.instantiateViewController(withIdentifier: "FaqVC") as! FaqVC
@@ -192,8 +186,10 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
             
         default:
             break
+            
         }
         
     }
     
 }
+

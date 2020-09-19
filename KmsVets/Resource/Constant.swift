@@ -15,13 +15,13 @@ struct AppConstant {
     //constant
 }
 
-
 //MARK:- String Constant
 struct StringConstant {
     
     //Identifier
     static let  CustomerInformationCell = "CustomerInformationCell"
-    
+    static let  ProfileViewTableViewCell = "ProfileViewTableViewCell"
+    static let  BookingNewPuppyTableViewCell = "BookingNewPuppyTableViewCell"
     
     //title
     static let  Apptitle = "KMS Vets"

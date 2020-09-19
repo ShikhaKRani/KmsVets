@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import SideMenu
+import Toast_Swift
+
 
 class BaseViewController: UIViewController {
 
@@ -40,6 +43,10 @@ class BaseViewController: UIViewController {
     }
     
     
-
+    func displayMessage( message : String? ) {
+        self.view.makeToast(message, duration: 3.0, position: .center)
+    }
+    
+    
 }
 
