@@ -23,6 +23,7 @@ struct StringConstant {
     static let  CustomerInformationCell = "CustomerInformationCell"
     static let  ProfileViewTableViewCell = "ProfileViewTableViewCell"
     static let  BookingNewPuppyTableViewCell = "BookingNewPuppyTableViewCell"
+    static let  NewPuppyHistoryTableViewCell = "NewPuppyHistoryTableViewCell"
     
     //title
     static let  Apptitle = "KMS Vets"

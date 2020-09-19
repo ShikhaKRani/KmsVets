@@ -29,8 +29,8 @@ struct APIUrl {
     static let GET_OTP  = "http://api.msg91.com/api/sendhttp.php"
     static let PROFILE_UPDATE  = "\(BaseUrl.BASE)/visitapi/index.php/updateprofile"
     static let BOOK_NEW_PUPPY  = "\(BaseUrl.BASE)/visitapi/index.php/newpuppy"
+    static let GET_NEW_PUPPY  = "\(BaseUrl.BASE)/visitapi/index.php/getnewpuppy"
 
-    
 
     
 

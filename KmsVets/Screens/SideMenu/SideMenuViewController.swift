@@ -134,11 +134,11 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 self.navigationController?.pushViewController(getbookingpuppy, animated: true)
             }
             break
-        case "FAQ":
-            //            let vc = self.storyboard?.instantiateViewController(withIdentifier: "FaqVC") as! FaqVC
-            //            //        navigationController?.pushViewController(vc, animated: true)
-            //            //        self.present(vc, animated: true, completion: nil)
-            //            self.navigationController?.pushViewController(vc, animated: true)
+        case "New puppy history":
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+            if let genewpuppyhistory = storyBoard.instantiateViewController(withIdentifier: "NewPuppyHistoryViewController") as? NewPuppyHistoryViewController {
+                self.navigationController?.pushViewController(genewpuppyhistory, animated: true)
+            }
             break
             
         case "Contact Us":

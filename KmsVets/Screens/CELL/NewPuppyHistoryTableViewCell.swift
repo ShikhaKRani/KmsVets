@@ -10,9 +10,13 @@ import UIKit
 
 class NewPuppyHistoryTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var customerName: UITextField!
-       @IBOutlet weak var customerEmail: UITextField!
-       @IBOutlet weak var customerAddress: UITextField!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var mobileLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var breedLabel: UILabel!
+    @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var currentdateLabel: UILabel!
     
     
     
