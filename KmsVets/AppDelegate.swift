@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         IQKeyboardManager.shared.enable = true
         
-        let USERID = UserDefaults.standard.string(forKey: "UserID")
+        let USERID = UserDefaults.standard.string(forKey: "id")
         
         if USERID == nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)

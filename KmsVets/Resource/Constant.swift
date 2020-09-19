@@ -13,6 +13,7 @@ import UIKit
 //MARK:- App Constant
 struct AppConstant {
     //constant
+    static let UserKey  = "5642vcb546gfnbvb7r6ewc211365vhh34"
 }
 
 //MARK:- String Constant
@@ -36,3 +37,14 @@ struct ColorConstant {
     static let navThemeColor = UIColor(red: 01/255, green: 52/255, blue: 48/255, alpha: 1)
     
 }
+
+
+extension NSAttributedString
+{
+    convenience init(text: String, aligment: NSTextAlignment, color:UIColor) {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = aligment
+        self.init(string: text, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle, NSAttributedString.Key.foregroundColor:color])
+    }
+}
+

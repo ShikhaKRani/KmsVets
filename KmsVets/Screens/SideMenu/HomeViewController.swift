@@ -21,14 +21,12 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setTitleForNavigation(title: "KMS Vets", isHidden: false)
-        UserDefaults.standard.set("1", forKey: "UserID")
         self.fetchBannerImageFromServer()
         self.pageControl.numberOfPages = 3
         self.pageControl.currentPage = 0
         self.imgCollectionView.bringSubviewToFront(self.pageControl)
         
     }
-    
     
     func fetchBannerImageFromServer() {
         

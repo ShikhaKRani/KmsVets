@@ -22,6 +22,7 @@ class GetOTPViewController: BaseViewController {
     
     @IBOutlet weak var doneButton: UIButton!
     var mobileNumber:String?
+    var randomNumber:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,68 +43,92 @@ class GetOTPViewController: BaseViewController {
         infoLabel.text = "We have send an SMS at +91 \(mobileNumber ?? "")  With an Alternative Password"
         infoLabel.numberOfLines = 0
         
-        doneButton.addTarget(self, action: #selector(redirectToCustomerInfoScreen), for: .touchUpInside)
+        doneButton.addTarget(self, action: #selector(doneButtonAction), for: .touchUpInside)
 
-        self.getOtpApiCall()
+        self.getOtpApi()
         
     }
     
-    @objc func redirectToCustomerInfoScreen(sender : UIButton) {
+    
+    @objc func doneButtonAction(sender : UIButton) {
         
+        if randomNumber == self.otpTextfield.text {
+            self.fetchUserDetails(mobile: mobileNumber)
+        }else{
+            self.displayMessage(message: "Please enter correct OTP")
+        }
+    }
+    
+    
+    
+    func redirectToCustomerInfoScreen() {
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         if let customerinfoViewController = storyBoard.instantiateViewController(withIdentifier: "CustomerBasicInfoViewController") as? CustomerBasicInfoViewController {
-            
-            
-           
             self.navigationController?.pushViewController(customerinfoViewController, animated: true)
         }
     }
-    
-
-    func getOtpApiCall() {
-        
-        
-        let parameters = [
-            "order_id": "102"
-        ]
-        
-        AF.request(APIUrl.ORDER_DETAILS, method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                print(value)
-            case .failure(let error):
-                print(error)
+  
+      //MARK:- Fetch user details after login
+     func fetchUserDetails(mobile : String?) {
+        ServiceClient.sendRequest(apiUrl: APIUrl.LOGIN_URL,postdatadictionary: ["mobile" : mobile ?? ""], isArray: false) { (response) in
+            
+            if let reponse = response as? [String : Any] {
+                print(response)
+                let dataDict = reponse["data"] as? [String: Any]
+                UserDefaults.standard.set(dataDict?["status"], forKey: "status")
+                UserDefaults.standard.set(dataDict?["mobile"], forKey: "mobile")
+                UserDefaults.standard.set(dataDict?["zipcode"], forKey: "zipcode")
+                UserDefaults.standard.set(dataDict?["password"], forKey: "password")
+                UserDefaults.standard.set(dataDict?["country"], forKey: "country")
+                UserDefaults.standard.set(dataDict?["id"], forKey: "id")
+                UserDefaults.standard.set(dataDict?["unique_code"], forKey: "unique_code")
+                UserDefaults.standard.set(dataDict?["gcm_code"], forKey: "gcm_code")
+                UserDefaults.standard.set(dataDict?["city"], forKey: "city")
+                UserDefaults.standard.set(dataDict?["temp_password"], forKey: "temp_password")
+                UserDefaults.standard.set(dataDict?["name"], forKey: "name")
+                UserDefaults.standard.set(dataDict?["email"], forKey: "email")
+                UserDefaults.standard.set(dataDict?["reg_date"], forKey: "reg_date")
+                UserDefaults.standard.set(dataDict?["phone_verified"], forKey: "phone_verified")
+                UserDefaults.standard.set(dataDict?["gcm_type"], forKey: "gcm_type")
+                UserDefaults.standard.set(dataDict?["state"], forKey: "state")
+                UserDefaults.standard.set(dataDict?["address"], forKey: "address")
+                UserDefaults.standard.set(dataDict?["username"], forKey: "username")
+                
+                DispatchQueue.main.async { () -> Void in
+                    self.redirectToCustomerInfoScreen()
+                }
+                
             }
         }
-        
+     }
+  
+    
+   
+    func getOtpApi() {
+        randomNumber = self.random()
+        AF.request(APIUrl.GET_OTP, method: .post, parameters: ["authkey": "262913AkeGtTka5c6567fb","route": "4", "sender": "WISDOM", "country": "91", "message": "Your OTP is \(randomNumber!)", "mobiles": self.mobileNumber ?? ""],encoding: URLEncoding.default, headers: nil).responseString { (response) in
+            print("--OTP ->\(self.randomNumber ?? ""),\(response)")
+        }
+    }
+    
+    func random() -> String {
+        var result = ""
+        repeat {
+            result = String(format:"%04d", arc4random_uniform(10000) )
+        } while result.count < 4 || Int(result)! < 1000
+        print(result)
+        return result
     }
     
     
 
-}
-
-extension NSAttributedString
-{
-    convenience init(text: String, aligment: NSTextAlignment, color:UIColor) {
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = aligment
-        self.init(string: text, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle, NSAttributedString.Key.foregroundColor:color])
-    }
 }
 
 extension GetOTPViewController: UITextFieldDelegate {
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-    }
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
-    }
+  
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        
-          
-        
+     
         let charsLimit = 4
         let startingLength = otpTextfield.text?.count ?? 0
         let lengthToAdd = string.count
@@ -131,3 +156,4 @@ extension GetOTPViewController: UITextFieldDelegate {
     }
     
 }
+

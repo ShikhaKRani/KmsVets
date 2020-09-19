@@ -670,6 +670,13 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLe-Nx-cOH">
                                                     <rect key="frame" x="20" y="485" width="374" height="30"/>
                                                 </button>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down-arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Tj-EL-36E">
+                                                    <rect key="frame" x="359" y="487.5" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="FV5-kP-Ji1"/>
+                                                        <constraint firstAttribute="width" constant="25" id="t6V-mr-N1M"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="yS7-vp-RPf" firstAttribute="top" secondItem="2Gr-na-uS8" secondAttribute="bottom" constant="20" id="6vM-qd-FGb"/>
@@ -678,6 +685,7 @@
                                                 <constraint firstItem="2Gr-na-uS8" firstAttribute="leading" secondItem="1Bo-Eh-RhT" secondAttribute="leading" constant="20" id="9qP-BZ-ihj"/>
                                                 <constraint firstItem="cah-w9-sAf" firstAttribute="top" secondItem="yS7-vp-RPf" secondAttribute="bottom" constant="20" id="CWH-SC-Fr5"/>
                                                 <constraint firstAttribute="trailing" secondItem="0Ej-Ve-QS6" secondAttribute="trailing" constant="20" id="FfW-Bo-LUH"/>
+                                                <constraint firstItem="3Tj-EL-36E" firstAttribute="trailing" secondItem="0dg-89-cZi" secondAttribute="trailing" constant="-10" id="GQP-6y-wRf"/>
                                                 <constraint firstItem="98x-qf-lRR" firstAttribute="leading" secondItem="1Bo-Eh-RhT" secondAttribute="leading" constant="30" id="GqL-K7-wxj"/>
                                                 <constraint firstItem="0dg-89-cZi" firstAttribute="leading" secondItem="1Bo-Eh-RhT" secondAttribute="leading" constant="20" id="Lf7-fy-ZSP"/>
                                                 <constraint firstAttribute="trailing" secondItem="98x-qf-lRR" secondAttribute="trailing" constant="30" id="Lyg-DE-2gr"/>
@@ -693,6 +701,7 @@
                                                 <constraint firstItem="98x-qf-lRR" firstAttribute="top" secondItem="0Ej-Ve-QS6" secondAttribute="bottom" constant="24" id="nDQ-6m-RoJ"/>
                                                 <constraint firstItem="0Ej-Ve-QS6" firstAttribute="top" secondItem="0dg-89-cZi" secondAttribute="bottom" constant="20" id="qxs-BY-jfg"/>
                                                 <constraint firstAttribute="trailing" secondItem="cah-w9-sAf" secondAttribute="trailing" constant="20" id="rjs-nG-hdV"/>
+                                                <constraint firstItem="3Tj-EL-36E" firstAttribute="centerY" secondItem="VLe-Nx-cOH" secondAttribute="centerY" id="vo4-Ga-GT5"/>
                                                 <constraint firstItem="0dg-89-cZi" firstAttribute="top" secondItem="cah-w9-sAf" secondAttribute="bottom" constant="20" id="w4k-Sy-YbT"/>
                                                 <constraint firstItem="X0w-Ue-27B" firstAttribute="top" secondItem="1Bo-Eh-RhT" secondAttribute="top" constant="30" id="wgd-65-WgZ"/>
                                                 <constraint firstAttribute="trailing" secondItem="0dg-89-cZi" secondAttribute="trailing" constant="20" id="xQN-Jk-UVH"/>
@@ -944,6 +953,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="down-arrow.png" width="392.17022705078125" height="392.17022705078125"/>
         <image name="medicine.jpeg" width="540" height="360.75"/>
     </resources>
 </document>

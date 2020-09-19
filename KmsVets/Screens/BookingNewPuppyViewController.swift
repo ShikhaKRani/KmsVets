@@ -27,45 +27,53 @@ class BookingNewPuppyViewController: BaseViewController {
         // Do any additional setup after loading the view.
     }
     
-    //http://wisdompetclinic.xyz/visitapi/index.php/getpet_list
-    
+
+    //MARK:- fetchPetList
     func fetchPetList() {
-        
-        let params = ["key":"5642vcb546gfnbvb7r6ewc211365vhh34"] as Dictionary<String, String>
+        //params
+        let params = ["key": AppConstant.UserKey] as Dictionary<String, String>
         
         var request = URLRequest(url: URL(string: APIUrl.GET_PET_LIST)!)
         request.httpMethod = "POST"
         request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
         let session = URLSession.shared
+       
         let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
             print(response!)
             do {
-                let json = try JSONSerialization.jsonObject(with: data!) as! Array<Dictionary<String, AnyObject>>
+                let json = try JSONSerialization.jsonObject(with: data!) as! [[String : Any]]
                 let dict = json[0]
                 let dataArray = dict["data"]
                 self.petArray = dataArray as! [[String : Any]]
-                print(self.petArray)
-
-
             } catch {
-                print("error")
+                print(" Parshing Error")
             }
         })
         
         task.resume()
     }
     
+    
+    //Button Action
+    
     @objc func dropdownAction (sender : UIButton) {
         guard let cell = sender.superview?.superview as? BookingNewPuppyTableViewCell else {
             return
         }
+       
+        var petList = [String]()
+        for petDict in self.petArray {
+            let pet_name = petDict["pet_name"] as? String
+            petList.append(pet_name?.capitalized ?? "")
+        }
+        
+        print(petList)
         
         self.dropDown.anchorView = cell.petbreedTextfield.plainView
         self.dropDown.bottomOffset = CGPoint(x: 0, y: (sender).bounds.height)
         self.dropDown.dataSource.removeAll()
-        //self.dropDown.dataSource = self.petArray
+        self.dropDown.dataSource = petList
         self.dropDown.selectionAction = { [unowned self] (index, item) in
             
             print(item)
