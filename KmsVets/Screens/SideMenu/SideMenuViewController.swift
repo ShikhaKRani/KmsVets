@@ -157,13 +157,7 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
             // Create the actions
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
                 UIAlertAction in
-                                UserDefaults.standard.removeObject(forKey: "id")
-                //                UserDefaults.standard.removeObject(forKey: "Emailid")
-                //                UserDefaults.standard.removeObject(forKey: "mobile")
-                //                UserDefaults.standard.removeObject(forKey: "username")
-                //                UserDefaults.standard.removeObject(forKey: "password")
-                
-                
+                UserDefaults.standard.removeObject(forKey: "id")
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                 let newViewController = storyBoard.instantiateViewController(withIdentifier: "SplashViewController") as! SplashViewController
                 let navigationController = UINavigationController(rootViewController: newViewController)

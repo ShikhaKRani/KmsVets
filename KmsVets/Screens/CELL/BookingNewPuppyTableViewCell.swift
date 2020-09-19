@@ -20,7 +20,12 @@ class BookingNewPuppyTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.nameTextfield.tag = 100
+        self.mobileTextfield.tag = 101
+        self.eamilTextfield.tag = 102
+        self.addressTextfield.tag = 103
+        self.petbreedTextfield.tag = 104
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -70,6 +70,7 @@ class GetOTPViewController: BaseViewController {
   
       //MARK:- Fetch user details after login
      func fetchUserDetails(mobile : String?) {
+        self.showHud("Loading...")
         ServiceClient.sendRequest(apiUrl: APIUrl.LOGIN_URL,postdatadictionary: ["mobile" : mobile ?? ""], isArray: false) { (response) in
             
             if let reponse = response as? [String : Any] {
@@ -94,6 +95,7 @@ class GetOTPViewController: BaseViewController {
                 UserDefaults.standard.set(dataDict?["address"], forKey: "address")
                 UserDefaults.standard.set(dataDict?["username"], forKey: "username")
                 
+                self.hideHUD()
                 DispatchQueue.main.async { () -> Void in
                     self.redirectToCustomerInfoScreen()
                 }
@@ -105,9 +107,12 @@ class GetOTPViewController: BaseViewController {
     
    
     func getOtpApi() {
+        
+        self.showHud("Loading...")
         randomNumber = self.random()
         AF.request(APIUrl.GET_OTP, method: .post, parameters: ["authkey": "262913AkeGtTka5c6567fb","route": "4", "sender": "WISDOM", "country": "91", "message": "Your OTP is \(randomNumber!)", "mobiles": self.mobileNumber ?? ""],encoding: URLEncoding.default, headers: nil).responseString { (response) in
             print("--OTP ->\(self.randomNumber ?? ""),\(response)")
+            self.hideHUD()
         }
     }
     

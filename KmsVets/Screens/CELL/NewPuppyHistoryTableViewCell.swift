@@ -10,6 +10,12 @@ import UIKit
 
 class NewPuppyHistoryTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var customerName: UITextField!
+       @IBOutlet weak var customerEmail: UITextField!
+       @IBOutlet weak var customerAddress: UITextField!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

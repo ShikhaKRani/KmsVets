@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewPuppyHistoryViewController: UIViewController {
+class NewPuppyHistoryViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

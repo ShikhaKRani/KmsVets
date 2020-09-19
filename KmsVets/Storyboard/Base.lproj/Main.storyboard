@@ -761,15 +761,15 @@
                                 <rect key="frame" x="0.0" y="145" width="414" height="717"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="246" id="FsN-xy-EYF">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="246"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="300" id="FsN-xy-EYF">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FsN-xy-EYF" id="uxj-IS-vja">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="246"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YvK-QW-lUC">
-                                                    <rect key="frame" x="10" y="24" width="394" height="289"/>
+                                                    <rect key="frame" x="10" y="24" width="394" height="265"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaK-eH-ksd">
                                                             <rect key="frame" x="10" y="8" width="150" height="21"/>
@@ -878,7 +878,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="DVC-Zr-fkc" secondAttribute="trailing" constant="10" id="43l-Lv-AnI"/>
                                                         <constraint firstItem="wRT-Fu-Jb6" firstAttribute="leading" secondItem="YvK-QW-lUC" secondAttribute="leading" constant="10" id="4NW-Wi-d5o"/>
@@ -925,7 +925,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="YvK-QW-lUC" firstAttribute="leading" secondItem="uxj-IS-vja" secondAttribute="leading" constant="10" id="hbM-0h-Ob4"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="YvK-QW-lUC" secondAttribute="bottom" constant="-78" id="oGK-1q-df8"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="YvK-QW-lUC" secondAttribute="bottom" id="oGK-1q-df8"/>
                                                 <constraint firstAttribute="trailing" secondItem="YvK-QW-lUC" secondAttribute="trailing" constant="10" id="yDm-g6-jEM"/>
                                                 <constraint firstItem="YvK-QW-lUC" firstAttribute="top" secondItem="uxj-IS-vja" secondAttribute="topMargin" constant="13" id="yf3-FT-Rlt"/>
                                             </constraints>

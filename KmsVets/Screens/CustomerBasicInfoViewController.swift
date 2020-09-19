@@ -62,7 +62,7 @@ class CustomerBasicInfoViewController: BaseViewController {
     //MARK:- UPDATE PROFILE
     func updateUserInfo() {
         //params
-        
+        self.showHud("Loading...")
         let params = ["key": AppConstant.UserKey, "name" : customerName, "email" : customerEmail, "address" : customerAddress , "userid": UserDefaults.standard.string(forKey: "id") ?? ""] as Dictionary<String, String>
         
         var request = URLRequest(url: URL(string: APIUrl.PROFILE_UPDATE)!)
@@ -81,6 +81,7 @@ class CustomerBasicInfoViewController: BaseViewController {
                     UserDefaults.standard.set(self.customerName, forKey: "name")
                     UserDefaults.standard.set(self.customerEmail, forKey: "email")
                     
+                    self.hideHUD()
                     DispatchQueue.main.async { () -> Void in
                         self.redirectToHomeInfoScreen()
                     }

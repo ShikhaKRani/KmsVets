@@ -11,11 +11,14 @@ target 'KmsVets' do
   pod 'IQKeyboardManagerSwift'
   pod 'SideMenu'
   pod 'Charts'
-  pod ‘SDWebImage’, ‘~> 4.0’
   pod 'Toast-Swift', '~> 5.0.0'
   pod 'FSCalendar'
   pod 'DropDown'
   pod 'EzPopup'
+  pod 'MBProgressHUD', '~> 1.2.0'
+  pod ‘SDWebImage’, ‘~> 4.0’
+
+  
   # Pods for KmsVets
 
 end

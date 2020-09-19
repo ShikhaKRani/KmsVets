@@ -7,6 +7,7 @@ PODS:
   - EzPopup (1.1)
   - FSCalendar (2.8.1)
   - IQKeyboardManagerSwift (6.5.6)
+  - MBProgressHUD (1.2.0)
   - SDWebImage (4.4.8):
     - SDWebImage/Core (= 4.4.8)
   - SDWebImage/Core (4.4.8)
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - EzPopup
   - FSCalendar
   - IQKeyboardManagerSwift
+  - MBProgressHUD (~> 1.2.0)
   - SDWebImage (~> 4.0)
   - SideMenu
   - Toast-Swift (~> 5.0.0)
@@ -32,6 +34,7 @@ SPEC REPOS:
     - EzPopup
     - FSCalendar
     - IQKeyboardManagerSwift
+    - MBProgressHUD
     - SDWebImage
     - SideMenu
     - Toast-Swift
@@ -43,10 +46,11 @@ SPEC CHECKSUMS:
   EzPopup: b959cfb0d70d782a28e770a96c454df0401467c7
   FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
   SideMenu: 8ef57a3cfc024a2d3fc1c036c7fe98537baec9e0
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 47b3d6000b69cc884db36386c8670e54bf261973
+PODFILE CHECKSUM: a6d011fcc55cad9e999329567d3b6bab526435a6
 
 COCOAPODS: 1.10.0.beta.2

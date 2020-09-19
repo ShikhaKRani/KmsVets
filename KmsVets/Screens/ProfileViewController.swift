@@ -89,12 +89,15 @@ class ProfileViewController: BaseViewController {
           //MARK:- Fetch user details after login
     func updateUserDetails() {
         
+        self.showHud("")
+
         let params = ["key": AppConstant.UserKey, "name" : fullnameStr,"username" : userName, "email" : email, "address" : address , "zipcode" : zipcode, "city": city, "userid": UserDefaults.standard.string(forKey: "id") ?? ""] as Dictionary<String, String>
         
        ServiceClient.sendRequest(apiUrl: APIUrl.PROFILE_UPDATE,postdatadictionary: params, isArray: false) { (response) in
            
            if let reponse = response as? [String : Any] {
                print(reponse)
+            self.hideHUD()
             self.fetchUserDetails()
            }
        }
@@ -104,6 +107,7 @@ class ProfileViewController: BaseViewController {
     
      //MARK:- Fetch user details after login
     func fetchUserDetails() {
+        self.showHud("")
         ServiceClient.sendRequest(apiUrl: APIUrl.LOGIN_URL,postdatadictionary: ["mobile" : mobile ], isArray: false) { (response) in
            
            if let reponse = response as? [String : Any] {
@@ -128,7 +132,8 @@ class ProfileViewController: BaseViewController {
                UserDefaults.standard.set(dataDict?["address"], forKey: "address")
                UserDefaults.standard.set(dataDict?["username"], forKey: "username")
                            
-               
+               self.hideHUD()
+
            }
        }
     }
