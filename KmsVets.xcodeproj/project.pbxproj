@@ -27,6 +27,8 @@
 		BF527170250E1F1900BD60D2 /* GetOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52716F250E1F1900BD60D2 /* GetOTPViewController.swift */; };
 		BF527173250E39D900BD60D2 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF527172250E39D900BD60D2 /* APIClient.swift */; };
 		BF5569192519C88000C3E4BA /* AppExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5569182519C88000C3E4BA /* AppExtension.swift */; };
+		BF556926251A08D600C3E4BA /* BookingSurgeryHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF556925251A08D600C3E4BA /* BookingSurgeryHistoryViewController.swift */; };
+		BF556929251A08F700C3E4BA /* BookingSurgeryHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF556928251A08F700C3E4BA /* BookingSurgeryHistoryTableViewCell.swift */; };
 		BF786711250CEF8900D8D17E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF786710250CEF8900D8D17E /* LoginViewController.swift */; };
 		BF786713250CEFBE00D8D17E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF786712250CEFBE00D8D17E /* SplashViewController.swift */; };
 		BF786716250CF6C100D8D17E /* medicine.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BF786715250CF6C100D8D17E /* medicine.jpeg */; };
@@ -63,6 +65,8 @@
 		BF52716F250E1F1900BD60D2 /* GetOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOTPViewController.swift; sourceTree = "<group>"; };
 		BF527172250E39D900BD60D2 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		BF5569182519C88000C3E4BA /* AppExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppExtension.swift; sourceTree = "<group>"; };
+		BF556925251A08D600C3E4BA /* BookingSurgeryHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSurgeryHistoryViewController.swift; sourceTree = "<group>"; };
+		BF556928251A08F700C3E4BA /* BookingSurgeryHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSurgeryHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		BF786710250CEF8900D8D17E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BF786712250CEFBE00D8D17E /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		BF786715250CF6C100D8D17E /* medicine.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = medicine.jpeg; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 				BF32E9522514B35A00E154D3 /* BookingNewPuppyTableViewCell.swift */,
 				BF8D0D202514C16800373096 /* NewPuppyHistoryTableViewCell.swift */,
 				BF17C2202518944E0000D5C3 /* BookinfForSurgeryTableViewCell.swift */,
+				BF556928251A08F700C3E4BA /* BookingSurgeryHistoryTableViewCell.swift */,
 			);
 			path = CELL;
 			sourceTree = "<group>";
@@ -215,6 +220,7 @@
 				BF32E9502514B34200E154D3 /* BookingNewPuppyViewController.swift */,
 				BF8D0D1E2514C05300373096 /* NewPuppyHistoryViewController.swift */,
 				BF17C21E25188F130000D5C3 /* BookingForSurgeryViewController.swift */,
+				BF556925251A08D600C3E4BA /* BookingSurgeryHistoryViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -350,6 +356,7 @@
 				BF8D0D1F2514C05300373096 /* NewPuppyHistoryViewController.swift in Sources */,
 				BF17C2212518944E0000D5C3 /* BookinfForSurgeryTableViewCell.swift in Sources */,
 				BF1D97F7250F9EFA00446CA8 /* MyChartViewController.swift in Sources */,
+				BF556926251A08D600C3E4BA /* BookingSurgeryHistoryViewController.swift in Sources */,
 				BF32E92F25147FA600E154D3 /* ProfileViewTableViewCell.swift in Sources */,
 				BFBA34EF250CE908004C37C2 /* AppDelegate.swift in Sources */,
 				BF02B53A2511EF1A0076B05E /* BannerCollCell.swift in Sources */,
@@ -360,6 +367,7 @@
 				BF786713250CEFBE00D8D17E /* SplashViewController.swift in Sources */,
 				BF1D97ED250F675A00446CA8 /* CustomerBasicInfoViewController.swift in Sources */,
 				BF8D0D212514C16800373096 /* NewPuppyHistoryTableViewCell.swift in Sources */,
+				BF556929251A08F700C3E4BA /* BookingSurgeryHistoryTableViewCell.swift in Sources */,
 				BF32E9532514B35A00E154D3 /* BookingNewPuppyTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

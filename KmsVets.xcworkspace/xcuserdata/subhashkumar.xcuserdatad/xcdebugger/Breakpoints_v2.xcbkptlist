@@ -7,96 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E352D273-7A2E-4A17-A7DD-C717CEF36F63"
+            uuid = "AB3A9794-CCCF-487D-8739-08EF447B7D4A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KmsVets/Screens/BookingForSurgeryViewController.swift"
+            filePath = "KmsVets/Screens/BookingSurgeryHistoryViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "saveBtnAtion()"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "getSurgeryHistoryList()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F6B3509B-0B23-4C5C-91EC-7F8D0299D3AD"
+            uuid = "DB1235CC-F2FC-478E-AB44-936122EC9C1B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KmsVets/Screens/BookingForSurgeryViewController.swift"
+            filePath = "KmsVets/Screens/BookingSurgeryHistoryViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "confirmSurgeryBooking()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E6857CB7-0632-4A9C-AEA2-81DCAC220BDC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KmsVets/Screens/BookingForSurgeryViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "confirmSurgeryBooking()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E6857CB7-0632-4A9C-AEA2-81DCAC220BDC - e1ee33a23adc4790"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "KMS_Vets.BookingForSurgeryViewController.confirmSurgeryBooking() -&gt; ()"
-                  moduleName = "KMS Vets"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/subhashkumar/Documents/GIT_Project/KmsVets/KmsVets/Screens/BookingForSurgeryViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "67"
-                  endingLineNumber = "67"
-                  offsetFromSymbolStart = "1101">
-               </Location>
-               <Location
-                  uuid = "E6857CB7-0632-4A9C-AEA2-81DCAC220BDC - 745eb75f9d2ef709"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Any) -&gt; () in KMS_Vets.BookingForSurgeryViewController.confirmSurgeryBooking() -&gt; ()"
-                  moduleName = "KMS Vets"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/subhashkumar/Documents/GIT_Project/KmsVets/KmsVets/Screens/BookingForSurgeryViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69"
-                  offsetFromSymbolStart = "162">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B26CE4EF-A8B8-4EB5-B168-46CB44129E58"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KmsVets/Screens/BookingForSurgeryViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "confirmSurgeryBooking()"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

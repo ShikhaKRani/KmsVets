@@ -148,6 +148,13 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     }
             break
             
+        case "Surgery History":
+                    let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+                    if let bookForSurgeryHistory = storyBoard.instantiateViewController(withIdentifier: "BookingSurgeryHistoryViewController") as? BookingSurgeryHistoryViewController {
+                        self.navigationController?.pushViewController(bookForSurgeryHistory, animated: true)
+                    }
+            break
+            
             
             
         case "Logout":
