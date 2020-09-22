@@ -154,6 +154,12 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
                         self.navigationController?.pushViewController(bookForSurgeryHistory, animated: true)
                     }
             break
+        case "Contact Us":
+                    let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+                    if let getcontact = storyBoard.instantiateViewController(withIdentifier: "ContactUsViewController") as? ContactUsViewController {
+                        self.navigationController?.pushViewController(getcontact, animated: true)
+                    }
+            break
             
             
             
