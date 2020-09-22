@@ -12,6 +12,8 @@
 		BF02B5372511E62C0076B05E /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02B5362511E62C0076B05E /* SideMenuViewController.swift */; };
 		BF02B53A2511EF1A0076B05E /* BannerCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02B5382511EF1A0076B05E /* BannerCollCell.swift */; };
 		BF02B53B2511EF1A0076B05E /* HomeCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02B5392511EF1A0076B05E /* HomeCollCell.swift */; };
+		BF17C21F25188F130000D5C3 /* BookingForSurgeryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF17C21E25188F130000D5C3 /* BookingForSurgeryViewController.swift */; };
+		BF17C2212518944E0000D5C3 /* BookinfForSurgeryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF17C2202518944E0000D5C3 /* BookinfForSurgeryTableViewCell.swift */; };
 		BF1D97ED250F675A00446CA8 /* CustomerBasicInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D97EC250F675A00446CA8 /* CustomerBasicInfoViewController.swift */; };
 		BF1D97F0250F8BCA00446CA8 /* CustomerInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D97EF250F8BCA00446CA8 /* CustomerInformationCell.swift */; };
 		BF1D97F3250F8D5900446CA8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D97F2250F8D5900446CA8 /* Constant.swift */; };
@@ -24,6 +26,7 @@
 		BF42BC902515E9430064F0C9 /* ServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF42BC8F2515E9430064F0C9 /* ServiceClient.swift */; };
 		BF527170250E1F1900BD60D2 /* GetOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52716F250E1F1900BD60D2 /* GetOTPViewController.swift */; };
 		BF527173250E39D900BD60D2 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF527172250E39D900BD60D2 /* APIClient.swift */; };
+		BF5569192519C88000C3E4BA /* AppExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5569182519C88000C3E4BA /* AppExtension.swift */; };
 		BF786711250CEF8900D8D17E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF786710250CEF8900D8D17E /* LoginViewController.swift */; };
 		BF786713250CEFBE00D8D17E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF786712250CEFBE00D8D17E /* SplashViewController.swift */; };
 		BF786716250CF6C100D8D17E /* medicine.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BF786715250CF6C100D8D17E /* medicine.jpeg */; };
@@ -45,6 +48,8 @@
 		BF02B5362511E62C0076B05E /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		BF02B5382511EF1A0076B05E /* BannerCollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerCollCell.swift; sourceTree = "<group>"; };
 		BF02B5392511EF1A0076B05E /* HomeCollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollCell.swift; sourceTree = "<group>"; };
+		BF17C21E25188F130000D5C3 /* BookingForSurgeryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingForSurgeryViewController.swift; sourceTree = "<group>"; };
+		BF17C2202518944E0000D5C3 /* BookinfForSurgeryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookinfForSurgeryTableViewCell.swift; sourceTree = "<group>"; };
 		BF1D97EC250F675A00446CA8 /* CustomerBasicInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerBasicInfoViewController.swift; sourceTree = "<group>"; };
 		BF1D97EF250F8BCA00446CA8 /* CustomerInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerInformationCell.swift; sourceTree = "<group>"; };
 		BF1D97F2250F8D5900446CA8 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -57,6 +62,7 @@
 		BF42BC8F2515E9430064F0C9 /* ServiceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceClient.swift; sourceTree = "<group>"; };
 		BF52716F250E1F1900BD60D2 /* GetOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOTPViewController.swift; sourceTree = "<group>"; };
 		BF527172250E39D900BD60D2 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		BF5569182519C88000C3E4BA /* AppExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppExtension.swift; sourceTree = "<group>"; };
 		BF786710250CEF8900D8D17E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BF786712250CEFBE00D8D17E /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		BF786715250CF6C100D8D17E /* medicine.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = medicine.jpeg; sourceTree = "<group>"; };
@@ -120,6 +126,7 @@
 				BF32E92E25147FA600E154D3 /* ProfileViewTableViewCell.swift */,
 				BF32E9522514B35A00E154D3 /* BookingNewPuppyTableViewCell.swift */,
 				BF8D0D202514C16800373096 /* NewPuppyHistoryTableViewCell.swift */,
+				BF17C2202518944E0000D5C3 /* BookinfForSurgeryTableViewCell.swift */,
 			);
 			path = CELL;
 			sourceTree = "<group>";
@@ -127,17 +134,10 @@
 		BF1D97F1250F8D4C00446CA8 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				BF42BC8C2515D85F0064F0C9 /* New Group */,
 				BF1D97F2250F8D5900446CA8 /* Constant.swift */,
+				BF5569182519C88000C3E4BA /* AppExtension.swift */,
 			);
 			path = Resource;
-			sourceTree = "<group>";
-		};
-		BF42BC8C2515D85F0064F0C9 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		BF527171250E39BC00BD60D2 /* Network */ = {
@@ -214,6 +214,7 @@
 				BF27A1E4251337E500F4AA65 /* ProfileViewController.swift */,
 				BF32E9502514B34200E154D3 /* BookingNewPuppyViewController.swift */,
 				BF8D0D1E2514C05300373096 /* NewPuppyHistoryViewController.swift */,
+				BF17C21E25188F130000D5C3 /* BookingForSurgeryViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -339,12 +340,15 @@
 				BF1D97F0250F8BCA00446CA8 /* CustomerInformationCell.swift in Sources */,
 				BF1D97F3250F8D5900446CA8 /* Constant.swift in Sources */,
 				BF02B53B2511EF1A0076B05E /* HomeCollCell.swift in Sources */,
+				BF5569192519C88000C3E4BA /* AppExtension.swift in Sources */,
 				BF786711250CEF8900D8D17E /* LoginViewController.swift in Sources */,
+				BF17C21F25188F130000D5C3 /* BookingForSurgeryViewController.swift in Sources */,
 				BF527173250E39D900BD60D2 /* APIClient.swift in Sources */,
 				BF02B5372511E62C0076B05E /* SideMenuViewController.swift in Sources */,
 				BFBA34F3250CE908004C37C2 /* BaseViewController.swift in Sources */,
 				BF42BC902515E9430064F0C9 /* ServiceClient.swift in Sources */,
 				BF8D0D1F2514C05300373096 /* NewPuppyHistoryViewController.swift in Sources */,
+				BF17C2212518944E0000D5C3 /* BookinfForSurgeryTableViewCell.swift in Sources */,
 				BF1D97F7250F9EFA00446CA8 /* MyChartViewController.swift in Sources */,
 				BF32E92F25147FA600E154D3 /* ProfileViewTableViewCell.swift in Sources */,
 				BFBA34EF250CE908004C37C2 /* AppDelegate.swift in Sources */,
@@ -507,6 +511,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Shikha.KmsVets;
 				PRODUCT_NAME = "KMS Vets";
 				SWIFT_VERSION = 5.0;
@@ -525,6 +530,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Shikha.KmsVets;
 				PRODUCT_NAME = "KMS Vets";
 				SWIFT_VERSION = 5.0;

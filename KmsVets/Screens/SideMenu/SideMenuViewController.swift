@@ -141,11 +141,11 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
             }
             break
             
-        case "Contact Us":
-            //            let vc = self.storyboard?.instantiateViewController(withIdentifier: "contactVc") as! contactVc
-            //            //        navigationController?.pushViewController(vc, animated: true)
-            //            //        self.present(vc, animated: true, completion: nil)
-            //            self.navigationController?.pushViewController(vc, animated: true)
+        case "Booking for a surgery":
+                    let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+                    if let bookForSurgery = storyBoard.instantiateViewController(withIdentifier: "BookingForSurgeryViewController") as? BookingForSurgeryViewController {
+                        self.navigationController?.pushViewController(bookForSurgery, animated: true)
+                    }
             break
             
             

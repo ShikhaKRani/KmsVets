@@ -46,7 +46,7 @@ class BaseViewController: UIViewController {
     
     func displayMessage( message : String? ) {
         DispatchQueue.main.async { () -> Void in
-            self.view.makeToast(message, duration: 3.0, position: .center)
+            self.view.makeToast(message, duration: 3.0, position: .bottom)
         }
     }
     
@@ -72,6 +72,7 @@ class BaseViewController: UIViewController {
         DispatchQueue.main.async { () -> Void in
         let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
         hud.label.text = message
+        
         hud.isUserInteractionEnabled = false
         }
     }
@@ -80,6 +81,7 @@ class BaseViewController: UIViewController {
         DispatchQueue.main.async { () -> Void in
 
         MBProgressHUD.hide(for: self.view, animated: true)
+            
         }
     }
     
