@@ -9,6 +9,7 @@
 import UIKit
 
 class ContactUsViewController: BaseViewController {
+    var data : [[String : Any]]?
     
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var mobileLabel: UILabel!
@@ -22,17 +23,20 @@ class ContactUsViewController: BaseViewController {
     
     func getContact() {
         
-        //self.showHud("Booking in Progress")
-        ServiceClient.sendRequest(apiUrl: APIUrl.GET_CONTACT,postdatadictionary: ["component":"json", "action": "get_contact"], isArray: false) { (response) in
+        self.showHud("Booking in Progress")
+        ServiceClient.sendRequest(apiUrl: APIUrl.GET_CONTACT,postdatadictionary: ["" : ""], isArray: false) { (response) in
 
-        
-       
            if let res = response as? [String : Any] {
                print(res)
-            //let message = res["msg"] as? String
+            self.data = res["data"] as? [[String: Any]] ?? [[:]]
+            if self.data?.count ?? 0 > 0{
+                let dict = self.data?[0]
+                DispatchQueue.main.async { () -> Void in
+                self.emailLabel.text = dict?["email"] as? String
+                self.mobileLabel.text = dict?["phone"] as? String
+                }
+            }
             self.hideHUD()
-
-            //self.displayMessage(message: message)
            }
        }
     }
@@ -49,3 +53,6 @@ class ContactUsViewController: BaseViewController {
     */
 
 }
+
+
+

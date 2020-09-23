@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n45-Ab-hCs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n45-Ab-hCs">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -80,19 +82,20 @@
                                 </connections>
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="U0d-Dl-k6d">
-                                <rect key="frame" x="187.5" y="264" width="39" height="37"/>
+                                <rect key="frame" x="146" y="264" width="122.5" height="27.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ed-zg-Z66">
-                                <rect key="frame" x="0.0" y="299" width="414" height="40"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="289.5" width="414" height="40"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="XDh-IG-xic"/>
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6fU-nZ-Pzn"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="U0d-Dl-k6d" firstAttribute="centerX" secondItem="XU0-jh-OXX" secondAttribute="centerX" id="Ccp-cQ-CFn"/>
@@ -104,7 +107,6 @@
                             <constraint firstItem="XU0-jh-OXX" firstAttribute="top" secondItem="6fU-nZ-Pzn" secondAttribute="top" constant="1" id="lax-0X-xGg"/>
                             <constraint firstItem="6fU-nZ-Pzn" firstAttribute="trailing" secondItem="1Ed-zg-Z66" secondAttribute="trailing" id="n4a-gr-BME"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6fU-nZ-Pzn"/>
                     </view>
                     <navigationItem key="navigationItem" id="Q2U-DL-eOn">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="more" id="eiL-nQ-fzQ">
@@ -169,14 +171,14 @@
                                                     <color key="backgroundColor" red="0.96854275469999995" green="0.96868163350000003" blue="0.96851247549999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medicine.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="urC-NF-3n3">
-                                                    <rect key="frame" x="10" y="5" width="30" height="64"/>
+                                                    <rect key="frame" x="10" y="5" width="25" height="64"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="Fwf-6Y-WJU"/>
-                                                        <constraint firstAttribute="height" constant="30" id="MT4-rK-pWu"/>
+                                                        <constraint firstAttribute="width" constant="25" id="Fwf-6Y-WJU"/>
+                                                        <constraint firstAttribute="height" constant="25" id="MT4-rK-pWu"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsF-er-JeZ">
-                                                    <rect key="frame" x="55" y="26" width="46.5" height="22.5"/>
+                                                    <rect key="frame" x="50" y="26" width="46.5" height="22.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -239,6 +241,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="CWu-ZK-gZm"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="CWu-ZK-gZm" firstAttribute="trailing" secondItem="TIu-BE-jVA" secondAttribute="trailing" id="6Y6-SO-cOu"/>
@@ -246,7 +249,6 @@
                             <constraint firstItem="TIu-BE-jVA" firstAttribute="leading" secondItem="CWu-ZK-gZm" secondAttribute="leading" id="r8t-Iy-wyP"/>
                             <constraint firstItem="TIu-BE-jVA" firstAttribute="top" secondItem="CWu-ZK-gZm" secondAttribute="top" id="x0n-H0-UX1"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="CWu-ZK-gZm"/>
                     </view>
                     <navigationItem key="navigationItem" id="dV3-EI-F5G"/>
                     <connections>
@@ -261,5 +263,8 @@
     <resources>
         <image name="medicine.jpeg" width="540" height="360.75"/>
         <image name="more" width="25" height="25"/>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

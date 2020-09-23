@@ -19,11 +19,11 @@ struct AppURL {
 }
 
 
-
+//http://wisdompetclinic.xyz/index.php?component=json&action=get_contact
 struct APIUrl {
     
     static let LOGIN_URL  = "\(BaseUrl.BASE)?component=json&action=get_search_password"
-    static let GET_CONTACT  = "\(BaseUrl.BASE)?"
+    static let GET_CONTACT  = "\(BaseUrl.BASE)?component=json&action=get_contact"
     static let ORDER_DETAILS  = "\(BaseUrl.BASE)?component=json&action=order_detail"
     static let GET_SLIDER_IMAGE  = "\(BaseUrl.BASE)?component=json&action=get_slider_image"
     static let GET_PET_LIST  = "\(BaseUrl.BASE)/visitapi/index.php/getpet_list"

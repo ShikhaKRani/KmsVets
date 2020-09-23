@@ -29,12 +29,12 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
         ,["title":"My Order" as AnyObject,"image": "userprofile" as AnyObject]
         ,["title":"My Service Order" as AnyObject,"image": "history" as AnyObject]
         ,["title":"Booking for a new Puppy" as AnyObject,"image": "aboutus" as AnyObject]
-        ,["title":"New puppy history" as AnyObject,"image": "phone" as AnyObject]
+        ,["title":"New puppy history" as AnyObject,"image": "" as AnyObject]
         ,["title":"Booking for a surgery" as AnyObject,"image": "faqs" as AnyObject]
         ,["title":"Surgery History" as AnyObject,"image": "logout" as AnyObject]
         ,["title":"Asking a Question" as AnyObject,"image": "logout" as AnyObject]
         ,["title":"Question History" as AnyObject,"image": "logout" as AnyObject]
-        ,["title":"Contact Us" as AnyObject,"image": "logout" as AnyObject]
+        ,["title":"Contact Us" as AnyObject,"image": "phone" as AnyObject]
         ,["title":"About Us" as AnyObject,"image": "logout" as AnyObject]
         ,["title":"Suggestion/Complaint" as AnyObject,"image": "logout" as AnyObject]
         ,["title":"Logout" as AnyObject,"image": "logout" as AnyObject]]
@@ -160,6 +160,21 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
                         self.navigationController?.pushViewController(getcontact, animated: true)
                     }
             break
+        case "About Us":
+                    let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+                    if let aboutus = storyBoard.instantiateViewController(withIdentifier: "AboutUsViewController") as? AboutUsViewController {
+                        self.navigationController?.pushViewController(aboutus, animated: true)
+                    }
+            break
+            
+        case "Suggestion/Complaint":
+                    let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+                    if let suggestion = storyBoard.instantiateViewController(withIdentifier: "SuggestionViewController") as? SuggestionViewController {
+                        self.navigationController?.pushViewController(suggestion, animated: true)
+                    }
+            break
+            
+            
             
             
             

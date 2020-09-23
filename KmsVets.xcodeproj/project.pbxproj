@@ -19,6 +19,9 @@
 		BF1D97F3250F8D5900446CA8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D97F2250F8D5900446CA8 /* Constant.swift */; };
 		BF1D97F7250F9EFA00446CA8 /* MyChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D97F6250F9EFA00446CA8 /* MyChartViewController.swift */; };
 		BF27A1E5251337E500F4AA65 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF27A1E4251337E500F4AA65 /* ProfileViewController.swift */; };
+		BF2D8F7C251B8B3100641058 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D8F7B251B8B3100641058 /* AboutUsViewController.swift */; };
+		BF2D8F7F251B9D9D00641058 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D8F7E251B9D9D00641058 /* SuggestionViewController.swift */; };
+		BF2D8F82251B9DBB00641058 /* SuggestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D8F81251B9DBB00641058 /* SuggestionTableViewCell.swift */; };
 		BF32E92F25147FA600E154D3 /* ProfileViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32E92E25147FA600E154D3 /* ProfileViewTableViewCell.swift */; };
 		BF32E9512514B34200E154D3 /* BookingNewPuppyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32E9502514B34200E154D3 /* BookingNewPuppyViewController.swift */; };
 		BF32E9532514B35A00E154D3 /* BookingNewPuppyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32E9522514B35A00E154D3 /* BookingNewPuppyTableViewCell.swift */; };
@@ -58,6 +61,9 @@
 		BF1D97F2250F8D5900446CA8 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		BF1D97F6250F9EFA00446CA8 /* MyChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChartViewController.swift; sourceTree = "<group>"; };
 		BF27A1E4251337E500F4AA65 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BF2D8F7B251B8B3100641058 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		BF2D8F7E251B9D9D00641058 /* SuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
+		BF2D8F81251B9DBB00641058 /* SuggestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionTableViewCell.swift; sourceTree = "<group>"; };
 		BF32E92E25147FA600E154D3 /* ProfileViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewTableViewCell.swift; sourceTree = "<group>"; };
 		BF32E9502514B34200E154D3 /* BookingNewPuppyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingNewPuppyViewController.swift; sourceTree = "<group>"; };
 		BF32E9522514B35A00E154D3 /* BookingNewPuppyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingNewPuppyTableViewCell.swift; sourceTree = "<group>"; };
@@ -134,6 +140,7 @@
 				BF8D0D202514C16800373096 /* NewPuppyHistoryTableViewCell.swift */,
 				BF17C2202518944E0000D5C3 /* BookinfForSurgeryTableViewCell.swift */,
 				BF556928251A08F700C3E4BA /* BookingSurgeryHistoryTableViewCell.swift */,
+				BF2D8F81251B9DBB00641058 /* SuggestionTableViewCell.swift */,
 			);
 			path = CELL;
 			sourceTree = "<group>";
@@ -224,6 +231,8 @@
 				BF17C21E25188F130000D5C3 /* BookingForSurgeryViewController.swift */,
 				BF556925251A08D600C3E4BA /* BookingSurgeryHistoryViewController.swift */,
 				BF556937251A28B500C3E4BA /* ContactUsViewController.swift */,
+				BF2D8F7B251B8B3100641058 /* AboutUsViewController.swift */,
+				BF2D8F7E251B9D9D00641058 /* SuggestionViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -350,6 +359,7 @@
 				BF1D97F3250F8D5900446CA8 /* Constant.swift in Sources */,
 				BF02B53B2511EF1A0076B05E /* HomeCollCell.swift in Sources */,
 				BF5569192519C88000C3E4BA /* AppExtension.swift in Sources */,
+				BF2D8F7C251B8B3100641058 /* AboutUsViewController.swift in Sources */,
 				BF786711250CEF8900D8D17E /* LoginViewController.swift in Sources */,
 				BF17C21F25188F130000D5C3 /* BookingForSurgeryViewController.swift in Sources */,
 				BF527173250E39D900BD60D2 /* APIClient.swift in Sources */,
@@ -362,6 +372,7 @@
 				BF556926251A08D600C3E4BA /* BookingSurgeryHistoryViewController.swift in Sources */,
 				BF32E92F25147FA600E154D3 /* ProfileViewTableViewCell.swift in Sources */,
 				BFBA34EF250CE908004C37C2 /* AppDelegate.swift in Sources */,
+				BF2D8F82251B9DBB00641058 /* SuggestionTableViewCell.swift in Sources */,
 				BF02B53A2511EF1A0076B05E /* BannerCollCell.swift in Sources */,
 				BF527170250E1F1900BD60D2 /* GetOTPViewController.swift in Sources */,
 				BF32E9512514B34200E154D3 /* BookingNewPuppyViewController.swift in Sources */,
@@ -369,6 +380,7 @@
 				BF27A1E5251337E500F4AA65 /* ProfileViewController.swift in Sources */,
 				BF786713250CEFBE00D8D17E /* SplashViewController.swift in Sources */,
 				BF1D97ED250F675A00446CA8 /* CustomerBasicInfoViewController.swift in Sources */,
+				BF2D8F7F251B9D9D00641058 /* SuggestionViewController.swift in Sources */,
 				BF8D0D212514C16800373096 /* NewPuppyHistoryTableViewCell.swift in Sources */,
 				BF556929251A08F700C3E4BA /* BookingSurgeryHistoryTableViewCell.swift in Sources */,
 				BF32E9532514B35A00E154D3 /* BookingNewPuppyTableViewCell.swift in Sources */,
