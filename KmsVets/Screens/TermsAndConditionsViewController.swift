@@ -39,6 +39,7 @@ extension TermsAndConditionsViewController : UITableViewDelegate, UITableViewDat
         
         
         if indexPath.row == 0 {
+            cell?.headerLbl.textAlignment = .center
             cell?.headerLbl.text = StringConstant.TERMS_question1
             cell?.titleLbl.text = StringConstant.TERMS_answer1
             cell?.subTitleLbl.text = ""
