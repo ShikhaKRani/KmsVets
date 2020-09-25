@@ -89,18 +89,139 @@
                             </pageControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ed-zg-Z66">
                                 <rect key="frame" x="0.0" y="289.5" width="414" height="40"/>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop By Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gk1-cl-H8D">
+                                        <rect key="frame" x="134.5" y="9.5" width="145.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.14064545728045255" green="0.44892131979695427" blue="0.11358354535880658" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="XDh-IG-xic"/>
+                                    <constraint firstItem="gk1-cl-H8D" firstAttribute="centerX" secondItem="1Ed-zg-Z66" secondAttribute="centerX" id="agf-cA-1YJ"/>
+                                    <constraint firstItem="gk1-cl-H8D" firstAttribute="centerY" secondItem="1Ed-zg-Z66" secondAttribute="centerY" id="nU1-OG-lJX"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RaT-BF-HWJ">
+                                <rect key="frame" x="0.0" y="329.5" width="414" height="532.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomePageDogFoodCell" rowHeight="128" id="tDM-SW-p10" customClass="HomePageDogFoodCell" customModule="KMS_Vets" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="128"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tDM-SW-p10" id="Dew-qS-z6F">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hfv-Of-Crs">
+                                                    <rect key="frame" x="8" y="5" width="398" height="118"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DOGFOOD" translatesAutoresizingMaskIntoConstraints="NO" id="IGr-SW-BLw">
+                                                            <rect key="frame" x="10" y="10" width="180" height="98"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="180" id="WOJ-L2-VnE"/>
+                                                                <constraint firstAttribute="height" constant="90" id="bok-sM-pP0"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOG FOOD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqV-35-5XZ">
+                                                            <rect key="frame" x="240" y="47" width="102" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="MqV-35-5XZ" firstAttribute="leading" secondItem="IGr-SW-BLw" secondAttribute="trailing" constant="50" id="C7G-PB-Yar"/>
+                                                        <constraint firstItem="IGr-SW-BLw" firstAttribute="leading" secondItem="Hfv-Of-Crs" secondAttribute="leading" constant="10" id="JOd-nO-4io"/>
+                                                        <constraint firstItem="IGr-SW-BLw" firstAttribute="top" secondItem="Hfv-Of-Crs" secondAttribute="top" constant="10" id="YRR-pY-3Sm"/>
+                                                        <constraint firstItem="MqV-35-5XZ" firstAttribute="centerY" secondItem="IGr-SW-BLw" secondAttribute="centerY" id="dBc-a8-7pt"/>
+                                                        <constraint firstAttribute="bottom" secondItem="IGr-SW-BLw" secondAttribute="bottom" constant="10" id="icz-oX-0Bm"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Hfv-Of-Crs" secondAttribute="bottom" constant="5" id="Am2-MS-l1d"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hfv-Of-Crs" secondAttribute="trailing" constant="8" id="IV3-Tw-lTv"/>
+                                                <constraint firstItem="Hfv-Of-Crs" firstAttribute="leading" secondItem="Dew-qS-z6F" secondAttribute="leading" constant="8" id="Umw-J6-pX6"/>
+                                                <constraint firstItem="Hfv-Of-Crs" firstAttribute="top" secondItem="Dew-qS-z6F" secondAttribute="top" constant="5" id="tOm-Ug-EEq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                        <connections>
+                                            <outlet property="foodLabel" destination="MqV-35-5XZ" id="sgT-VI-LUr"/>
+                                            <outlet property="imageDogFood" destination="IGr-SW-BLw" id="IrK-Mp-xdh"/>
+                                            <outlet property="viewDog" destination="Hfv-Of-Crs" id="JpP-Ao-Ek8"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomePageServicesCell" rowHeight="145" id="klQ-6h-TfY" customClass="HomePageServicesCell" customModule="KMS_Vets" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="156" width="414" height="145"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="klQ-6h-TfY" id="JmV-dw-l5e">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="145"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jIn-c1-GcL">
+                                                    <rect key="frame" x="8" y="5" width="398" height="130"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="services" translatesAutoresizingMaskIntoConstraints="NO" id="tg0-E7-VLe">
+                                                            <rect key="frame" x="10" y="10" width="180" height="110"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="90" id="4hV-VG-yfB"/>
+                                                                <constraint firstAttribute="width" constant="180" id="7wq-MJ-PYw"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SERVICES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GmT-zj-8oi">
+                                                            <rect key="frame" x="240" y="53" width="90.5" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="GmT-zj-8oi" firstAttribute="leading" secondItem="tg0-E7-VLe" secondAttribute="trailing" constant="50" id="By4-pN-Mep"/>
+                                                        <constraint firstItem="tg0-E7-VLe" firstAttribute="leading" secondItem="jIn-c1-GcL" secondAttribute="leading" constant="10" id="GYm-mP-Jow"/>
+                                                        <constraint firstItem="tg0-E7-VLe" firstAttribute="top" secondItem="jIn-c1-GcL" secondAttribute="top" constant="10" id="cUH-eF-dJM"/>
+                                                        <constraint firstItem="GmT-zj-8oi" firstAttribute="centerY" secondItem="tg0-E7-VLe" secondAttribute="centerY" id="gba-aO-TSk"/>
+                                                        <constraint firstAttribute="bottom" secondItem="tg0-E7-VLe" secondAttribute="bottom" constant="10" id="lLn-kR-LS7"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="jIn-c1-GcL" secondAttribute="trailing" constant="8" id="NhG-Qg-PPp"/>
+                                                <constraint firstAttribute="bottom" secondItem="jIn-c1-GcL" secondAttribute="bottom" constant="10" id="UGi-s6-c9E"/>
+                                                <constraint firstItem="jIn-c1-GcL" firstAttribute="leading" secondItem="JmV-dw-l5e" secondAttribute="leading" constant="8" id="iPV-Fg-Vmx"/>
+                                                <constraint firstItem="jIn-c1-GcL" firstAttribute="top" secondItem="JmV-dw-l5e" secondAttribute="top" constant="5" id="ibS-wP-vdc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                        <connections>
+                                            <outlet property="imageService" destination="tg0-E7-VLe" id="7CZ-Xs-gDr"/>
+                                            <outlet property="serviceLabel" destination="GmT-zj-8oi" id="WCJ-Bg-NSL"/>
+                                            <outlet property="viewService" destination="jIn-c1-GcL" id="vqC-DE-HGm"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pSY-Gi-EfS" id="lwu-qS-LsL"/>
+                                    <outlet property="delegate" destination="pSY-Gi-EfS" id="xYM-2f-dMI"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6fU-nZ-Pzn"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="RaT-BF-HWJ" firstAttribute="leading" secondItem="6fU-nZ-Pzn" secondAttribute="leading" id="AFp-ps-xAR"/>
                             <constraint firstItem="U0d-Dl-k6d" firstAttribute="centerX" secondItem="XU0-jh-OXX" secondAttribute="centerX" id="Ccp-cQ-CFn"/>
                             <constraint firstItem="U0d-Dl-k6d" firstAttribute="top" secondItem="XU0-jh-OXX" secondAttribute="bottom" id="K3J-VE-THe"/>
+                            <constraint firstItem="6fU-nZ-Pzn" firstAttribute="trailing" secondItem="RaT-BF-HWJ" secondAttribute="trailing" id="Lip-j8-5hE"/>
                             <constraint firstItem="1Ed-zg-Z66" firstAttribute="top" secondItem="U0d-Dl-k6d" secondAttribute="bottom" constant="-2" id="OOG-YP-McG"/>
+                            <constraint firstItem="6fU-nZ-Pzn" firstAttribute="bottom" secondItem="RaT-BF-HWJ" secondAttribute="bottom" id="Ywa-nI-Pug"/>
+                            <constraint firstItem="RaT-BF-HWJ" firstAttribute="top" secondItem="1Ed-zg-Z66" secondAttribute="bottom" id="Zdw-uN-BJe"/>
                             <constraint firstItem="XU0-jh-OXX" firstAttribute="leading" secondItem="6fU-nZ-Pzn" secondAttribute="leading" id="cDd-h4-Uky"/>
                             <constraint firstItem="XU0-jh-OXX" firstAttribute="trailing" secondItem="6fU-nZ-Pzn" secondAttribute="trailing" id="g86-jy-W3w"/>
                             <constraint firstItem="1Ed-zg-Z66" firstAttribute="leading" secondItem="6fU-nZ-Pzn" secondAttribute="leading" id="k2B-nW-6DI"/>
@@ -117,6 +238,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="homeshopcategoryTblVw" destination="RaT-BF-HWJ" id="O7b-E0-qAQ"/>
                         <outlet property="imgCollectionView" destination="XU0-jh-OXX" id="KSu-jN-1hd"/>
                         <outlet property="pageControl" destination="U0d-Dl-k6d" id="X76-zL-Rhz"/>
                     </connections>
@@ -261,10 +383,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="DOGFOOD" width="320" height="426"/>
         <image name="medicine.jpeg" width="540" height="360.75"/>
         <image name="more" width="25" height="25"/>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="services" width="647" height="363"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

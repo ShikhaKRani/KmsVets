@@ -11,9 +11,22 @@ import SideMenu
 import Alamofire
 import SDWebImage
 
+class HomePageDogFoodCell: UITableViewCell {
+    @IBOutlet var viewDog: UIView!
+    @IBOutlet var imageDogFood: UIImageView!
+    @IBOutlet var foodLabel: UILabel!
+}
+
+class HomePageServicesCell: UITableViewCell {
+    @IBOutlet var viewService: UIView!
+    @IBOutlet var imageService: UIImageView!
+    @IBOutlet var serviceLabel: UILabel!
+}
+
 class HomeViewController: BaseViewController {
     
     @IBOutlet var imgCollectionView: UICollectionView!
+    @IBOutlet var homeshopcategoryTblVw: UITableView!
     
     @IBOutlet weak var pageControl: UIPageControl!
     var bannerData: [[String: Any]] = [[:]]
@@ -68,14 +81,14 @@ class HomeViewController: BaseViewController {
                 if ((indexPath?.row)! < bannerData.count - 1){
                     let indexPath1: IndexPath?
                     indexPath1 = IndexPath.init(row: (indexPath?.row)! + 1, section: (indexPath?.section)!)
-                    pageControl.currentPage = indexPath1?.row as! Int
+                    pageControl.currentPage = indexPath1?.row ?? 0
                     coll.scrollToItem(at: indexPath1!, at: .right, animated: true)
                 }
                 else{
                     let indexPath1: IndexPath?
                     indexPath1 = IndexPath.init(row: 0, section: (indexPath?.section)!)
                     coll.scrollToItem(at: indexPath1!, at: .left, animated: true)
-                    pageControl.currentPage = indexPath1?.row as! Int
+                    pageControl.currentPage = indexPath1?.row ?? 0
                     
                 }
                 
@@ -134,6 +147,51 @@ extension HomeViewController {
 
     }
     //MARK:- Side Menu Set up
+}
+
+//MARK:- Table View Delegate
+extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = self.homeshopcategoryTblVw.dequeueReusableCell(withIdentifier: "HomePageDogFoodCell") as? HomePageDogFoodCell
+        cell?.selectionStyle = .none
+        if indexPath.row == 1{
+            let cell = self.homeshopcategoryTblVw.dequeueReusableCell(withIdentifier: "HomePageServicesCell") as? HomePageServicesCell
+            cell?.selectionStyle = .none
+            return cell!
+        }
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     
+        if indexPath.row == 0 {
+            
+            let storyBoard = UIStoryboard.init(name: "ProductHome", bundle: nil)
+            if let getProfile = storyBoard.instantiateViewController(withIdentifier: "ProductHomeViewController") as? ProductHomeViewController {
+                self.navigationController?.pushViewController(getProfile, animated: true)
+            }
+            
+            //ProductHomeViewController
+            
+            
+        }
+        else if indexPath.row == 1 {
+            
+            
+        }
+        
+    }
+    
 }
 
 

@@ -29,13 +29,13 @@ class SuggestionViewController: BaseViewController {
         
         
         var count = 0
-        if ((nameString?.isEmpty) != nil) {
+        if ((nameString?.isEmpty) == nil) {
             count = count + 1
             self.displayMessage(message: "Please enter your full name")
             return
         }
         
-        if ((mobileString?.isEmpty) != nil) {
+        if ((mobileString?.isEmpty) == nil) {
             
             count = count + 1
             self.displayMessage(message: "Please enter your email")
@@ -43,7 +43,7 @@ class SuggestionViewController: BaseViewController {
         }
         
         
-        if ((descString?.isEmpty) != nil) {
+        if ((descString?.isEmpty) == nil) {
             
             count = count + 1
             self.displayMessage(message: "Please enter description")

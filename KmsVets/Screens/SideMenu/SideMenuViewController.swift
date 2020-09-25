@@ -14,6 +14,7 @@ class SideMenuTblCell: UITableViewCell {
     @IBOutlet var cellTitleLbl: UILabel!
 }
 
+
 class SideMenuImgCell: UITableViewCell {
     @IBOutlet var cellLargeIcon: UIImageView!
 }
@@ -23,6 +24,8 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     
     @IBOutlet var sidemenuTblVw: UITableView!
+    
+    
     
     var dataArr : Array<Dictionary<String,AnyObject>> = [
         ["title":"My Profile" as AnyObject,"image": "home" as AnyObject]
@@ -176,6 +179,13 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
             
             
             
+            
+        case "Asking a Question":
+                    let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+                    if let askquestionVC = storyBoard.instantiateViewController(withIdentifier: "AskingQuestionViewController") as? AskingQuestionViewController {
+                        self.navigationController?.pushViewController(askquestionVC, animated: true)
+                    }
+            break
             
             
         case "Logout":

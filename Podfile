@@ -17,7 +17,9 @@ target 'KmsVets' do
   pod 'EzPopup'
   pod 'MBProgressHUD', '~> 1.2.0'
   pod ‘SDWebImage’, ‘~> 4.0’
+  pod 'Segmentio'
 
+  
   
   # Pods for KmsVets
 

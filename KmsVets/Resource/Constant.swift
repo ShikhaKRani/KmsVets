@@ -17,7 +17,7 @@ struct AppConstant {
 }
 
 //MARK:- String Constant
-struct StringConstant {
+struct StringConstant {  
     
     //Identifier
     static let  CustomerInformationCell = "CustomerInformationCell"
@@ -27,6 +27,7 @@ struct StringConstant {
     static let  BookinfForSurgeryTableViewCell = "BookinfForSurgeryTableViewCell"
     static let  BookingSurgeryHistoryTableViewCell = "BookingSurgeryHistoryTableViewCell"
     static let  SuggestionTableViewCell = "SuggestionTableViewCell"
+    static let  AskQuestionTableViewCell = "AskQuestionTableViewCell"
     
     
     //title
