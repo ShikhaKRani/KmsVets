@@ -16,6 +16,19 @@ struct AppConstant {
     static let UserKey  = "5642vcb546gfnbvb7r6ewc211365vhh34"
 }
 
+struct Payment {
+    static let PAY_U_BASEURL = "https://secure.payu.in"
+    static let TestPayUMoneyBaseURL = "https://test.payu.in"
+    
+    static let PRODUCT_NAME = "KMSVETS"
+    static let MERCHANT_ID = "8G9KDwUt"
+    static let SALT = "pfOAp2JeG8"
+    static let S_URL = "https://www.payumoney.com/mobileapp/payumoney/success.php"
+    static let F_URL = "https://www.payumoney.com/mobileapp/payumoney/failure.php"
+    static let Service_Provider = "payu_paisa"
+    
+    
+}
 //MARK:- String Constant
 struct StringConstant {  
     

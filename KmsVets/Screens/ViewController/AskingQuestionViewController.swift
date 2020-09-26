@@ -14,8 +14,11 @@ class AskingQuestionViewController: BaseViewController {
     var emailString : String?
     var quesString : String?
     var numberofquesString : String?
+    var amountToPay  = 0
+    var pricePerQuestion : String?
+    var order_id : String?
     
-    
+//
     
     @IBOutlet weak var askquestionTableView: UITableView!
     
@@ -47,12 +50,12 @@ class AskingQuestionViewController: BaseViewController {
             
             if let res = response as? [String : Any] {
                 print(res)
-                let price = res["price"] as? String
+                self.pricePerQuestion = res["price"] as? String
                 DispatchQueue.main.async { () -> Void in
                     
                     if let cell = self.askquestionTableView?.cellForRow(at: indexPath) as? AskQuestionTableViewCell {
                         cell.priceLabel.textAlignment = .center
-                        cell.priceLabel.text = price
+                        cell.priceLabel.text = self.pricePerQuestion
                     }
                 }
                 self.hideHUD()
@@ -94,14 +97,70 @@ class AskingQuestionViewController: BaseViewController {
             return
         }
         
-        
-        
-        
+        // check if no error
         if count == 0 {
-            //api payumoney
+            if ((numberofquesString?.isEmpty) != nil) {
+                
+                if let no_question = Int(numberofquesString ?? "0") {
+                    if let  price = Int(pricePerQuestion ?? "0") {
+                        amountToPay = price * no_question
+                    }
+                }
+            }
+            
+            askQuestionAPICall()
         }
     }
     
+    
+    //MARK:- askQuestion APi call
+    
+    
+    func askQuestionAPICall() {
+
+        self.showHud("Progress...")
+        let params = ["key": AppConstant.UserKey, "name" : nameString ?? "", "user_id": UserDefaults.standard.string(forKey: "id") ?? "","mobile": mobileString ?? "", "email" : emailString ?? "", "no_of_question" : numberofquesString ?? "0" , "amount" : "\(amountToPay)" , "question" : quesString ?? ""]  as! Dictionary<String, String>
+
+
+       ServiceClient.sendRequest(apiUrl: APIUrl.ASK_Question,postdatadictionary: params, isArray: false) { (response) in
+
+           if let res = response as? [String : Any] {
+               print(res)
+            self.order_id = res["id"] as? String
+            let amount = res["amount"] as? String
+            self.hideHUD()
+            DispatchQueue.main.async { () -> Void in
+                self.redirectToPaymentScreen()
+            }
+            
+            
+           }
+       }
+    }
+    
+    
+    
+    //MARK:- Pay U Money
+    
+    
+    func redirectToPaymentScreen() {
+        
+        let storyBoard = UIStoryboard.init(name: "Payment", bundle: nil)
+        if let paymentVC = storyBoard.instantiateViewController(withIdentifier: "PaymentViewController") as? PaymentViewController {
+           
+            paymentVC.firstName = nameString
+            paymentVC.email = emailString
+            paymentVC.order_id = order_id
+            paymentVC.totalPriceAmount = "\(amountToPay)"
+            
+            paymentVC.screen = "asking"
+            self.navigationController?.pushViewController(paymentVC, animated: true)
+        }
+        
+        
+    }
+    
+    //MARK:- Pay U Money
     
     
     

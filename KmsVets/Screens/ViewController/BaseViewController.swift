@@ -51,8 +51,8 @@ class BaseViewController: UIViewController {
     }
     
     
-    func displayAlertView (message : String ) {
-        let alertController = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+    func displayAlertView (alertType: String? ,message : String ) {
+        let alertController = UIAlertController(title: alertType ?? "Alert", message: message, preferredStyle: .alert)
         
         // Create the actions
         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {

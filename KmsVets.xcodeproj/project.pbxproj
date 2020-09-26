@@ -23,6 +23,10 @@
 		BF2D8F7C251B8B3100641058 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D8F7B251B8B3100641058 /* AboutUsViewController.swift */; };
 		BF2D8F7F251B9D9D00641058 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D8F7E251B9D9D00641058 /* SuggestionViewController.swift */; };
 		BF2D8F82251B9DBB00641058 /* SuggestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D8F81251B9DBB00641058 /* SuggestionTableViewCell.swift */; };
+		BF2EA0F2251F816900BAB963 /* Payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2EA0F1251F816900BAB963 /* Payment.storyboard */; };
+		BF2EA0F5251F81E700BAB963 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2EA0F4251F81E700BAB963 /* PaymentViewController.swift */; };
+		BF2EA0F8251FA8D900BAB963 /* TransactionSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2EA0F7251FA8D900BAB963 /* TransactionSuccessViewController.swift */; };
+		BF2EA12C251FB7A400BAB963 /* PayUServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EA12B251FB7A400BAB963 /* PayUServiceHelper.m */; };
 		BF32E92F25147FA600E154D3 /* ProfileViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32E92E25147FA600E154D3 /* ProfileViewTableViewCell.swift */; };
 		BF32E9512514B34200E154D3 /* BookingNewPuppyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32E9502514B34200E154D3 /* BookingNewPuppyViewController.swift */; };
 		BF32E9532514B35A00E154D3 /* BookingNewPuppyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32E9522514B35A00E154D3 /* BookingNewPuppyTableViewCell.swift */; };
@@ -83,6 +87,12 @@
 		BF2D8F7B251B8B3100641058 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		BF2D8F7E251B9D9D00641058 /* SuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
 		BF2D8F81251B9DBB00641058 /* SuggestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionTableViewCell.swift; sourceTree = "<group>"; };
+		BF2EA0F1251F816900BAB963 /* Payment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Payment.storyboard; sourceTree = "<group>"; };
+		BF2EA0F4251F81E700BAB963 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		BF2EA0F7251FA8D900BAB963 /* TransactionSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSuccessViewController.swift; sourceTree = "<group>"; };
+		BF2EA129251FB7A100BAB963 /* KmsVets-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KmsVets-Bridging-Header.h"; sourceTree = "<group>"; };
+		BF2EA12A251FB7A300BAB963 /* PayUServiceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUServiceHelper.h; sourceTree = "<group>"; };
+		BF2EA12B251FB7A400BAB963 /* PayUServiceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayUServiceHelper.m; sourceTree = "<group>"; };
 		BF32E92E25147FA600E154D3 /* ProfileViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewTableViewCell.swift; sourceTree = "<group>"; };
 		BF32E9502514B34200E154D3 /* BookingNewPuppyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingNewPuppyViewController.swift; sourceTree = "<group>"; };
 		BF32E9522514B35A00E154D3 /* BookingNewPuppyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingNewPuppyTableViewCell.swift; sourceTree = "<group>"; };
@@ -175,9 +185,9 @@
 				BF1D97EC250F675A00446CA8 /* CustomerBasicInfoViewController.swift */,
 				BF1D97F6250F9EFA00446CA8 /* MyChartViewController.swift */,
 				BF27A1E4251337E500F4AA65 /* ProfileViewController.swift */,
+				BF17C21E25188F130000D5C3 /* BookingForSurgeryViewController.swift */,
 				BF32E9502514B34200E154D3 /* BookingNewPuppyViewController.swift */,
 				BF8D0D1E2514C05300373096 /* NewPuppyHistoryViewController.swift */,
-				BF17C21E25188F130000D5C3 /* BookingForSurgeryViewController.swift */,
 				BF556925251A08D600C3E4BA /* BookingSurgeryHistoryViewController.swift */,
 				BF556937251A28B500C3E4BA /* ContactUsViewController.swift */,
 				BF2D8F7B251B8B3100641058 /* AboutUsViewController.swift */,
@@ -190,6 +200,19 @@
 				BF6C44B3251E367C00D85E58 /* ServicesListViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		BF16BF8F251F673300D6BE6F /* PAYU */ = {
+			isa = PBXGroup;
+			children = (
+				BF2EA12A251FB7A300BAB963 /* PayUServiceHelper.h */,
+				BF2EA12B251FB7A400BAB963 /* PayUServiceHelper.m */,
+				BF2EA0F1251F816900BAB963 /* Payment.storyboard */,
+				BF2EA0F4251F81E700BAB963 /* PaymentViewController.swift */,
+				BF2EA0F7251FA8D900BAB963 /* TransactionSuccessViewController.swift */,
+				BF2EA129251FB7A100BAB963 /* KmsVets-Bridging-Header.h */,
+			);
+			path = PAYU;
 			sourceTree = "<group>";
 		};
 		BF1D97EE250F8BA200446CA8 /* CELL */ = {
@@ -299,6 +322,7 @@
 		BFBA3503250CEA0B004C37C2 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				BF16BF8F251F673300D6BE6F /* PAYU */,
 				BF16BF8D251F66EB00D6BE6F /* ViewController */,
 				BF6C44D9251E48F800D85E58 /* Page Controller */,
 				BF02B5352511E61E0076B05E /* SideMenu */,
@@ -341,6 +365,7 @@
 				TargetAttributes = {
 					BFBA34EA250CE907004C37C2 = {
 						CreatedOnToolsVersion = 11.7;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -374,6 +399,7 @@
 				BFBA34F8250CE909004C37C2 /* Assets.xcassets in Resources */,
 				BFBA34F6250CE908004C37C2 /* Main.storyboard in Resources */,
 				BF786716250CF6C100D8D17E /* medicine.jpeg in Resources */,
+				BF2EA0F2251F816900BAB963 /* Payment.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +457,7 @@
 				BF6C44A3251CCEAB00D85E58 /* CancellationAndRefundViewController.swift in Sources */,
 				BF1D97F3250F8D5900446CA8 /* Constant.swift in Sources */,
 				BF02B53B2511EF1A0076B05E /* HomeCollCell.swift in Sources */,
+				BF2EA0F8251FA8D900BAB963 /* TransactionSuccessViewController.swift in Sources */,
 				BF5569192519C88000C3E4BA /* AppExtension.swift in Sources */,
 				BF6C44DE251E4A3D00D85E58 /* ProductHomeViewController.swift in Sources */,
 				BF2D8F7C251B8B3100641058 /* AboutUsViewController.swift in Sources */,
@@ -447,6 +474,7 @@
 				BF42BC902515E9430064F0C9 /* ServiceClient.swift in Sources */,
 				BF6C4497251CBDC400D85E58 /* PrivacyPolicyViewController.swift in Sources */,
 				BF6C4506251E510200D85E58 /* ProductContainerViewController.swift in Sources */,
+				BF2EA0F5251F81E700BAB963 /* PaymentViewController.swift in Sources */,
 				BF8D0D1F2514C05300373096 /* NewPuppyHistoryViewController.swift in Sources */,
 				BF17C2212518944E0000D5C3 /* BookinfForSurgeryTableViewCell.swift in Sources */,
 				BF1D97F7250F9EFA00446CA8 /* MyChartViewController.swift in Sources */,
@@ -456,6 +484,7 @@
 				BF2D8F82251B9DBB00641058 /* SuggestionTableViewCell.swift in Sources */,
 				BF02B53A2511EF1A0076B05E /* BannerCollCell.swift in Sources */,
 				BF527170250E1F1900BD60D2 /* GetOTPViewController.swift in Sources */,
+				BF2EA12C251FB7A400BAB963 /* PayUServiceHelper.m in Sources */,
 				BF6C44A6251CCFAB00D85E58 /* CancellationCell.swift in Sources */,
 				BF32E9512514B34200E154D3 /* BookingNewPuppyViewController.swift in Sources */,
 				BF6C44AA251DC33700D85E58 /* AskingQuestionViewController.swift in Sources */,
@@ -617,6 +646,7 @@
 			baseConfigurationReference = 20DCC6962A596A72E0E79C77 /* Pods-KmsVets.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9TA9SAVC4B;
@@ -629,6 +659,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Shikha.KmsVets;
 				PRODUCT_NAME = "KMS Vets";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "KmsVets/Screens/PAYU/KmsVets-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -639,6 +671,7 @@
 			baseConfigurationReference = 28FF4657877655ECD4FA515F /* Pods-KmsVets.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9TA9SAVC4B;
@@ -651,6 +684,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Shikha.KmsVets;
 				PRODUCT_NAME = "KMS Vets";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "KmsVets/Screens/PAYU/KmsVets-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

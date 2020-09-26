@@ -35,7 +35,7 @@ struct APIUrl {
     static let BOOK_SURGERY_HISTORY  = "\(BaseUrl.BASE)/visitapi/index.php/getsurgery"
     static let QUESTION_PRICE  = "\(BaseUrl.BASE)/visitapi/index.php/getquestion_price"
     static let SERVICE_LIST  = "\(BaseUrl.BASE)/visitapi/index.php/visit"
-
+    static let ASK_Question  = "\(BaseUrl.BASE)/visitapi/index.php/ask_question"
     
 }
 

@@ -41,6 +41,11 @@ class HomeViewController: BaseViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setTitleForNavigation(title: "KMS Vets", isHidden: false)
+    }
+    
     func fetchBannerImageFromServer() {
         
         let parameters = [
