@@ -2189,7 +2189,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="154" id="q3I-sF-JJB">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ServiceListTableViewCell" rowHeight="154" id="q3I-sF-JJB" customClass="ServiceListTableViewCell" customModule="KMS_Vets" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="154"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q3I-sF-JJB" id="scG-Ts-SS1">
@@ -2199,24 +2199,37 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3KS-Dg-cFk">
                                                     <rect key="frame" x="1" y="1" width="412" height="152"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6pw-6X-Bec">
-                                                            <rect key="frame" x="2" y="5" width="120" height="139"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6pw-6X-Bec">
+                                                            <rect key="frame" x="2" y="5" width="130" height="139"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="120" id="jDA-WG-Mrj"/>
                                                                 <constraint firstAttribute="height" constant="100" id="zJP-9T-LW6"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qd1-Zu-rkF">
-                                                            <rect key="frame" x="132" y="5" width="270" height="21"/>
+                                                            <rect key="frame" x="142" y="5" width="260" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmN-bC-PZ7">
+                                                            <rect key="frame" x="312" y="76" width="90" height="30"/>
+                                                            <color key="backgroundColor" red="0.1406454573" green="0.4489213198" blue="0.1135835454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="90" id="YtA-wI-nvL"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Book Now">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                        </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstItem="KmN-bC-PZ7" firstAttribute="top" secondItem="qd1-Zu-rkF" secondAttribute="bottom" constant="50" id="7S3-Vm-Vb3"/>
+                                                        <constraint firstItem="KmN-bC-PZ7" firstAttribute="leading" secondItem="6pw-6X-Bec" secondAttribute="trailing" constant="180" id="8kG-xU-Vw8"/>
                                                         <constraint firstAttribute="trailing" secondItem="qd1-Zu-rkF" secondAttribute="trailing" constant="10" id="Bma-6t-OwS"/>
                                                         <constraint firstItem="6pw-6X-Bec" firstAttribute="top" secondItem="3KS-Dg-cFk" secondAttribute="top" constant="5" id="VQ0-CC-2Ja"/>
+                                                        <constraint firstAttribute="trailing" secondItem="KmN-bC-PZ7" secondAttribute="trailing" constant="10" id="VoE-aK-o1j"/>
                                                         <constraint firstItem="6pw-6X-Bec" firstAttribute="leading" secondItem="3KS-Dg-cFk" secondAttribute="leading" constant="2" id="YeU-vt-o4R"/>
                                                         <constraint firstItem="qd1-Zu-rkF" firstAttribute="leading" secondItem="6pw-6X-Bec" secondAttribute="trailing" constant="10" id="eIa-G0-Pr1"/>
                                                         <constraint firstItem="qd1-Zu-rkF" firstAttribute="top" secondItem="3KS-Dg-cFk" secondAttribute="top" constant="5" id="eWi-a9-8Ao"/>
@@ -2231,8 +2244,18 @@
                                                 <constraint firstItem="3KS-Dg-cFk" firstAttribute="top" secondItem="scG-Ts-SS1" secondAttribute="top" constant="1" id="yaC-TM-Wvv"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="booknowButton" destination="KmN-bC-PZ7" id="Zwd-O6-abg"/>
+                                            <outlet property="titleImage" destination="6pw-6X-Bec" id="Ilc-si-zOP"/>
+                                            <outlet property="titleLabel" destination="qd1-Zu-rkF" id="NZC-Rh-CwK"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="lw7-5V-Qco" id="PkD-WP-Ve6"/>
+                                    <outlet property="delegate" destination="lw7-5V-Qco" id="dVm-3N-NLO"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Il8-xT-d93"/>
@@ -2244,6 +2267,9 @@
                             <constraint firstItem="Oou-vA-6gF" firstAttribute="top" secondItem="Il8-xT-d93" secondAttribute="top" id="nMd-au-lE4"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="servicelistTableView" destination="Oou-vA-6gF" id="v8o-AB-sx2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ema-UH-Mc9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

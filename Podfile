@@ -18,7 +18,7 @@ target 'KmsVets' do
   pod 'MBProgressHUD', '~> 1.2.0'
   pod ‘SDWebImage’, ‘~> 4.0’
   pod 'Segmentio'
-
+  pod 'PayUmoney_PnP'
   
   
   # Pods for KmsVets

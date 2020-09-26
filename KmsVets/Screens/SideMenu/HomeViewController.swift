@@ -186,7 +186,10 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
             
         }
         else if indexPath.row == 1 {
-            
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+            if let getProfile = storyBoard.instantiateViewController(withIdentifier: "ServicesListViewController") as? ServicesListViewController {
+                self.navigationController?.pushViewController(getProfile, animated: true)
+            }
             
         }
         
