@@ -19,23 +19,23 @@ struct SegmentioBuilder {
         )
     }
     
-    static func buildSegmentioView(segmentioView: Segmentio, segmentioStyle: SegmentioStyle, segmentioPosition: SegmentioPosition = .fixed(maxVisibleItems: 3)) {
+    static func buildSegmentioView(segmentioView: Segmentio, titleArray : [String], segmentioStyle: SegmentioStyle, segmentioPosition: SegmentioPosition = .fixed(maxVisibleItems: 3)) {
         segmentioView.setup(
-            content: segmentioContent(),
+            content: segmentioContent(titleArray: titleArray),
             style: segmentioStyle,
             options: segmentioOptions(segmentioStyle: segmentioStyle, segmentioPosition: segmentioPosition)
         )
     }
     
-    private static func segmentioContent() -> [SegmentioItem] {
-        return [
-            SegmentioItem(title: "Tornado", image: UIImage(named: "tornado")),
-            SegmentioItem(title: "Earthquakes", image: UIImage(named: "earthquakes")),
-            SegmentioItem(title: "Extreme heat", image: UIImage(named: "heat")),
-            SegmentioItem(title: "Eruption", image: UIImage(named: "eruption")),
-            SegmentioItem(title: "Floods", image: UIImage(named: "floods")),
-            SegmentioItem(title: "Wildfires", image: UIImage(named: "wildfires"))
-        ]
+    private static func segmentioContent(titleArray : [String]!) -> [SegmentioItem] {
+        
+        
+        var itemArray : [SegmentioItem] = []
+        for item in titleArray {
+            itemArray.append(SegmentioItem(title: item, image: UIImage(named: item)))
+        }
+        
+        return itemArray
     }
     
     private static func segmentioOptions(segmentioStyle: SegmentioStyle, segmentioPosition: SegmentioPosition = .fixed(maxVisibleItems: 3)) -> SegmentioOptions {

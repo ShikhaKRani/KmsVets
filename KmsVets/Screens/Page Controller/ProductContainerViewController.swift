@@ -23,7 +23,8 @@ class ProductContainerViewController: BaseViewController {
     var controllerArray : [UIViewController] = []
     var latestProductArray : [[String: Any]] = [[:]]
     var indexSelected = 0
-    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
     private lazy var viewControllers: [UIViewController] = {
         return self.preparedViewControllers()
     }()
@@ -73,11 +74,14 @@ class ProductContainerViewController: BaseViewController {
     //MARK:- Setup controller
     func setUpController() {
         setupScrollView()
+        
         SegmentioBuilder.buildSegmentioView(
-            segmentioView: segmentioView,
+            segmentioView: segmentioView, titleArray: appDelegate.contentSliderArray ?? [""],
             segmentioStyle: segmentioStyle
         )
-        SegmentioBuilder.setupBadgeCountForIndex(segmentioView, index: 1)
+        
+        
+        SegmentioBuilder.setupBadgeCountForIndex(segmentioView, index: 0)
         
         segmentioView.valueDidChange = { [weak self] _, segmentIndex in
             if let scrollViewWidth = self?.scrollView.frame.width {
@@ -119,7 +123,6 @@ class ProductContainerViewController: BaseViewController {
         
         var data = [[String: Any]]()
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         print(appDelegate.latestProductArray)
         
         for items in appDelegate.latestProductArray {
@@ -132,7 +135,7 @@ class ProductContainerViewController: BaseViewController {
     }
     
     private func selectedSegmentioIndex() -> Int {
-        return 1
+        return 0
     }
     
     // MARK: - Setup container view

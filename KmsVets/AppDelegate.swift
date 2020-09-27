@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var latestProductArray : [[String: Any]] = [[:]]
+    var contentSliderArray = [String]()
+
     var currentTab : String?
 
     

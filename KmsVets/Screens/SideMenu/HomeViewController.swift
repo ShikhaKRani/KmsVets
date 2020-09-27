@@ -32,6 +32,7 @@ class HomeViewController: BaseViewController {
     var bannerData: [[String: Any]] = [[:]]
     var catgoryData : [[String: Any]] = [[:]]
     var latestProductArray : [[String: Any]] = [[:]]
+    var productTitleArray = [String]()
 
     
     override func viewDidLoad() {
@@ -89,6 +90,7 @@ class HomeViewController: BaseViewController {
                 self.latestProductArray.removeAll()
                 for info in self.catgoryData {
                     self.getProductList(categoryId: info["id"] as? String)
+                    self.productTitleArray.append(info["name"] as? String ?? "")
                 }
                 self.hideHUD()
             }
@@ -114,6 +116,7 @@ class HomeViewController: BaseViewController {
 
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.latestProductArray = self.latestProductArray
+                    appDelegate.contentSliderArray  = self.productTitleArray ?? [""]
                 }
                 
                 self.hideHUD()
