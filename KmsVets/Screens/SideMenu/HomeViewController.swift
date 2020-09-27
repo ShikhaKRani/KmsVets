@@ -30,8 +30,8 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     
     var bannerData: [[String: Any]] = [[:]]
-    var catgoryData : [[String: Any]] = [[:]]
-    var latestProductArray : [[String: Any]] = [[:]]
+    var catgoryData = [[String: Any]]()
+    var latestProductArray = [[String: Any]]()
     var productTitleArray = [String]()
 
     
@@ -80,7 +80,7 @@ class HomeViewController: BaseViewController {
     
     func getCategory() {
         
-        self.showHud("Fetching Category")
+        self.showHud("Loading..")
         ServiceClient.sendRequest(apiUrl: APIUrl.GET_CATEGORY,postdatadictionary: ["" : ""], isArray: false) { (response) in
 
             if let res = response as? [String : Any] {
@@ -92,6 +92,10 @@ class HomeViewController: BaseViewController {
                     self.getProductList(categoryId: info["id"] as? String)
                     self.productTitleArray.append(info["name"] as? String ?? "")
                 }
+                
+                DispatchQueue.main.async { () -> Void in
+                self.homeshopcategoryTblVw.reloadData()
+                }
                 self.hideHUD()
             }
        }
@@ -100,7 +104,7 @@ class HomeViewController: BaseViewController {
     
     func getProductList(categoryId : String?) {
         
-        self.showHud("Fetching Category")
+        self.showHud("Load Product..")
         ServiceClient.sendRequest(apiUrl: APIUrl.PRODUCT_CATEGORY_LIST,postdatadictionary: ["userId" : UserDefaults.standard.string(forKey: "id") ?? "", "id" : categoryId ?? ""], isArray: true) { (response) in
             
             print(response)
@@ -210,6 +214,21 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
         
         let cell = self.homeshopcategoryTblVw.dequeueReusableCell(withIdentifier: "HomePageDogFoodCell") as? HomePageDogFoodCell
         cell?.selectionStyle = .none
+
+        
+        if indexPath.row == 0 {
+
+            if self.catgoryData.count > 0 {
+                
+                let dict = self.catgoryData[0]
+                let urlString  =  "\(AppURL.SLIDER_URL)/\(dict["icon"] ?? "")"
+                cell?.imageDogFood.sd_setImage(with: URL(string: urlString), placeholderImage: UIImage(named: "medicine.jpeg") ,options: .refreshCached, completed: nil)
+
+                cell?.foodLabel.text = "\(dict["name"] ?? "")"
+            }
+                
+        }
+        
         if indexPath.row == 1{
             let cell = self.homeshopcategoryTblVw.dequeueReusableCell(withIdentifier: "HomePageServicesCell") as? HomePageServicesCell
             cell?.selectionStyle = .none

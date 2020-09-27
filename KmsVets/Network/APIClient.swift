@@ -15,11 +15,12 @@ struct BaseUrl {
 
 struct AppURL {
     static let SLIDER_URL = "\(BaseUrl.BASE)/userfiles/contents/big/"
-    static let ICON_URL = "\(BaseUrl.BASE)/userfiles/contents/small/"
+    
+    
+    static let ICON_URL = "\(BaseUrl.BASE)/userfiles/products/big/"
 }
 
 
-//http://wisdompetclinic.xyz/index.php?component=json&action=get_contact
 struct APIUrl {
     
     static let LOGIN_URL  = "\(BaseUrl.BASE)?component=json&action=get_search_password"
@@ -38,10 +39,9 @@ struct APIUrl {
     static let ASK_Question  = "\(BaseUrl.BASE)/visitapi/index.php/ask_question"
     static let GET_CATEGORY  = "\(BaseUrl.BASE)?component=json&action=get_categories"
     static let PRODUCT_CATEGORY_LIST  = "\(BaseUrl.BASE)?component=json&action=latest_product"
-
+    static let GET_CART  = "\(BaseUrl.BASE)?component=json&action=get_cart"
+    static let ADD_CART  = "\(BaseUrl.BASE)/index.php?component=json&action=add_cart"
+    
     
 }
-
-//http://wisdompetclinic.xyz/visitapi/index.php/getpet_list
-
 

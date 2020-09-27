@@ -108,25 +108,25 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomePageDogFoodCell" rowHeight="128" id="tDM-SW-p10" customClass="HomePageDogFoodCell" customModule="KMS_Vets" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="128"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomePageDogFoodCell" rowHeight="155" id="tDM-SW-p10" customClass="HomePageDogFoodCell" customModule="KMS_Vets" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="155"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tDM-SW-p10" id="Dew-qS-z6F">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="155"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hfv-Of-Crs">
-                                                    <rect key="frame" x="8" y="5" width="398" height="118"/>
+                                                    <rect key="frame" x="8" y="5" width="398" height="145"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DOGFOOD" translatesAutoresizingMaskIntoConstraints="NO" id="IGr-SW-BLw">
-                                                            <rect key="frame" x="10" y="10" width="180" height="98"/>
+                                                            <rect key="frame" x="10" y="10" width="160" height="125"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="180" id="WOJ-L2-VnE"/>
+                                                                <constraint firstAttribute="width" constant="160" id="WOJ-L2-VnE"/>
                                                                 <constraint firstAttribute="height" constant="90" id="bok-sM-pP0"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOG FOOD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqV-35-5XZ">
-                                                            <rect key="frame" x="240" y="47" width="102" height="24"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOG FOOD" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqV-35-5XZ">
+                                                            <rect key="frame" x="180" y="60.5" width="208" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -134,11 +134,12 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="MqV-35-5XZ" firstAttribute="leading" secondItem="IGr-SW-BLw" secondAttribute="trailing" constant="50" id="C7G-PB-Yar"/>
+                                                        <constraint firstAttribute="trailing" secondItem="MqV-35-5XZ" secondAttribute="trailing" constant="10" id="GPy-qS-V78"/>
                                                         <constraint firstItem="IGr-SW-BLw" firstAttribute="leading" secondItem="Hfv-Of-Crs" secondAttribute="leading" constant="10" id="JOd-nO-4io"/>
+                                                        <constraint firstItem="MqV-35-5XZ" firstAttribute="leading" secondItem="IGr-SW-BLw" secondAttribute="trailing" constant="10" id="Tld-3b-rO6"/>
                                                         <constraint firstItem="IGr-SW-BLw" firstAttribute="top" secondItem="Hfv-Of-Crs" secondAttribute="top" constant="10" id="YRR-pY-3Sm"/>
-                                                        <constraint firstItem="MqV-35-5XZ" firstAttribute="centerY" secondItem="IGr-SW-BLw" secondAttribute="centerY" id="dBc-a8-7pt"/>
                                                         <constraint firstAttribute="bottom" secondItem="IGr-SW-BLw" secondAttribute="bottom" constant="10" id="icz-oX-0Bm"/>
+                                                        <constraint firstItem="MqV-35-5XZ" firstAttribute="centerY" secondItem="IGr-SW-BLw" secondAttribute="centerY" id="nH2-rv-sIS"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -157,7 +158,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomePageServicesCell" rowHeight="145" id="klQ-6h-TfY" customClass="HomePageServicesCell" customModule="KMS_Vets" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="156" width="414" height="145"/>
+                                        <rect key="frame" x="0.0" y="183" width="414" height="145"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="klQ-6h-TfY" id="JmV-dw-l5e">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="145"/>
@@ -167,14 +168,14 @@
                                                     <rect key="frame" x="8" y="5" width="398" height="130"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="services" translatesAutoresizingMaskIntoConstraints="NO" id="tg0-E7-VLe">
-                                                            <rect key="frame" x="10" y="10" width="180" height="110"/>
+                                                            <rect key="frame" x="10" y="10" width="160" height="110"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="90" id="4hV-VG-yfB"/>
-                                                                <constraint firstAttribute="width" constant="180" id="7wq-MJ-PYw"/>
+                                                                <constraint firstAttribute="width" constant="160" id="7wq-MJ-PYw"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SERVICES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GmT-zj-8oi">
-                                                            <rect key="frame" x="240" y="53" width="90.5" height="24"/>
+                                                            <rect key="frame" x="180" y="53" width="90.5" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -182,7 +183,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="GmT-zj-8oi" firstAttribute="leading" secondItem="tg0-E7-VLe" secondAttribute="trailing" constant="50" id="By4-pN-Mep"/>
+                                                        <constraint firstItem="GmT-zj-8oi" firstAttribute="leading" secondItem="tg0-E7-VLe" secondAttribute="trailing" constant="10" id="By4-pN-Mep"/>
                                                         <constraint firstItem="tg0-E7-VLe" firstAttribute="leading" secondItem="jIn-c1-GcL" secondAttribute="leading" constant="10" id="GYm-mP-Jow"/>
                                                         <constraint firstItem="tg0-E7-VLe" firstAttribute="top" secondItem="jIn-c1-GcL" secondAttribute="top" constant="10" id="cUH-eF-dJM"/>
                                                         <constraint firstItem="GmT-zj-8oi" firstAttribute="centerY" secondItem="tg0-E7-VLe" secondAttribute="centerY" id="gba-aO-TSk"/>

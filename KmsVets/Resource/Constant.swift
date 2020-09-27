@@ -29,6 +29,11 @@ struct Payment {
     
     
 }
+
+struct Colors {
+    static let theme = UIColor(red: 01/255, green: 61/255, blue: 55/255, alpha: 1)
+}
+
 //MARK:- String Constant
 struct StringConstant {  
     
