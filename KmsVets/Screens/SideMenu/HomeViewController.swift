@@ -27,17 +27,21 @@ class HomeViewController: BaseViewController {
     
     @IBOutlet var imgCollectionView: UICollectionView!
     @IBOutlet var homeshopcategoryTblVw: UITableView!
-    
     @IBOutlet weak var pageControl: UIPageControl!
+    
     var bannerData: [[String: Any]] = [[:]]
+    var catgoryData : [[String: Any]] = [[:]]
+    var latestProductArray : [[String: Any]] = [[:]]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setTitleForNavigation(title: "KMS Vets", isHidden: false)
         self.fetchBannerImageFromServer()
-        self.pageControl.numberOfPages = 3
         self.pageControl.currentPage = 0
         self.imgCollectionView.bringSubviewToFront(self.pageControl)
+        
+        self.getCategory()
         
     }
     
@@ -59,7 +63,7 @@ class HomeViewController: BaseViewController {
                 if let responseDict = value as? NSDictionary {
                     print(responseDict)
                     self.bannerData = responseDict["data"] as! [[String : Any]]
-                    
+                    self.pageControl.numberOfPages = self.bannerData.count
                     
                     self.startTimer()
                     self.imgCollectionView.reloadData()
@@ -73,32 +77,73 @@ class HomeViewController: BaseViewController {
     }
     
     
-    func startTimer() {
+    func getCategory() {
         
-        _ =  Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(self.scrollAutomatically), userInfo: nil, repeats: true)
+        self.showHud("Fetching Category")
+        ServiceClient.sendRequest(apiUrl: APIUrl.GET_CATEGORY,postdatadictionary: ["" : ""], isArray: false) { (response) in
+
+            if let res = response as? [String : Any] {
+                self.catgoryData = res["data"] as? [[String: Any]] ?? [[:]]
+                print(self.catgoryData)
+                
+                self.latestProductArray.removeAll()
+                for info in self.catgoryData {
+                    self.getProductList(categoryId: info["id"] as? String)
+                }
+                self.hideHUD()
+            }
+       }
     }
     
-    @objc func scrollAutomatically(_ timer1: Timer) {
+    
+    func getProductList(categoryId : String?) {
         
-        if let coll  = imgCollectionView {
-            for cell in coll.visibleCells {
-                let indexPath: IndexPath? = coll.indexPath(for: cell)
-                if ((indexPath?.row)! < bannerData.count - 1){
-                    let indexPath1: IndexPath?
-                    indexPath1 = IndexPath.init(row: (indexPath?.row)! + 1, section: (indexPath?.section)!)
-                    pageControl.currentPage = indexPath1?.row ?? 0
-                    coll.scrollToItem(at: indexPath1!, at: .right, animated: true)
-                }
-                else{
-                    let indexPath1: IndexPath?
-                    indexPath1 = IndexPath.init(row: 0, section: (indexPath?.section)!)
-                    coll.scrollToItem(at: indexPath1!, at: .left, animated: true)
-                    pageControl.currentPage = indexPath1?.row ?? 0
-                    
+        self.showHud("Fetching Category")
+        ServiceClient.sendRequest(apiUrl: APIUrl.PRODUCT_CATEGORY_LIST,postdatadictionary: ["userId" : UserDefaults.standard.string(forKey: "id") ?? "", "id" : categoryId ?? ""], isArray: true) { (response) in
+            
+            print(response)
+            if let res = response as? [[String : Any]] {
+                
+                for items in res {
+                    self.latestProductArray.append(items)
+
                 }
                 
+                DispatchQueue.main.async { () -> Void in
+                    print(self.latestProductArray)
+
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.latestProductArray = self.latestProductArray
+                }
+                
+                self.hideHUD()
             }
         }
+    }
+    
+    
+    
+    
+    func startTimer() {
+        let _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(autoScroll), userInfo: nil, repeats: true)
+    }
+    
+    var counter = 0
+    @objc func autoScroll() {
+        
+        if self.counter < self.bannerData.count {
+            let indexPath = IndexPath(item: counter, section: 0)
+            
+            self.imgCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            self.pageControl.currentPage = self.counter
+            self.counter = self.counter + 1
+        }else{
+            self.counter = 0
+            let indexPath = IndexPath(item: counter, section: 0)
+            self.imgCollectionView.scrollToItem(at:indexPath, at: .left, animated: true)
+            self.pageControl.currentPage = self.counter
+        }
+        
     }
     
 }
@@ -129,11 +174,9 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                     
     }
     
-    
 }
 
 //MARK:- CollectionView Delegate
-
 
 
 extension HomeViewController {

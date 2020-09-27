@@ -77,8 +77,12 @@ extension ServicesListViewController : UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let dict = self.dataArray?[indexPath.row]
-
-        // redirect to new class
+        
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        if let service = storyBoard.instantiateViewController(withIdentifier: "ServiceDetailViewController") as? ServiceDetailViewController {
+            service.dict = dict ?? [:]
+            self.navigationController?.pushViewController(service, animated: true)
+        }
         
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

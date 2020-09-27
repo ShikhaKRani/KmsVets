@@ -38,11 +38,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XU0-jh-OXX">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XU0-jh-OXX">
                                 <rect key="frame" x="0.0" y="89" width="414" height="175"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="175" id="0qM-Iw-m5g"/>
                                     <constraint firstAttribute="height" constant="175" id="FWt-TB-hB1"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8YO-ff-vcA">
@@ -60,15 +59,15 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="spc-Y1-lLw">
-                                                    <rect key="frame" x="8" y="8" width="330" height="119"/>
+                                                    <rect key="frame" x="-2" y="-2" width="350" height="139"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="trailingMargin" secondItem="spc-Y1-lLw" secondAttribute="trailing" id="CWw-9t-p3D"/>
-                                            <constraint firstItem="spc-Y1-lLw" firstAttribute="top" secondItem="nj4-eI-SdQ" secondAttribute="topMargin" id="jdZ-l0-UrU"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="spc-Y1-lLw" secondAttribute="bottom" id="kpr-ZZ-APJ"/>
-                                            <constraint firstItem="spc-Y1-lLw" firstAttribute="leading" secondItem="nj4-eI-SdQ" secondAttribute="leadingMargin" id="udZ-Zw-HPk"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="spc-Y1-lLw" secondAttribute="trailing" constant="-10" id="CWw-9t-p3D"/>
+                                            <constraint firstItem="spc-Y1-lLw" firstAttribute="top" secondItem="nj4-eI-SdQ" secondAttribute="topMargin" constant="-10" id="jdZ-l0-UrU"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="spc-Y1-lLw" secondAttribute="bottom" constant="-10" id="kpr-ZZ-APJ"/>
+                                            <constraint firstItem="spc-Y1-lLw" firstAttribute="leading" secondItem="nj4-eI-SdQ" secondAttribute="leadingMargin" constant="-10" id="udZ-Zw-HPk"/>
                                         </constraints>
                                         <size key="customSize" width="346" height="135"/>
                                         <connections>

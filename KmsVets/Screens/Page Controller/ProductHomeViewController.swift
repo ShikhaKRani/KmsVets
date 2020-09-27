@@ -13,7 +13,7 @@ import Segmentio
 
 class ProductHomeViewController: UIViewController {
     
-    fileprivate var currentStyle = SegmentioStyle.onlyImage
+    fileprivate var currentStyle = SegmentioStyle.onlyLabel
     fileprivate var containerViewController: EmbedContainerViewController?
     
     // MARK: - Lifecycle

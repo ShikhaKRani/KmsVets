@@ -14,7 +14,7 @@ private let animateDuration: TimeInterval = 0.6
 class EmbedContainerViewController: UIViewController {
     
     var style = SegmentioStyle.onlyImage
-    
+  
     fileprivate var currentViewController: UIViewController?
     
     // MARK: - Lifecycle
@@ -40,6 +40,7 @@ class EmbedContainerViewController: UIViewController {
     
     fileprivate func controller(_ style: SegmentioStyle) -> ProductContainerViewController {
         let controller = ProductContainerViewController.create()
+       
         controller.segmentioStyle = style
         controller.view.frame = view.bounds
         return controller
@@ -52,7 +53,9 @@ class EmbedContainerViewController: UIViewController {
     }
     
     fileprivate func swapCurrentController(_ controller: UIViewController) {
+        
         currentViewController?.willMove(toParent: nil)
+        
         addChild(controller)
         view.addSubview(controller.view)
         

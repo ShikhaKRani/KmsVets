@@ -30,6 +30,8 @@
 		BF32E92F25147FA600E154D3 /* ProfileViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32E92E25147FA600E154D3 /* ProfileViewTableViewCell.swift */; };
 		BF32E9512514B34200E154D3 /* BookingNewPuppyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32E9502514B34200E154D3 /* BookingNewPuppyViewController.swift */; };
 		BF32E9532514B35A00E154D3 /* BookingNewPuppyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32E9522514B35A00E154D3 /* BookingNewPuppyTableViewCell.swift */; };
+		BF36194E2520B72F0013709C /* ServiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF36194D2520B72F0013709C /* ServiceDetailViewController.swift */; };
+		BF3619552520BCE90013709C /* ServiceDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3619542520BCE90013709C /* ServiceDetailTableViewCell.swift */; };
 		BF42BC8E2515D8730064F0C9 /* down-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = BF42BC8D2515D8730064F0C9 /* down-arrow.png */; };
 		BF42BC902515E9430064F0C9 /* ServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF42BC8F2515E9430064F0C9 /* ServiceClient.swift */; };
 		BF527170250E1F1900BD60D2 /* GetOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52716F250E1F1900BD60D2 /* GetOTPViewController.swift */; };
@@ -96,6 +98,8 @@
 		BF32E92E25147FA600E154D3 /* ProfileViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewTableViewCell.swift; sourceTree = "<group>"; };
 		BF32E9502514B34200E154D3 /* BookingNewPuppyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingNewPuppyViewController.swift; sourceTree = "<group>"; };
 		BF32E9522514B35A00E154D3 /* BookingNewPuppyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingNewPuppyTableViewCell.swift; sourceTree = "<group>"; };
+		BF36194D2520B72F0013709C /* ServiceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailViewController.swift; sourceTree = "<group>"; };
+		BF3619542520BCE90013709C /* ServiceDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailTableViewCell.swift; sourceTree = "<group>"; };
 		BF42BC8D2515D8730064F0C9 /* down-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down-arrow.png"; sourceTree = "<group>"; };
 		BF42BC8F2515E9430064F0C9 /* ServiceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceClient.swift; sourceTree = "<group>"; };
 		BF52716F250E1F1900BD60D2 /* GetOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOTPViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 				BF6C44A2251CCEAB00D85E58 /* CancellationAndRefundViewController.swift */,
 				BF6C44A9251DC33700D85E58 /* AskingQuestionViewController.swift */,
 				BF6C44B3251E367C00D85E58 /* ServicesListViewController.swift */,
+				BF36194D2520B72F0013709C /* ServiceDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 				BF6C44A5251CCFAB00D85E58 /* CancellationCell.swift */,
 				BF6C44AC251DCB3900D85E58 /* AskQuestionTableViewCell.swift */,
 				BF16BF79251F513500D6BE6F /* ServiceListTableViewCell.swift */,
+				BF3619542520BCE90013709C /* ServiceDetailTableViewCell.swift */,
 			);
 			path = CELL;
 			sourceTree = "<group>";
@@ -466,6 +472,7 @@
 				BF786711250CEF8900D8D17E /* LoginViewController.swift in Sources */,
 				BF17C21F25188F130000D5C3 /* BookingForSurgeryViewController.swift in Sources */,
 				BF6C450A251E521400D85E58 /* SegmentioBuilder.swift in Sources */,
+				BF36194E2520B72F0013709C /* ServiceDetailViewController.swift in Sources */,
 				BF527173250E39D900BD60D2 /* APIClient.swift in Sources */,
 				BF02B5372511E62C0076B05E /* SideMenuViewController.swift in Sources */,
 				BF6C44AD251DCB3900D85E58 /* AskQuestionTableViewCell.swift in Sources */,
@@ -487,6 +494,7 @@
 				BF2EA12C251FB7A400BAB963 /* PayUServiceHelper.m in Sources */,
 				BF6C44A6251CCFAB00D85E58 /* CancellationCell.swift in Sources */,
 				BF32E9512514B34200E154D3 /* BookingNewPuppyViewController.swift in Sources */,
+				BF3619552520BCE90013709C /* ServiceDetailTableViewCell.swift in Sources */,
 				BF6C44AA251DC33700D85E58 /* AskingQuestionViewController.swift in Sources */,
 				BF6C44E3251E4CD700D85E58 /* EmbedContainerViewController.swift in Sources */,
 				BFBA3505250CEC13004C37C2 /* HomeViewController.swift in Sources */,

@@ -10,7 +10,7 @@
 import UIKit
 import Segmentio
 
-class ProductContainerViewController: UIViewController {
+class ProductContainerViewController: BaseViewController {
     
     var segmentioStyle = SegmentioStyle.imageOverLabel
     
@@ -18,6 +18,11 @@ class ProductContainerViewController: UIViewController {
     @IBOutlet private var segmentioView: Segmentio!
     @IBOutlet private var containerView: UIView!
     @IBOutlet private var scrollView: UIScrollView!
+    
+    var catgoryData : [[String: Any]] = [[:]]
+    var controllerArray : [UIViewController] = []
+    var latestProductArray : [[String: Any]] = [[:]]
+    var indexSelected = 0
     
     private lazy var viewControllers: [UIViewController] = {
         return self.preparedViewControllers()
@@ -35,6 +40,8 @@ class ProductContainerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.getCategory()
+        
         switch segmentioStyle {
         case .onlyLabel, .imageBeforeLabel, .imageAfterLabel:
             segmentViewHeightConstraint.constant = 50
@@ -45,9 +52,26 @@ class ProductContainerViewController: UIViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    func getCategory() {
         
+        self.showHud("Fetching Category")
+        ServiceClient.sendRequest(apiUrl: APIUrl.GET_CATEGORY,postdatadictionary: ["" : ""], isArray: false) { (response) in
+
+            if let res = response as? [String : Any] {
+                self.catgoryData = res["data"] as? [[String: Any]] ?? [[:]]
+                print(self.catgoryData)
+                DispatchQueue.main.async { () -> Void in
+                    self.setUpController()
+                }
+                self.hideHUD()
+            }
+       }
+    }
+    
+    
+    
+    //MARK:- Setup controller
+    func setUpController() {
         setupScrollView()
         SegmentioBuilder.buildSegmentioView(
             segmentioView: segmentioView,
@@ -63,52 +87,48 @@ class ProductContainerViewController: UIViewController {
                     animated: true
                 )
             }
+            
+            NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil, userInfo: ["SegmentIndex":"\(segmentIndex)"])
+
         }
         segmentioView.selectedSegmentioIndex = selectedSegmentioIndex()
     }
     
     // Example viewControllers
     
-    private func preparedViewControllers() -> [ProdcutListViewController] {
+    private func preparedViewControllers() -> [UIViewController] {
         
-        let dogFoodController = ProdcutListViewController.create()
-//        dogFoodController.disaster = Disaster(
-//            cardName: "Before tornado",
-//            hints: Hints.tornado
-//        )
+        
+        self.controllerArray.removeAll()
+        
+        for pageInfo in self.catgoryData {
+            let controller = ProdcutListViewController.create()
+            controller.categoryDict = pageInfo
+            
+            let category = pageInfo["id"] as? String ?? "33"
+            let data = self.returnSelectedCategoryData(categoryId: category)
 
-        let catFoodController = ProdcutListViewController.create()
-//        earthquakesController.disaster = Disaster(
-//            cardName: "Before earthquakes",
-//            hints: Hints.earthquakes
-//        )
-
-        let dogAccessoryController = ProdcutListViewController.create()
-//        extremeHeatController.disaster = Disaster(
-//            cardName: "Before extreme heat",
-//            hints: Hints.extremeHeat
-//        )
-
-        let dogMedicineController = ProdcutListViewController.create()
-//        eruptionController.disaster = Disaster(
-//            cardName: "Before eruption",
-////            hints: Hints.eruption
-//        )
-
-        let catmedicineController = ProdcutListViewController.create()
-//        catmedicineController.disaster = Disaster(
-//            cardName: "Before floods",
-////            hints: Hints.floods
-//        )
-
-
-        return [
-            dogFoodController,
-            catFoodController,
-            dogAccessoryController,
-            dogMedicineController,
-            catmedicineController
-        ]
+            controller.productItemArray = data
+                self.controllerArray.append(controller)
+        }
+        return self.controllerArray
+        
+    }
+    
+    func returnSelectedCategoryData(categoryId : String) -> [[String: Any ]] {
+        
+        var data = [[String: Any]]()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        print(appDelegate.latestProductArray)
+        
+        for items in appDelegate.latestProductArray {
+            if items["category_id"] as! String == categoryId {
+                data.append(items)
+            }
+        }
+        
+        return data
     }
     
     private func selectedSegmentioIndex() -> Int {

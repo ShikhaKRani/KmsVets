@@ -15,7 +15,7 @@ struct BaseUrl {
 
 struct AppURL {
     static let SLIDER_URL = "\(BaseUrl.BASE)/userfiles/contents/big/"
-
+    static let ICON_URL = "\(BaseUrl.BASE)/userfiles/contents/small/"
 }
 
 
@@ -36,6 +36,9 @@ struct APIUrl {
     static let QUESTION_PRICE  = "\(BaseUrl.BASE)/visitapi/index.php/getquestion_price"
     static let SERVICE_LIST  = "\(BaseUrl.BASE)/visitapi/index.php/visit"
     static let ASK_Question  = "\(BaseUrl.BASE)/visitapi/index.php/ask_question"
+    static let GET_CATEGORY  = "\(BaseUrl.BASE)?component=json&action=get_categories"
+    static let PRODUCT_CATEGORY_LIST  = "\(BaseUrl.BASE)?component=json&action=latest_product"
+
     
 }
 
