@@ -53,22 +53,7 @@ class ProductContainerViewController: BaseViewController {
         }
     }
     
-    func getCategory() {
-        
-        self.showHud("Fetching Category")
-        ServiceClient.sendRequest(apiUrl: APIUrl.GET_CATEGORY,postdatadictionary: ["" : ""], isArray: false) { (response) in
-
-            if let res = response as? [String : Any] {
-                self.catgoryData = res["data"] as? [[String: Any]] ?? [[:]]
-                print(self.catgoryData)
-                DispatchQueue.main.async { () -> Void in
-                    self.setUpController()
-                }
-                self.hideHUD()
-            }
-       }
-    }
-    
+ 
     
     
     //MARK:- Setup controller
@@ -76,7 +61,7 @@ class ProductContainerViewController: BaseViewController {
         setupScrollView()
         
         SegmentioBuilder.buildSegmentioView(
-            segmentioView: segmentioView, titleArray: appDelegate.contentSliderArray ?? [""],
+            segmentioView: segmentioView, titleArray: appDelegate.contentSliderArray,
             segmentioStyle: segmentioStyle
         )
         
@@ -92,7 +77,7 @@ class ProductContainerViewController: BaseViewController {
                 )
             }
             
-            NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil, userInfo: ["SegmentIndex":"\(segmentIndex)"])
+//            NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil, userInfo: ["SegmentIndex":"\(segmentIndex)"])
 
         }
         segmentioView.selectedSegmentioIndex = selectedSegmentioIndex()
@@ -179,3 +164,22 @@ extension ProductContainerViewController: UIScrollViewDelegate {
 }
 
 
+//MARK:-API calls
+extension ProductContainerViewController  {
+    
+    func getCategory() {
+        
+        self.showHud("Fetching Category")
+        ServiceClient.sendRequest(apiUrl: APIUrl.GET_CATEGORY,postdatadictionary: ["" : ""], isArray: false) { (response) in
+
+            if let res = response as? [String : Any] {
+                self.catgoryData = res["data"] as? [[String: Any]] ?? [[:]]
+                print(self.catgoryData)
+                DispatchQueue.main.async { () -> Void in
+                    self.setUpController()
+                }
+                self.hideHUD()
+            }
+       }
+    }
+}

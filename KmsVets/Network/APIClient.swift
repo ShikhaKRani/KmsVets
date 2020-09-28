@@ -39,9 +39,9 @@ struct APIUrl {
     static let ASK_Question  = "\(BaseUrl.BASE)/visitapi/index.php/ask_question"
     static let GET_CATEGORY  = "\(BaseUrl.BASE)?component=json&action=get_categories"
     static let PRODUCT_CATEGORY_LIST  = "\(BaseUrl.BASE)?component=json&action=latest_product"
-    static let GET_CART  = "\(BaseUrl.BASE)?component=json&action=get_cart"
+    static let GET_CART  = "\(BaseUrl.BASE)/index.php?component=json&action=get_cart"
     static let ADD_CART  = "\(BaseUrl.BASE)/index.php?component=json&action=add_cart"
-    
+    static let DELET_ALL_CART  = "\(BaseUrl.BASE)/index.php?component=json&action=delete_cart"
     
 }
 

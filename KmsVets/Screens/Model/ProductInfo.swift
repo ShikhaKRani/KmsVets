@@ -20,7 +20,8 @@ class ProductInfo: NSObject {
     var discount : String?
     var quantity : Int?
     var dis_id : String?
-
+    var unit : String?
+    var gmqty : String?
 
     var quantityForCartItem : Int?
 
@@ -41,7 +42,10 @@ class ProductInfo: NSObject {
             self.sale_price = lastItem["sale_price"] as? String
             self.cartquantity = lastItem["cartquantity"] as? String
             self.dis_id = lastItem["id"] as? String
+            self.unit = lastItem["unit"] as? String
+            self.gmqty = lastItem["gmqty"] as? String
 
+            
             
             if ((cartquantity?.isEmpty) == nil) {
                 self.quantity = Int(cartquantity ?? "0")

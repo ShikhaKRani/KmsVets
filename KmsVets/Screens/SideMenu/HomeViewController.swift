@@ -41,14 +41,12 @@ class HomeViewController: BaseViewController {
         self.fetchBannerImageFromServer()
         self.pageControl.currentPage = 0
         self.imgCollectionView.bringSubviewToFront(self.pageControl)
-        
-        self.getCategory()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setTitleForNavigation(title: "KMS Vets", isHidden: false)
+        self.getCategory()
     }
     
     func fetchBannerImageFromServer() {
@@ -78,9 +76,12 @@ class HomeViewController: BaseViewController {
     }
     
     
+    
+    
     func getCategory() {
         
-        self.showHud("Loading..")
+        
+        self.showHud("")
         ServiceClient.sendRequest(apiUrl: APIUrl.GET_CATEGORY,postdatadictionary: ["" : ""], isArray: false) { (response) in
 
             if let res = response as? [String : Any] {
@@ -104,7 +105,7 @@ class HomeViewController: BaseViewController {
     
     func getProductList(categoryId : String?) {
         
-        self.showHud("Load Product..")
+        self.showHud("")
         ServiceClient.sendRequest(apiUrl: APIUrl.PRODUCT_CATEGORY_LIST,postdatadictionary: ["userId" : UserDefaults.standard.string(forKey: "id") ?? "", "id" : categoryId ?? ""], isArray: true) { (response) in
             
             print(response)
@@ -120,7 +121,7 @@ class HomeViewController: BaseViewController {
 
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.latestProductArray = self.latestProductArray
-                    appDelegate.contentSliderArray  = self.productTitleArray ?? [""]
+                    appDelegate.contentSliderArray  = self.productTitleArray
                 }
                 
                 self.hideHUD()

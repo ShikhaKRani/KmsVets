@@ -33,6 +33,17 @@ class ProdcutListViewController: BaseViewController {
         itemTableView.rowHeight = UITableView.automaticDimension
         itemTableView.estimatedRowHeight = 100
         itemTableView.tableFooterView = UIView()
+       
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.methodOfReceivedNotification(notification:)), name: Notification.Name("NotificationIdentifier"), object: nil)
+    }
+    
+    
+//    @objc func methodOfReceivedNotification(notification: Notification) {
+//        print(notification.userInfo)
+//    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if let array = productItemArray {
             productItemArray = array
             
@@ -44,14 +55,7 @@ class ProdcutListViewController: BaseViewController {
             itemTableView.reloadData()
             
         }
-        NotificationCenter.default.addObserver(self, selector: #selector(self.methodOfReceivedNotification(notification:)), name: Notification.Name("NotificationIdentifier"), object: nil)
     }
-    
-    
-    @objc func methodOfReceivedNotification(notification: Notification) {
-        print(notification.userInfo)
-    }
-    
     
     @objc func addBtnAction(sender : UIButton) {
         
@@ -84,7 +88,7 @@ class ProdcutListViewController: BaseViewController {
     // api call
         cell?.itemCountLbl.text = "\(model.quantityForCartItem ?? 0)"
         model.quantity = model.quantityForCartItem
-        self.addProductToCart(model: model)
+        self.addProductToCart(model: model, tag: sender.tag)
 
     }
     
@@ -108,19 +112,18 @@ class ProdcutListViewController: BaseViewController {
             cell?.minusButton.isHidden = false
             cell?.itemCountLbl.isHidden = false
             cell?.addInitialButton.isHidden = true
-            
             cell?.trailingConstraintForInitialAddbutton.constant = 110
         }
         
         
-        if count > 0 {
+        if count > 1 {
             count = count - 1
             model.quantityForCartItem =  count
             
             cell?.itemCountLbl.text = "\(model.quantityForCartItem ?? 0)"
             model.quantityForCartItem = count
             model.quantity = model.quantityForCartItem
-            self.addProductToCart(model: model)            
+            self.addProductToCart(model: model,tag: sender.tag)
         }
         
        
@@ -129,9 +132,9 @@ class ProdcutListViewController: BaseViewController {
     }
     
     
-    func addProductToCart(model : ProductInfo!) {
+    func addProductToCart(model : ProductInfo!, tag : Int) {
     
-        self.showHud("Progress..")
+        self.showHud("")
         let product_id = model.id ?? ""
         let dis_id = model.dis_id ?? ""
         let quantityForCartItem = "\(model.quantityForCartItem ?? 0)"
@@ -142,11 +145,16 @@ class ProdcutListViewController: BaseViewController {
             if let res = response as? [String : Any] {
                 print(res)
                 
-//                self.catgoryData = res["data"] as? [[String: Any]] ?? [[:]]
-//                print(self.catgoryData)
-//                DispatchQueue.main.async { () -> Void in
-//                    self.setUpController()
-//                }
+                
+                DispatchQueue.main.async { () -> Void in
+                    let indexPath = IndexPath(item: tag, section: 0)
+                    self.itemTableView.reloadRows(at: [indexPath], with: .none)
+
+                }
+                
+
+                NotificationCenter.default.post(name: Notification.Name("NotificationHomeIdentifier"), object: nil, userInfo: ["response":"\(res)"])
+
                 self.hideHUD()
             }
        }
@@ -170,16 +178,20 @@ extension ProdcutListViewController: UITableViewDataSource, UITableViewDelegate 
         let model = self.productModelArray[indexPath.row]
         
         cell.titleLbl?.text = model.title
+        cell.weightLbl.text = "Weight:\(model.gmqty ?? "")\(model.unit ?? "")"
         let urlString  =  "\(AppURL.ICON_URL)\(model.image ?? "")"
         cell.titleImg.sd_setImage(with: URL(string: urlString), placeholderImage: UIImage(named: "medicine.jpeg") ,options: .refreshCached, completed: nil)
         
         cell.addButton.addTarget(self, action: #selector(addBtnAction(sender:)), for: .touchUpInside)
+        cell.minusButton.tag = indexPath.row
+        cell.addButton.tag = indexPath.row
         cell.minusButton.addTarget(self, action: #selector(minusBtnAction(sender:)), for: .touchUpInside)
         cell.addInitialButton.addTarget(self, action: #selector(addBtnAction(sender:)), for: .touchUpInside)
                 
         cell.discountLbl?.text = model.discount
-        cell.oldPriceLbl?.text = model.market_price
-        cell.currentPriceLbl?.text = model.sale_price
+        cell.oldPriceLbl?.text = "\(StringConstant.RuppeeSymbol)\(model.market_price ?? "0")"
+        cell.oldPriceLbl?.textColor = .red
+        cell.currentPriceLbl?.text = "\(StringConstant.RuppeeSymbol)\(model.sale_price ?? "0")"
         let cartquantity = model.quantity
         if model.quantityForCartItem ?? 0 == 0 {
             model.quantityForCartItem = cartquantity
@@ -217,24 +229,6 @@ extension ProdcutListViewController: UITableViewDataSource, UITableViewDelegate 
         return 150
     }
     
-}
-
-
-//MARK:- Cell
-class ProductItemCell: UITableViewCell {
-    
-    @IBOutlet weak var titleLbl: UILabel!
-    @IBOutlet weak var discountLbl: UILabel!
-    @IBOutlet weak var oldPriceLbl: UILabel!
-    @IBOutlet weak var currentPriceLbl: UILabel!
-    @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var minusButton: UIButton!
-    @IBOutlet weak var itemCountLbl: UILabel!
-    @IBOutlet weak var addInitialButton: UIButton!
-
-    @IBOutlet weak var titleImg: UIImageView!
-
-    @IBOutlet weak var trailingConstraintForInitialAddbutton: NSLayoutConstraint!
 }
 
 

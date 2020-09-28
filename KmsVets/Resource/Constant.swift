@@ -48,6 +48,12 @@ struct StringConstant {
     static let  AskQuestionTableViewCell = "AskQuestionTableViewCell"
     
     
+    
+    static let  RuppeeSymbol = "₹"
+
+    
+    
+    
     //title
     static let  Apptitle = "KMS Vets"
     static let FAQ = "At KMS vets, we are dedicated to providing a seamless shopping experience to all our customers. To help guide you through your online shopping with us, we have compiled a list of frequently asked questions and provided answers below. If you don’t find your question, you are always welcome to contact us and we will get back to you as soon as possible."
