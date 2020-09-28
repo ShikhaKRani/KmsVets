@@ -27,14 +27,25 @@ class ProductCartViewController: BaseViewController {
         let trash_button = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(homeBarButtonAction))
         navigationItem.rightBarButtonItems = [trash_button]
 
-        let home_button = UIBarButtonItem(barButtonSystemItem: .rewind, target: self, action: #selector(backAction))
-        navigationItem.leftBarButtonItem = home_button
+        
+        let homebutton = UIButton(type: .custom)
+        homebutton.setImage(UIImage(named: "home22"), for: .normal)
+        homebutton.frame = CGRect(x: 0.0, y: 0.0, width: 25, height: 25)
+        homebutton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+        let barButtonItem2 = UIBarButtonItem(customView: homebutton)
 
+        let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        space.width = 20
+        self.navigationItem.leftBarButtonItems = [barButtonItem2,space]
+        
         
         
         
         
     }
+    
+    
+    
     
     @objc func backAction() {
         self.navigationController?.popToRootViewController(animated: false)

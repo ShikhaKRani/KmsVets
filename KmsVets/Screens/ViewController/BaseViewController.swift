@@ -86,6 +86,25 @@ class BaseViewController: UIViewController {
     }
     
     
+//    func setUpNav() {
+//        
+//        let button = UIButton(type: .custom)
+//        button.setBackgroundImage(UIImage(named: "cart22"), for: .normal)
+//        button.frame = CGRect(x: 0.0, y: 0.0, width: 25, height: 25)
+////        button.addTarget(self, action: #selector(redirectToCart), for: .touchUpInside)
+//        let barButtonItem = UIBarButtonItem(customView: button)
+//
+//        let button2 = UIButton(type: .custom)
+//        button2.setImage(UIImage(named: "home22"), for: .normal)
+//        button2.frame = CGRect(x: 0.0, y: 0.0, width: 25, height: 25)
+//        let barButtonItem2 = UIBarButtonItem(customView: button2)
+//
+//        let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+//        space.width = 20
+//        self.navigationItem.rightBarButtonItems = [barButtonItem,space]
+//   
+//    }
+    
     
 }
 

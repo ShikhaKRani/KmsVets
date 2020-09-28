@@ -25,7 +25,9 @@ class HomePageServicesCell: UITableViewCell {
 
 class HomeViewController: BaseViewController {
     
-    @IBOutlet var imgCollectionView: UICollectionView!
+    @IBOutlet weak var collectionView: BJAutoScrollingCollectionView!
+    @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
+
     @IBOutlet var homeshopcategoryTblVw: UITableView!
     @IBOutlet weak var pageControl: UIPageControl!
     
@@ -33,6 +35,7 @@ class HomeViewController: BaseViewController {
     var catgoryData = [[String: Any]]()
     var latestProductArray = [[String: Any]]()
     var productTitleArray = [String]()
+    private var timer = Timer()
 
     
     override func viewDidLoad() {
@@ -40,11 +43,40 @@ class HomeViewController: BaseViewController {
         self.setTitleForNavigation(title: "KMS Vets", isHidden: false)
         self.fetchBannerImageFromServer()
         self.pageControl.currentPage = 0
-        self.imgCollectionView.bringSubviewToFront(self.pageControl)
+        self.setUpNav()
+        initCollectionView()
+        
     }
     
+    func setUpNav() {
+        
+        let button = UIButton(type: .custom)
+        button.setBackgroundImage(UIImage(named: "cart22"), for: .normal)
+        button.frame = CGRect(x: 0.0, y: 0.0, width: 25, height: 25)
+        button.addTarget(self, action: #selector(redirectToCart), for: .touchUpInside)
+        let barButtonItem = UIBarButtonItem(customView: button)
+
+        let button2 = UIButton(type: .custom)
+        button2.setImage(UIImage(named: "home22"), for: .normal)
+        button2.frame = CGRect(x: 0.0, y: 0.0, width: 25, height: 25)
+        let barButtonItem2 = UIBarButtonItem(customView: button2)
+
+        let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        space.width = 20
+        self.navigationItem.rightBarButtonItems = [barButtonItem,space]
+   
+    }
     
+    @objc func redirectToCart() {
+        
+        let storyBoard = UIStoryboard.init(name: "ProductHome", bundle: nil)
+        if let cartVC = storyBoard.instantiateViewController(withIdentifier: "ProductCartViewController") as? ProductCartViewController {
+            
+            self.navigationController?.pushViewController(cartVC, animated: true)
+        }
+    }
     
+
     @objc func homeBarButtonAction() {
        
        self.openAlert(title: "Alert",
@@ -85,8 +117,10 @@ class HomeViewController: BaseViewController {
                     self.bannerData = responseDict["data"] as! [[String : Any]]
                     self.pageControl.numberOfPages = self.bannerData.count
                     
-                    self.startTimer()
-                    self.imgCollectionView.reloadData()
+//                    self.imgCollectionView.reloadData()
+//                    self.imgCollectionView.startScrolling()
+                    
+                    self.scrollReload()
                 }
                 
             case .failure(let error):
@@ -151,67 +185,53 @@ class HomeViewController: BaseViewController {
     }
     
     
-    
-    
-    func startTimer() {
-        let _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(autoScroll), userInfo: nil, repeats: true)
+    func initCollectionView() {
+        
+        self.collectionView.scrollInterval = 2 //Step 2
+        self.collectionViewFlowLayout.scrollDirection = .horizontal
+        self.collectionViewFlowLayout.minimumInteritemSpacing = 0
+        self.collectionViewFlowLayout.minimumLineSpacing = 0
     }
     
-    var counter = 0
-    @objc func autoScroll() {
-        
-        if self.counter < self.bannerData.count {
-            let indexPath = IndexPath(item: counter, section: 0)
-            
-            self.imgCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-            self.pageControl.currentPage = self.counter
-            self.counter = self.counter + 1
-        }else{
-            self.counter = 0
-            let indexPath = IndexPath(item: counter, section: 0)
-            self.imgCollectionView.scrollToItem(at:indexPath, at: .left, animated: true)
-            self.pageControl.currentPage = self.counter
+    func scrollReload() {
+        self.collectionView.reloadData()
+        self.collectionView.startScrolling() //Step 3
+        self.startUpdatingPager()
+    }
+    
+    func setTimer() {
+        self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(updatePager), userInfo: nil, repeats: true)
+    }
+    
+    func startUpdatingPager() {
+        if !self.timer.isValid {
+            if self.bannerData.count > 0 {
+                stopUpdatingScrolling()
+                setTimer()
+            }
         }
-        
     }
+    
+    func stopUpdatingScrolling() { if timer.isValid { self.timer.invalidate() } }
+
+    var counter = 1
+    @objc func updatePager() {
+        
+        if counter < self.bannerData.count  {
+            self.pageControl.currentPage = counter
+            counter = counter + 1
+        }else{
+            counter = 0
+            self.pageControl.currentPage = counter
+        }
+    }
+    
     
 }
-
-
 //MARK:- CollectionView Delegate
-extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return bannerData.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerCollCell", for: indexPath) as! BannerCollCell
-        let dict = self.bannerData[indexPath.row]
-            
-        let urlString  =  "\(AppURL.SLIDER_URL)/\(dict["image"] ?? "")"
-            cell.bannerCellImg.sd_setImage(with: URL(string: urlString), placeholderImage: UIImage(named: "medicine.jpeg") ,options: .refreshCached, completed: nil)
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-            let collectionViewWidth = imgCollectionView.bounds.width
-            let collectionHeight = imgCollectionView.bounds.height
-            return CGSize(width: (collectionViewWidth), height: (collectionHeight))
-                    
-    }
-    
-}
-
-//MARK:- CollectionView Delegate
-
-
 extension HomeViewController {
     
     //MARK:- Side Menu Set up
-    
     func settingUpSideMenuUI() {
         SideMenuManager.default.addPanGestureToPresent(toView: self.navigationController!.navigationBar)
         setupSideMenu()
@@ -260,7 +280,7 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        return 160
     }
     
     
@@ -289,4 +309,60 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     
 }
 
+
+//MARK:- CollectionView Delegate
+//extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+//
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return bannerData.count
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerCollCell", for: indexPath) as! BannerCollCell
+//        let dict = self.bannerData[indexPath.row]
+//
+//        let urlString  =  "\(AppURL.SLIDER_URL)/\(dict["image"] ?? "")"
+//            cell.bannerCellImg.sd_setImage(with: URL(string: urlString), placeholderImage: UIImage(named: "medicine.jpeg") ,options: .refreshCached, completed: nil)
+//        return cell
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView,
+//                        layout collectionViewLayout: UICollectionViewLayout,
+//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//        return CGSize(width: AppClass.windowWidth, height: 120)
+//
+//    }
+//
+//}
+
+
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cellIdentifier: String = "CustomImageCollectionCell"
+        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! CustomImageCollectionViewCell
+        
+        let dict = self.bannerData[indexPath.row]
+        
+        let urlString  =  "\(AppURL.SLIDER_URL)/\(dict["image"] ?? "")"
+                    cell.imageView.sd_setImage(with: URL(string: urlString), placeholderImage: UIImage(named: "medicine.jpeg") ,options: .refreshCached, completed: nil)
+        
+//        cell.imageView.image = self.imagesArray[indexPath.row]
+        
+        
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.bannerData.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize.init(width: self.collectionView.frame.size.width, height: self.collectionView.frame.size.height)
+    }
+}
 

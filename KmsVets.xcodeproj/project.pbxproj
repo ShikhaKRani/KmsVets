@@ -72,6 +72,8 @@
 		BFE67A6D2521A9740024FAA9 /* ProductCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE67A6C2521A9740024FAA9 /* ProductCartViewController.swift */; };
 		BFE67A702521AAF50024FAA9 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE67A6F2521AAF50024FAA9 /* CartModel.swift */; };
 		BFE67A732521B66D0024FAA9 /* ProductItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE67A722521B66D0024FAA9 /* ProductItemCell.swift */; };
+		BFF3561325221F82003C9E07 /* CustomImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF3561125221F82003C9E07 /* CustomImageCollectionViewCell.swift */; };
+		BFF3561425221F82003C9E07 /* BJAutoScrollingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF3561225221F82003C9E07 /* BJAutoScrollingCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,6 +148,8 @@
 		BFE67A6C2521A9740024FAA9 /* ProductCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCartViewController.swift; sourceTree = "<group>"; };
 		BFE67A6F2521AAF50024FAA9 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		BFE67A722521B66D0024FAA9 /* ProductItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductItemCell.swift; sourceTree = "<group>"; };
+		BFF3561125221F82003C9E07 /* CustomImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		BFF3561225221F82003C9E07 /* BJAutoScrollingCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BJAutoScrollingCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +259,7 @@
 		BF1D97F1250F8D4C00446CA8 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BFF3561025221F82003C9E07 /* sc */,
 				BF1D97F2250F8D5900446CA8 /* Constant.swift */,
 				BF5569182519C88000C3E4BA /* AppExtension.swift */,
 			);
@@ -357,6 +362,15 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		BFF3561025221F82003C9E07 /* sc */ = {
+			isa = PBXGroup;
+			children = (
+				BFF3561125221F82003C9E07 /* CustomImageCollectionViewCell.swift */,
+				BFF3561225221F82003C9E07 /* BJAutoScrollingCollectionView.swift */,
+			);
+			path = sc;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -402,6 +416,103 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				he,
+				en_AU,
+				ar,
+				el,
+				ja,
+				uk,
+				es_419,
+				es_MX,
+				zh_CN,
+				nb,
+				es,
+				pt_BR,
+				da,
+				it,
+				sk,
+				pt_PT,
+				ms,
+				sv,
+				cs,
+				en_IN,
+				ko,
+				hu,
+				zh_HK,
+				tr,
+				pl,
+				zh_TW,
+				en_GB,
+				vi,
+				ru,
+				fr_CA,
+				fr,
+				fi,
+				id,
+				nl,
+				th,
+				pt,
+				ro,
+				hr,
+				hi,
+				ca,
+				ur,
+				"es-SV",
+				"zh-Hant-TW",
+				"zh-Hans",
+				fa,
+				mr,
+				"es-GT",
+				"en-CA",
+				"es-PY",
+				gu,
+				kn,
+				"es-US",
+				"en-GB",
+				"es-VE",
+				"es-CL",
+				sl,
+				"es-419",
+				bg,
+				"sr-Latn",
+				"nn-NO",
+				"es-PA",
+				"en-SG",
+				sr,
+				"es-CR",
+				ta,
+				"es-AR",
+				"es-PE",
+				"en-IE",
+				fil,
+				"zh-Hant",
+				"es-CO",
+				gsw,
+				"en-ZA",
+				"es-PR",
+				"de-AT",
+				"en-AU",
+				"pt-BR",
+				lv,
+				"es-MX",
+				lt,
+				"es-DO",
+				"fr-CH",
+				"es-NI",
+				"de-CH",
+				bn,
+				"es-EC",
+				"pt-PT",
+				"es-BO",
+				ln,
+				"es-UY",
+				"es-HN",
+				zh,
+				"en-IN",
+				"zh-HK",
+				mt,
+				"fr-CA",
 			);
 			mainGroup = BFBA34E2250CE907004C37C2;
 			productRefGroup = BFBA34EC250CE907004C37C2 /* Products */;
@@ -481,6 +592,7 @@
 				BFE67A732521B66D0024FAA9 /* ProductItemCell.swift in Sources */,
 				BF1D97F0250F8BCA00446CA8 /* CustomerInformationCell.swift in Sources */,
 				BF16BF7A251F513500D6BE6F /* ServiceListTableViewCell.swift in Sources */,
+				BFF3561425221F82003C9E07 /* BJAutoScrollingCollectionView.swift in Sources */,
 				BF6C44A3251CCEAB00D85E58 /* CancellationAndRefundViewController.swift in Sources */,
 				BF1D97F3250F8D5900446CA8 /* Constant.swift in Sources */,
 				BF02B53B2511EF1A0076B05E /* HomeCollCell.swift in Sources */,
@@ -510,6 +622,7 @@
 				BF1D97F7250F9EFA00446CA8 /* MyChartViewController.swift in Sources */,
 				BF556926251A08D600C3E4BA /* BookingSurgeryHistoryViewController.swift in Sources */,
 				BF32E92F25147FA600E154D3 /* ProfileViewTableViewCell.swift in Sources */,
+				BFF3561325221F82003C9E07 /* CustomImageCollectionViewCell.swift in Sources */,
 				BFBA34EF250CE908004C37C2 /* AppDelegate.swift in Sources */,
 				BF2D8F82251B9DBB00641058 /* SuggestionTableViewCell.swift in Sources */,
 				BF02B53A2511EF1A0076B05E /* BannerCollCell.swift in Sources */,
@@ -682,10 +795,22 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9TA9SAVC4B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KmsVets/Resource/AutoScroll/Desktop/Paysfer_ecommerce26sept/Paysfer/Pods/GooglePlaces/Frameworks",
+					"$(PROJECT_DIR)/KmsVets/Resource/AutoScroll/Desktop/Paysfer_ecommerce26sept/Paysfer/Pods/GoogleMaps/Maps/Frameworks",
+					"$(PROJECT_DIR)/KmsVets/Resource/AutoScroll/Desktop/Paysfer_ecommerce26sept/Paysfer/Pods/GoogleMaps/Base/Frameworks",
+					"$(PROJECT_DIR)/KmsVets/Resource/AutoScroll/Desktop/Paysfer_ecommerce26sept/Paysfer/Pods/GoogleSignIn/Frameworks",
+				);
 				INFOPLIST_FILE = KmsVets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KmsVets/Resource/AutoScroll/Desktop/Paysfer_ecommerce26sept/Paysfer/Pods/Stripe/InternalFrameworks",
+					"$(PROJECT_DIR)/KmsVets/Resource/AutoScroll/Desktop/StripeGateway/Pods/Stripe/InternalFrameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Shikha.KmsVets;
@@ -707,10 +832,22 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9TA9SAVC4B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KmsVets/Resource/AutoScroll/Desktop/Paysfer_ecommerce26sept/Paysfer/Pods/GooglePlaces/Frameworks",
+					"$(PROJECT_DIR)/KmsVets/Resource/AutoScroll/Desktop/Paysfer_ecommerce26sept/Paysfer/Pods/GoogleMaps/Maps/Frameworks",
+					"$(PROJECT_DIR)/KmsVets/Resource/AutoScroll/Desktop/Paysfer_ecommerce26sept/Paysfer/Pods/GoogleMaps/Base/Frameworks",
+					"$(PROJECT_DIR)/KmsVets/Resource/AutoScroll/Desktop/Paysfer_ecommerce26sept/Paysfer/Pods/GoogleSignIn/Frameworks",
+				);
 				INFOPLIST_FILE = KmsVets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KmsVets/Resource/AutoScroll/Desktop/Paysfer_ecommerce26sept/Paysfer/Pods/Stripe/InternalFrameworks",
+					"$(PROJECT_DIR)/KmsVets/Resource/AutoScroll/Desktop/StripeGateway/Pods/Stripe/InternalFrameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Shikha.KmsVets;

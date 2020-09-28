@@ -30,6 +30,23 @@ struct Payment {
     
 }
 
+class AppClass {
+    
+    class var windowWidth: CGFloat {
+        if let rootwindow = UIApplication.shared.delegate?.window, let view = rootwindow!.rootViewController?.view {
+            return view.bounds.size.width
+        }
+        return 0
+    }
+
+    class var windowHeigth: CGFloat {
+        if let rootwindow = UIApplication.shared.delegate?.window, let view = rootwindow!.rootViewController?.view {
+            return view.bounds.size.height
+        }
+        return 0
+    }
+
+}
 struct Colors {
     static let theme = UIColor(red: 01/255, green: 61/255, blue: 55/255, alpha: 1)
 }
@@ -178,4 +195,6 @@ extension NSAttributedString
         self.init(string: text, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle, NSAttributedString.Key.foregroundColor:color])
     }
 }
+
+
 

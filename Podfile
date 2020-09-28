@@ -19,7 +19,8 @@ target 'KmsVets' do
   pod ‘SDWebImage’, ‘~> 4.0’
   pod 'Segmentio'
   pod 'PayUmoney_PnP'
-  
+  pod 'FAPaginationLayout'
+
   
   # Pods for KmsVets
 
