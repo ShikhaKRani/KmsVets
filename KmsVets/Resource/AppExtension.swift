@@ -45,8 +45,6 @@ extension UITextField {
     
 }
 
-
-
 extension UIViewController{
 
     // Global Alert

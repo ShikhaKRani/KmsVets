@@ -12,10 +12,15 @@ class ProductCartViewController: BaseViewController {
     
     @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet weak var bgImgView: UIImageView!
+    @IBOutlet weak var totalLbl: UILabel!
+    @IBOutlet weak var deliveryChargeLbl: UILabel!
+    @IBOutlet weak var grandTotalLbl: UILabel!
+    @IBOutlet weak var checkOutBtn: UIButton!
 
     var cartItemsArray = [CartModel]()
-    
-    
+    var totalPrice = 0
+    var deliveryTotalPrice = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bgImgView.isHidden = true
@@ -24,9 +29,8 @@ class ProductCartViewController: BaseViewController {
         self.title = "View Cart"
         self.navigationItem.hidesBackButton = true
  
-        let trash_button = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(homeBarButtonAction))
+        let trash_button = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(rightBarButtonAction))
         navigationItem.rightBarButtonItems = [trash_button]
-
         
         let homebutton = UIButton(type: .custom)
         homebutton.setImage(UIImage(named: "home22"), for: .normal)
@@ -38,56 +42,43 @@ class ProductCartViewController: BaseViewController {
         space.width = 20
         self.navigationItem.leftBarButtonItems = [barButtonItem2,space]
         
-        
-        
-        
-        
+        self.checkOutBtn.addTarget(self, action: #selector(redirectToNextScreen), for: .touchUpInside)
     }
     
     
-    
+    @objc func redirectToNextScreen() {
+
+        let storyBoard = UIStoryboard.init(name: "ProductHome", bundle: nil)
+        if let addressVc = storyBoard.instantiateViewController(withIdentifier: "ConfirmAddressViewController") as? ConfirmAddressViewController {
+            
+            addressVc.cartItemsArray = self.cartItemsArray
+            addressVc.totalAmount = self.totalPrice
+
+            self.navigationController?.pushViewController(addressVc, animated: true)
+        }
+    }
     
     @objc func backAction() {
         self.navigationController?.popToRootViewController(animated: false)
     }
-   
     
-    @objc func homeBarButtonAction() {
-       
-       self.openAlert(title: "Alert",
-                             message: "Are you sure you want to remove items from Cart?",
-                             alertStyle: .alert,
-                             actionTitles: ["Okay", "Cancel"],
-                             actionStyles: [.default, .cancel],
-                             actions: [
-                                 {_ in
-                                      print("okay click")
-                                   self.clearCart()
-                                 },
-                                 {_ in
-                                      print("cancel click")
-                                 }
-                            ])
-      
-   }
-    
-     func rightBarButtonAction() {
+    @objc func rightBarButtonAction() {
         
         self.openAlert(title: "Alert",
-                              message: "Are you sure you want to remove items from Cart?",
-                              alertStyle: .alert,
-                              actionTitles: ["Okay", "Cancel"],
-                              actionStyles: [.default, .cancel],
-                              actions: [
-                                  {_ in
-                                       print("okay click")
-                                    self.clearCart()
-                                  },
-                                  {_ in
-                                       print("cancel click")
-                                  }
-                             ])
-       
+                       message: "Are you sure you want to remove items from Cart?",
+                       alertStyle: .alert,
+                       actionTitles: ["Okay", "Cancel"],
+                       actionStyles: [.default, .cancel],
+                       actions: [
+                        {_ in
+                            print("okay click")
+                            self.clearCart()
+                        },
+                        {_ in
+                            print("cancel click")
+                        }
+                       ])
+        
     }
     
     
@@ -194,12 +185,12 @@ class ProductCartViewController: BaseViewController {
     func fetchCartDetails() {
         
         var costOfItem = 0
-        var itemsSelected = 0
-        
-        var totalPrice = 0
+        var itemsSelected = 0        
         var totalItem = 0
+        
         DispatchQueue.main.async { () -> Void in
         self.bgImgView.isHidden = true
+            self.showHud("")
         }
         ServiceClient.sendRequest(apiUrl: APIUrl.GET_CART,postdatadictionary: ["userId" : UserDefaults.standard.string(forKey: "id") ?? ""], isArray: false) { (response) in
             
@@ -209,16 +200,17 @@ class ProductCartViewController: BaseViewController {
                 if let dataArray = res["data"] as? [[String: Any]] {
                     self.cartItemsArray.removeAll()
                     for itemDict in dataArray {
-                        
                         let cartModel = CartModel(dict: itemDict)
                         self.cartItemsArray.append(cartModel)
                         
                         costOfItem = Int(cartModel.sale_price ?? "0") ?? 0
                         itemsSelected = Int(cartModel.cartquantity ?? "0") ?? 0
                         let finalPricePerItem = costOfItem * itemsSelected
-                        
-                        totalPrice =  totalPrice + finalPricePerItem
+                        self.totalPrice =  self.totalPrice + finalPricePerItem
                         totalItem = totalItem + itemsSelected
+                        let charge = Int(cartModel.deliverycharge ?? "0") ?? 0
+                        
+                        self.deliveryTotalPrice = self.deliveryTotalPrice + charge
                     }
                 }
                 else{
@@ -235,7 +227,12 @@ class ProductCartViewController: BaseViewController {
 
                     }
 
-                    //                     self.totalPriceLabel.text = "\(totalItem) Items ₹ \(totalPrice)"
+                    self.totalLbl.text = "Total Price: \(StringConstant.RuppeeSymbol)\(self.totalPrice)"
+                    self.deliveryChargeLbl.text = "Delivery Charge: \(StringConstant.RuppeeSymbol)\(self.deliveryTotalPrice)"
+                    self.grandTotalLbl.text = "Grand Total: \(StringConstant.RuppeeSymbol)\(self.totalPrice + self.deliveryTotalPrice)"
+
+                    
+                    self.hideHUD()
                 }
             }
         }
@@ -291,10 +288,12 @@ extension ProductCartViewController : UITableViewDelegate, UITableViewDataSource
         
         
         
-        cell.discountLbl?.text = model.discount
-        cell.oldPriceLbl?.text = "\(StringConstant.RuppeeSymbol)\(model.market_price ?? "0")"
+        cell.discountLbl?.text = "\(model.discount ?? "")% off"
         cell.oldPriceLbl?.textColor = .red
         cell.currentPriceLbl?.text = "\(StringConstant.RuppeeSymbol)\(model.sale_price ?? "0")"
+        
+        AppClass.strikeOnlabel(yourText: "\(StringConstant.RuppeeSymbol)\(model.market_price ?? "0")", yourLabel: cell.oldPriceLbl)
+
         
         let cartquantity = model.quantity
         

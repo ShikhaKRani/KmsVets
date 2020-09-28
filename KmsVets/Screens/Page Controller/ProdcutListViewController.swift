@@ -176,7 +176,6 @@ extension ProdcutListViewController: UITableViewDataSource, UITableViewDelegate 
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductItemCell", for: indexPath) as! ProductItemCell
         cell.selectionStyle = .none
         let model = self.productModelArray[indexPath.row]
-        
         cell.titleLbl?.text = model.title
         cell.weightLbl.text = "Weight:\(model.gmqty ?? "")\(model.unit ?? "")"
         let urlString  =  "\(AppURL.ICON_URL)\(model.image ?? "")"
@@ -188,10 +187,11 @@ extension ProdcutListViewController: UITableViewDataSource, UITableViewDelegate 
         cell.minusButton.addTarget(self, action: #selector(minusBtnAction(sender:)), for: .touchUpInside)
         cell.addInitialButton.addTarget(self, action: #selector(addBtnAction(sender:)), for: .touchUpInside)
                 
-        cell.discountLbl?.text = model.discount
-        cell.oldPriceLbl?.text = "\(StringConstant.RuppeeSymbol)\(model.market_price ?? "0")"
+        cell.discountLbl?.text = "\(model.discount ?? "")% off"
         cell.oldPriceLbl?.textColor = .red
         cell.currentPriceLbl?.text = "\(StringConstant.RuppeeSymbol)\(model.sale_price ?? "0")"
+        AppClass.strikeOnlabel(yourText: "\(StringConstant.RuppeeSymbol)\(model.market_price ?? "0")", yourLabel: cell.oldPriceLbl)
+    
         let cartquantity = model.quantity
         if model.quantityForCartItem ?? 0 == 0 {
             model.quantityForCartItem = cartquantity

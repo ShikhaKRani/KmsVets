@@ -56,9 +56,7 @@ extension ProductHomeViewController {
         }
     }
     
-    @objc func methodOfReceivedNotification(notification: Notification) {
-        print(notification.userInfo)
-        
+    @objc func methodOfReceivedNotification(notification: Notification) {        
         self.getCartDetails()
     }
         
