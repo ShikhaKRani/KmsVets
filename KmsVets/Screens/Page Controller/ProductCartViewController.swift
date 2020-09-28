@@ -23,52 +23,25 @@ class ProductCartViewController: BaseViewController {
         cartTableView.tableFooterView = UIView()
         self.title = "View Cart"
         self.navigationItem.hidesBackButton = true
-        let newBackButton = UIBarButtonItem(title: "< Home", style: .plain, target: self, action: #selector(backAction))
-        self.navigationItem.leftBarButtonItem = newBackButton
-        
-        
-//        let rightButton = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: #selector(rightBarButtonAction))
-//        self.navigationItem.rightBarButtonItem = rightButton
-        
-        
-        let homebutton: UIButton = UIButton(type: .custom)
-                //set image for button
-        homebutton.setBackgroundImage(UIImage(named: "home.png"), for: .normal)
-                //add function for button
-        homebutton.addTarget(self, action: #selector(backAction(sender:)), for: .touchUpInside)
-                //set frameCGRectMake(0, 0, 53, 31)
-        homebutton.frame = CGRect(x: 0, y: 0, width: 53, height: 51)
+ 
+        let trash_button = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(homeBarButtonAction))
+        navigationItem.rightBarButtonItems = [trash_button]
 
-                let homebarButton = UIBarButtonItem(customView: homebutton)
-                //assign button to navigationbar
-                self.navigationItem.leftBarButtonItem = homebarButton
-        
-        
-        
-        
-        
-        let button: UIButton = UIButton(type: .custom)
-                //set image for button
-        button.setBackgroundImage(UIImage(named: "delete.png"), for: .normal)
-                //add function for button
-        button.addTarget(self, action: #selector(homeBarButtonAction(sender:)), for: .touchUpInside)
-                //set frameCGRectMake(0, 0, 53, 31)
-                button.frame = CGRect(x: 0, y: 0, width: 53, height: 51)
+        let home_button = UIBarButtonItem(barButtonSystemItem: .rewind, target: self, action: #selector(backAction))
+        navigationItem.leftBarButtonItem = home_button
 
-                let barButton = UIBarButtonItem(customView: button)
-                //assign button to navigationbar
-                self.navigationItem.rightBarButtonItem = barButton
+        
         
         
         
     }
     
-    @objc func backAction(sender: UIBarButtonItem) {
+    @objc func backAction() {
         self.navigationController?.popToRootViewController(animated: false)
     }
    
     
-    @objc func homeBarButtonAction(sender: UIBarButtonItem) {
+    @objc func homeBarButtonAction() {
        
        self.openAlert(title: "Alert",
                              message: "Are you sure you want to remove items from Cart?",

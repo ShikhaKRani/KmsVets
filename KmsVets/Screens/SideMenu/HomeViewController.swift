@@ -43,6 +43,27 @@ class HomeViewController: BaseViewController {
         self.imgCollectionView.bringSubviewToFront(self.pageControl)
     }
     
+    
+    
+    @objc func homeBarButtonAction() {
+       
+       self.openAlert(title: "Alert",
+                             message: "Are you sure you want to remove items from Cart?",
+                             alertStyle: .alert,
+                             actionTitles: ["Okay", "Cancel"],
+                             actionStyles: [.default, .cancel],
+                             actions: [
+                                 {_ in
+                                      print("okay click")
+                                 },
+                                 {_ in
+                                      print("cancel click")
+                                 }
+                            ])
+      
+   }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setTitleForNavigation(title: "KMS Vets", isHidden: false)
