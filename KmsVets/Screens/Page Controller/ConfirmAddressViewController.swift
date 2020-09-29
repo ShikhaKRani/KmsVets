@@ -110,13 +110,13 @@ class ConfirmAddressViewController: BaseViewController {
               let dataDict = reponse["data"] as? [String: Any]
               UserDefaults.standard.set(dataDict?["status"], forKey: "status")
               UserDefaults.standard.set(dataDict?["mobile"], forKey: "mobile")
-              UserDefaults.standard.set(dataDict?["zipcode"], forKey: "zipcode")
+//              UserDefaults.standard.set(dataDict?["zipcode"], forKey: "zipcode")
               UserDefaults.standard.set(dataDict?["password"], forKey: "password")
               UserDefaults.standard.set(dataDict?["country"], forKey: "country")
               UserDefaults.standard.set(dataDict?["id"], forKey: "id")
               UserDefaults.standard.set(dataDict?["unique_code"], forKey: "unique_code")
               UserDefaults.standard.set(dataDict?["gcm_code"], forKey: "gcm_code")
-              UserDefaults.standard.set(dataDict?["city"], forKey: "city")
+//              UserDefaults.standard.set(dataDict?["city"], forKey: "city")
               UserDefaults.standard.set(dataDict?["temp_password"], forKey: "temp_password")
               UserDefaults.standard.set(dataDict?["name"], forKey: "name")
               UserDefaults.standard.set(dataDict?["email"], forKey: "email")
@@ -215,9 +215,13 @@ extension ConfirmAddressViewController : UITextFieldDelegate {
         }
         else if textField.tag == 103 {
             landmark = textField.text ?? ""
+            UserDefaults.standard.set(landmark, forKey: "city")
+
         }
         else if textField.tag == 104 {
             zipcode = textField.text ?? ""
+            UserDefaults.standard.set(zipcode, forKey: "zipcode")
+
         }
         else if textField.tag == 105 {
             email = textField.text ?? ""

@@ -60,6 +60,9 @@ class CartModel: NSObject {
         self.currency = dict["currency"] as? String
         self.cartquantity = dict["cartquantity"] as? String
 
+        self.unit = dict["unit"] as? String
+
+        
         if ((cartquantity?.isEmpty) == nil) {
             self.quantity = Int(cartquantity ?? "0")
         }else{

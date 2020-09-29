@@ -690,35 +690,35 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="250"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gkx-vb-Asz">
-                                        <rect key="frame" x="20" y="20.5" width="30" height="29"/>
+                                        <rect key="frame" x="20" y="20.5" width="20" height="19"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="apC-Hr-6oE"/>
-                                            <constraint firstAttribute="width" constant="30" id="yQI-aa-9vE"/>
+                                            <constraint firstAttribute="height" constant="20" id="apC-Hr-6oE"/>
+                                            <constraint firstAttribute="width" constant="20" id="yQI-aa-9vE"/>
                                         </constraints>
                                         <color key="tintColor" red="0.1406454573" green="0.4489213198" blue="0.1135835454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" backgroundImage="dot.circle" catalog="system"/>
                                         <state key="selected" image="dot.circle" catalog="system"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Online" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iiS-4R-QwX">
-                                        <rect key="frame" x="60" y="24.5" width="51.5" height="21"/>
+                                        <rect key="frame" x="50" y="19.5" width="51.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Payable Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsK-F8-444">
-                                        <rect key="frame" x="20" y="69" width="183" height="23"/>
+                                        <rect key="frame" x="20" y="59" width="183" height="23"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rs 1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQx-RF-C1S">
-                                        <rect key="frame" x="333.5" y="70" width="70.5" height="21.5"/>
+                                        <rect key="frame" x="333.5" y="60" width="70.5" height="21.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMj-eg-GU5">
-                                        <rect key="frame" x="40" y="137" width="334" height="45"/>
+                                        <rect key="frame" x="40" y="127" width="334" height="45"/>
                                         <color key="backgroundColor" red="0.1406454573" green="0.4489213198" blue="0.1135835454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="VQ2-Vg-pss"/>
