@@ -39,64 +39,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2811731F-1E5D-4433-8997-92812429D8FE"
+            uuid = "3EAA43C8-A2E2-44B0-865B-91BC64B57857"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KmsVets/Screens/PAYU/TransactionSuccessViewController.swift"
+            filePath = "KmsVets/Screens/Page Controller/ProductDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "clearCart()"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "minusBtnAction(sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5B199B77-D97E-4A23-8E2D-A102BBD0461E"
+            uuid = "CFCD9916-7887-444D-AF02-C692CAD06C4E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KmsVets/Screens/PAYU/TransactionSuccessViewController.swift"
+            filePath = "KmsVets/Screens/Page Controller/ProductDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "checkPaymentStatus()"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
+            landmarkName = "addProductToCart(model:tag:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8AD82B36-1E68-40CB-A8B1-30D39F1AD148"
+            uuid = "EEF331CF-8970-41B6-9DDC-DBF79B093FB1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KmsVets/Screens/PAYU/TransactionSuccessViewController.swift"
+            filePath = "KmsVets/Screens/Page Controller/ProductDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "addProductToCart(model:tag:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "32437104-615E-437C-AD5F-A623DE00861B"
+            uuid = "D5317998-FF01-4303-A680-A8B1FB2D57CD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KmsVets/Screens/Page Controller/SearchProductViewController.swift"
+            filePath = "KmsVets/Screens/Page Controller/ProductDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "searchFromProductList(searchString:)"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
+            landmarkName = "addProductToCart(model:tag:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

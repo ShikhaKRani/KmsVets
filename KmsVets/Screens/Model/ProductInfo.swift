@@ -22,7 +22,9 @@ class ProductInfo: NSObject {
     var dis_id : String?
     var unit : String?
     var gmqty : String?
+    var descriptionPR : String?
 
+    
     var quantityForCartItem : Int?
 
     
@@ -30,6 +32,7 @@ class ProductInfo: NSObject {
         
         self.id = dict["id"] as? String
         self.title = dict["title"] as? String
+        self.descriptionPR = dict["description"] as? String
         self.image = dict["image"] as? String
 
         

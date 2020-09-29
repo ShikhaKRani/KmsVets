@@ -2311,7 +2311,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="523-YT-nuV">
-                                                            <rect key="frame" x="252" y="212" width="150" height="35"/>
+                                                            <rect key="frame" x="252" y="212" width="150" height="29"/>
                                                             <color key="backgroundColor" red="0.1406454573" green="0.4489213198" blue="0.1135835454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="150" id="qpu-ob-wpl"/>
@@ -2331,6 +2331,7 @@
                                                         <constraint firstItem="Qof-2m-yjx" firstAttribute="leading" secondItem="ozO-0d-uMt" secondAttribute="leading" constant="20" id="Yat-mf-FVC"/>
                                                         <constraint firstItem="523-YT-nuV" firstAttribute="top" secondItem="ozO-0d-uMt" secondAttribute="top" constant="212" id="Ypd-h0-gr6"/>
                                                         <constraint firstItem="IJl-Yg-Y9T" firstAttribute="top" secondItem="ozO-0d-uMt" secondAttribute="top" constant="10" id="gf7-4C-ule"/>
+                                                        <constraint firstAttribute="bottom" secondItem="523-YT-nuV" secondAttribute="bottom" constant="20" id="rGz-G9-xmO"/>
                                                         <constraint firstAttribute="trailing" secondItem="523-YT-nuV" secondAttribute="trailing" constant="10" id="xZ3-bQ-VGH"/>
                                                     </constraints>
                                                 </view>

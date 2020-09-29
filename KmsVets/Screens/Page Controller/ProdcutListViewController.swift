@@ -191,7 +191,7 @@ extension ProdcutListViewController: UITableViewDataSource, UITableViewDelegate 
         cell.minusButton.addTarget(self, action: #selector(minusBtnAction(sender:)), for: .touchUpInside)
         cell.addInitialButton.addTarget(self, action: #selector(addBtnAction(sender:)), for: .touchUpInside)
                 
-        cell.discountLbl?.text = "\(model.discount ?? "")% off"
+        cell.discountLbl?.text = "  \(model.discount ?? "")% off  "
         cell.oldPriceLbl?.textColor = .red
         cell.currentPriceLbl?.text = "\(StringConstant.RuppeeSymbol)\(model.sale_price ?? "0")"
         AppClass.strikeOnlabel(yourText: "\(StringConstant.RuppeeSymbol)\(model.market_price ?? "0")", yourLabel: cell.oldPriceLbl)
@@ -227,6 +227,18 @@ extension ProdcutListViewController: UITableViewDataSource, UITableViewDelegate 
         }
         
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let storyBoard = UIStoryboard.init(name: "ProductHome", bundle: nil)
+        if let detailVC = storyBoard.instantiateViewController(withIdentifier: "ProductDetailViewController") as? ProductDetailViewController {
+            let model = self.productModelArray[indexPath.row]
+            detailVC.productInfo = model
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

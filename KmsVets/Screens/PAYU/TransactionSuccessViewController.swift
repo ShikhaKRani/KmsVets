@@ -49,17 +49,21 @@ class TransactionSuccessViewController: BaseViewController {
                     print(responseDict)
                     if self.screen == "cart" {
                         
-                        if responseDict["responseDict"] as! String == "1" {
-                            self.msg = "Payment Status Failed !!"
-                            self.clearCart()
+                        let status = responseDict["status"] as? String
+                        if status == "sucess" {
+                            self.msg = "Your Order has been placed successfully."
                         }else{
-                            self.msg =  "Your Order has been placed successfully."
+                            self.msg =  "Payment Status Failed !!"
+                            
                         }
+                        self.clearCart()
                     }else{
-                        if responseDict["responseDict"] as! String == "1" {
-                            self.msg = "Payment Status Failed !!"
+                        let status = responseDict["status"] as? String
+                        if status == "sucess" {
+                            self.msg = "Your Order has been placed successfully."
+                                
                         }else{
-                            self.msg =  "Your Order has been placed successfully."
+                            self.msg =  "Payment Status Failed !!"
                         }
                     }
                 }
@@ -67,6 +71,7 @@ class TransactionSuccessViewController: BaseViewController {
             case .failure(let error):
                 print(error)
                 self.hideHUD()
+                self.msg =  "Payment Status Failed !!"
                 if self.screen == "cart" {
                     self.clearCart()
                 }
@@ -118,8 +123,7 @@ extension TransactionSuccessViewController : UITableViewDelegate, UITableViewDat
             cell?.updateProfileBtn.addTarget(self, action: #selector(redirectToHome), for: .touchUpInside)
             
             cell?.trackOrderBtn.addTarget(self, action: #selector(redirectToHome), for: .touchUpInside)
-            
-            
+
             
             return cell!
         }

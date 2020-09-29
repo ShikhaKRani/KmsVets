@@ -12,11 +12,11 @@ import UIKit
 struct SegmentioBuilder {
     
     static func setupBadgeCountForIndex(_ segmentioView: Segmentio, index: Int) {
-        segmentioView.addBadge(
-            at: index,
-            count: 10,
-            color: .clear
-        )
+//        segmentioView.addBadge(
+//            at: index,
+//            count: 10,
+//            color: .clear
+//        )
     }
     
     static func buildSegmentioView(segmentioView: Segmentio, titleArray : [String], segmentioStyle: SegmentioStyle, segmentioPosition: SegmentioPosition = .dynamic) {

@@ -20,6 +20,8 @@
 		BF1D97F3250F8D5900446CA8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D97F2250F8D5900446CA8 /* Constant.swift */; };
 		BF1D97F7250F9EFA00446CA8 /* MyChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D97F6250F9EFA00446CA8 /* MyChartViewController.swift */; };
 		BF27A1E5251337E500F4AA65 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF27A1E4251337E500F4AA65 /* ProfileViewController.swift */; };
+		BF2D594B252355C800AE0B2E /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D594A252355C800AE0B2E /* ProductDetailViewController.swift */; };
+		BF2D594E25235FD900AE0B2E /* ProductDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D594D25235FD900AE0B2E /* ProductDetailsModel.swift */; };
 		BF2D8F7C251B8B3100641058 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D8F7B251B8B3100641058 /* AboutUsViewController.swift */; };
 		BF2D8F7F251B9D9D00641058 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D8F7E251B9D9D00641058 /* SuggestionViewController.swift */; };
 		BF2D8F82251B9DBB00641058 /* SuggestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D8F81251B9DBB00641058 /* SuggestionTableViewCell.swift */; };
@@ -98,6 +100,8 @@
 		BF1D97F2250F8D5900446CA8 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		BF1D97F6250F9EFA00446CA8 /* MyChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChartViewController.swift; sourceTree = "<group>"; };
 		BF27A1E4251337E500F4AA65 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BF2D594A252355C800AE0B2E /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		BF2D594D25235FD900AE0B2E /* ProductDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsModel.swift; sourceTree = "<group>"; };
 		BF2D8F7B251B8B3100641058 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		BF2D8F7E251B9D9D00641058 /* SuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
 		BF2D8F81251B9DBB00641058 /* SuggestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionTableViewCell.swift; sourceTree = "<group>"; };
@@ -283,6 +287,7 @@
 			children = (
 				BF3619582520F5C80013709C /* ProductInfo.swift */,
 				BFE67A6F2521AAF50024FAA9 /* CartModel.swift */,
+				BF2D594D25235FD900AE0B2E /* ProductDetailsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +314,7 @@
 				BFF3561625223EB6003C9E07 /* ConfirmAddressViewController.swift */,
 				BFF3562B25224F0D003C9E07 /* PlaceOrderViewController.swift */,
 				BF2E139C252310B6009DB671 /* SearchProductViewController.swift */,
+				BF2D594A252355C800AE0B2E /* ProductDetailViewController.swift */,
 			);
 			path = "Page Controller";
 			sourceTree = "<group>";
@@ -627,6 +633,7 @@
 				BF786711250CEF8900D8D17E /* LoginViewController.swift in Sources */,
 				BF17C21F25188F130000D5C3 /* BookingForSurgeryViewController.swift in Sources */,
 				BF6C450A251E521400D85E58 /* SegmentioBuilder.swift in Sources */,
+				BF2D594E25235FD900AE0B2E /* ProductDetailsModel.swift in Sources */,
 				BF3619592520F5C80013709C /* ProductInfo.swift in Sources */,
 				BFE67A702521AAF50024FAA9 /* CartModel.swift in Sources */,
 				BF2E139D252310B6009DB671 /* SearchProductViewController.swift in Sources */,
@@ -641,6 +648,7 @@
 				BF6C4506251E510200D85E58 /* ProductContainerViewController.swift in Sources */,
 				BF2EA0F5251F81E700BAB963 /* PaymentViewController.swift in Sources */,
 				BF8D0D1F2514C05300373096 /* NewPuppyHistoryViewController.swift in Sources */,
+				BF2D594B252355C800AE0B2E /* ProductDetailViewController.swift in Sources */,
 				BF17C2212518944E0000D5C3 /* BookinfForSurgeryTableViewCell.swift in Sources */,
 				BF1D97F7250F9EFA00446CA8 /* MyChartViewController.swift in Sources */,
 				BF556926251A08D600C3E4BA /* BookingSurgeryHistoryViewController.swift in Sources */,

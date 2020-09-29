@@ -17,7 +17,7 @@ class SearchProductViewController: BaseViewController,UITextFieldDelegate {
     @IBOutlet weak var searchTableView: UITableView!
     @IBOutlet weak var crossBtn: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
-    var latestProductArray = [[String: Any]]()
+    var latestProductArray = [ProductInfo]()
 
     
     override func viewDidLoad() {
@@ -73,7 +73,8 @@ class SearchProductViewController: BaseViewController,UITextFieldDelegate {
             if let res = response as? [[String : Any]] {
                 self.latestProductArray.removeAll()
                 for items in res {
-                    self.latestProductArray.append(items)
+                    let model = ProductInfo(dict: items)
+                    self.latestProductArray.append(model)
                 }
                 
                 DispatchQueue.main.async { () -> Void in
@@ -97,14 +98,24 @@ extension SearchProductViewController : UITableViewDelegate,UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.searchTableView.dequeueReusableCell(withIdentifier: "SearchCell") as? SearchCell
-        let dict = latestProductArray[indexPath.row]
+        let model = latestProductArray[indexPath.row]
         
-        cell?.titleLbl.text = dict["title"] as? String
+        cell?.titleLbl.text = model.title
         cell?.selectionStyle = .none
 
         return cell!
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let storyBoard = UIStoryboard.init(name: "ProductHome", bundle: nil)
+        if let detailVC = storyBoard.instantiateViewController(withIdentifier: "ProductDetailViewController") as? ProductDetailViewController {
+            let model = latestProductArray[indexPath.row]
+            detailVC.productInfo = model
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        }
+    }
     
     
 }
