@@ -113,13 +113,11 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
             break
         case "My Order":
             
-            //            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProfileVc") as! ProfileVc
-            //            //        navigationController?.pushViewController(vc, animated: true)
-            //            //        self.present(vc, animated: true, completion: nil)
-            //            self.navigationController?.pushViewController(vc, animated: true)
-            
-            
-            
+            //OrderViewController
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+            if let orderVC = storyBoard.instantiateViewController(withIdentifier: "OrderViewController") as? OrderViewController {
+                self.navigationController?.pushViewController(orderVC, animated: true)
+            }
             
             break
             

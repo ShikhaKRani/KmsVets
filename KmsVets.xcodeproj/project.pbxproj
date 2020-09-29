@@ -22,6 +22,8 @@
 		BF27A1E5251337E500F4AA65 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF27A1E4251337E500F4AA65 /* ProfileViewController.swift */; };
 		BF2D594B252355C800AE0B2E /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D594A252355C800AE0B2E /* ProductDetailViewController.swift */; };
 		BF2D594E25235FD900AE0B2E /* ProductDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D594D25235FD900AE0B2E /* ProductDetailsModel.swift */; };
+		BF2D595125237A3400AE0B2E /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D595025237A3400AE0B2E /* OrderViewController.swift */; };
+		BF2D59542523819200AE0B2E /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D59532523819200AE0B2E /* OrderModel.swift */; };
 		BF2D8F7C251B8B3100641058 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D8F7B251B8B3100641058 /* AboutUsViewController.swift */; };
 		BF2D8F7F251B9D9D00641058 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D8F7E251B9D9D00641058 /* SuggestionViewController.swift */; };
 		BF2D8F82251B9DBB00641058 /* SuggestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D8F81251B9DBB00641058 /* SuggestionTableViewCell.swift */; };
@@ -102,6 +104,8 @@
 		BF27A1E4251337E500F4AA65 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BF2D594A252355C800AE0B2E /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		BF2D594D25235FD900AE0B2E /* ProductDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsModel.swift; sourceTree = "<group>"; };
+		BF2D595025237A3400AE0B2E /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		BF2D59532523819200AE0B2E /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		BF2D8F7B251B8B3100641058 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		BF2D8F7E251B9D9D00641058 /* SuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
 		BF2D8F81251B9DBB00641058 /* SuggestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionTableViewCell.swift; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 				BF6C44A9251DC33700D85E58 /* AskingQuestionViewController.swift */,
 				BF6C44B3251E367C00D85E58 /* ServicesListViewController.swift */,
 				BF36194D2520B72F0013709C /* ServiceDetailViewController.swift */,
+				BF2D595025237A3400AE0B2E /* OrderViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 				BF3619582520F5C80013709C /* ProductInfo.swift */,
 				BFE67A6F2521AAF50024FAA9 /* CartModel.swift */,
 				BF2D594D25235FD900AE0B2E /* ProductDetailsModel.swift */,
+				BF2D59532523819200AE0B2E /* OrderModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -658,11 +664,13 @@
 				BF2D8F82251B9DBB00641058 /* SuggestionTableViewCell.swift in Sources */,
 				BF02B53A2511EF1A0076B05E /* BannerCollCell.swift in Sources */,
 				BF527170250E1F1900BD60D2 /* GetOTPViewController.swift in Sources */,
+				BF2D59542523819200AE0B2E /* OrderModel.swift in Sources */,
 				BF2EA12C251FB7A400BAB963 /* PayUServiceHelper.m in Sources */,
 				BF6C44A6251CCFAB00D85E58 /* CancellationCell.swift in Sources */,
 				BF32E9512514B34200E154D3 /* BookingNewPuppyViewController.swift in Sources */,
 				BF3619552520BCE90013709C /* ServiceDetailTableViewCell.swift in Sources */,
 				BF6C44AA251DC33700D85E58 /* AskingQuestionViewController.swift in Sources */,
+				BF2D595125237A3400AE0B2E /* OrderViewController.swift in Sources */,
 				BF6C44E3251E4CD700D85E58 /* EmbedContainerViewController.swift in Sources */,
 				BFBA3505250CEC13004C37C2 /* HomeViewController.swift in Sources */,
 				BF27A1E5251337E500F4AA65 /* ProfileViewController.swift in Sources */,

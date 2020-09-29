@@ -47,6 +47,7 @@ struct APIUrl {
     static let PAYMENT_STATUS    = "http://wisdompetclinic.xyz/index.php?component=json&action=check_payment_status"
 
     static let GET_PRODUCT_DETAILS    = "http://wisdompetclinic.xyz/index.php?component=json&action=get_product_detail"
+    static let GET_ORDER    = "http://wisdompetclinic.xyz/index.php?component=json&action=get_order"
 
     
     
