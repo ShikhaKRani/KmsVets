@@ -67,7 +67,7 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         
         let imgcell:SideMenuImgCell! = tableView.dequeueReusableCell(withIdentifier: "SideMenuImgCell") as? SideMenuImgCell
-        
+        imgcell.selectionStyle  = .none
         
         if indexPath.section == 0 {
             //            imgcell.imageView?.image = UIImage(named: "")
@@ -79,6 +79,7 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
             let cellDict = dataArr[indexPath.row] as Dictionary<String,AnyObject>
             cell.cellIcon.image = UIImage.init(named: cellDict["image"] as? String ?? "")
             cell.cellTitleLbl.text = cellDict["title"] as? String ?? ""
+            cell.selectionStyle  = .none
             return cell
             
         }

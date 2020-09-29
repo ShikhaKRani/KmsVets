@@ -254,6 +254,11 @@ class ProductCartViewController: BaseViewController {
                 print(res)
                 self.hideHUD()
                 self.cartItemsArray = []
+                self.totalLbl.text = "Total Price: \(StringConstant.RuppeeSymbol)\("0")"
+                self.deliveryChargeLbl.text = "Delivery Charge: \(StringConstant.RuppeeSymbol)\("0")"
+                self.grandTotalLbl.text = "Grand Total: \(StringConstant.RuppeeSymbol)\("0")"
+
+                
                 DispatchQueue.main.async { () -> Void in
                     self.cartTableView.reloadData()
                     self.bgImgView.isHidden = false

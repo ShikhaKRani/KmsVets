@@ -59,6 +59,8 @@ class ProductHomeViewController: BaseViewController {
         let button2 = UIButton(type: .custom)
         button2.setImage(UIImage(named: "search"), for: .normal)
         button2.frame = CGRect(x: 0.0, y: 0.0, width: 25, height: 25)
+        button2.addTarget(self, action: #selector(redirectToSearchScreen), for: .touchUpInside)
+
         let barButtonItemright = UIBarButtonItem(customView: button2)
 
         let space2 = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
@@ -71,6 +73,7 @@ class ProductHomeViewController: BaseViewController {
     @objc func backAction() {
         self.navigationController?.popToRootViewController(animated: false)
     }
+    
     
     @objc func rightBarButtonAction() {
         
@@ -94,6 +97,24 @@ class ProductHomeViewController: BaseViewController {
     }
     
     
+    @objc func redirectToCart() {
+        
+        let storyBoard = UIStoryboard.init(name: "ProductHome", bundle: nil)
+        if let cartVC = storyBoard.instantiateViewController(withIdentifier: "ProductCartViewController") as? ProductCartViewController {
+            
+            self.navigationController?.pushViewController(cartVC, animated: true)
+        }
+    }
+    
+    @objc func redirectToSearchScreen() {
+        
+        let storyBoard = UIStoryboard.init(name: "ProductHome", bundle: nil)
+        if let searchVC = storyBoard.instantiateViewController(withIdentifier: "SearchProductViewController") as? SearchProductViewController {
+            self.navigationController?.pushViewController(searchVC, animated: true)
+        }
+    }
+    
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         return true
     }
@@ -108,14 +129,6 @@ class ProductHomeViewController: BaseViewController {
 
 extension ProductHomeViewController {
    
-    @objc func redirectToCart() {
-        
-        let storyBoard = UIStoryboard.init(name: "ProductHome", bundle: nil)
-        if let cartVC = storyBoard.instantiateViewController(withIdentifier: "ProductCartViewController") as? ProductCartViewController {
-            
-            self.navigationController?.pushViewController(cartVC, animated: true)
-        }
-    }
     
     @objc func methodOfReceivedNotification(notification: Notification) {        
         self.getCartDetails()

@@ -57,13 +57,18 @@ class HomeViewController: BaseViewController {
         let barButtonItem = UIBarButtonItem(customView: button)
 
         let button2 = UIButton(type: .custom)
-        button2.setImage(UIImage(named: "home22"), for: .normal)
+        button2.setImage(UIImage(named: "search"), for: .normal)
         button2.frame = CGRect(x: 0.0, y: 0.0, width: 25, height: 25)
-        let barButtonItem2 = UIBarButtonItem(customView: button2)
+        button2.addTarget(self, action: #selector(redirectToSearchScreen), for: .touchUpInside)
 
-        let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        space.width = 20
-        self.navigationItem.rightBarButtonItems = [barButtonItem,space]
+        let barButtonItemright = UIBarButtonItem(customView: button2)
+
+        let space2 = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        space2.width = 20
+        self.navigationItem.rightBarButtonItems = [barButtonItem,space2,barButtonItemright]
+        
+        
+        
    
     }
     
@@ -73,6 +78,14 @@ class HomeViewController: BaseViewController {
         if let cartVC = storyBoard.instantiateViewController(withIdentifier: "ProductCartViewController") as? ProductCartViewController {
             
             self.navigationController?.pushViewController(cartVC, animated: true)
+        }
+    }
+    
+    @objc func redirectToSearchScreen() {
+        
+        let storyBoard = UIStoryboard.init(name: "ProductHome", bundle: nil)
+        if let searchVC = storyBoard.instantiateViewController(withIdentifier: "SearchProductViewController") as? SearchProductViewController {
+            self.navigationController?.pushViewController(searchVC, animated: true)
         }
     }
     
