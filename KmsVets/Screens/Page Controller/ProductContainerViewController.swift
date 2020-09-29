@@ -108,7 +108,7 @@ class ProductContainerViewController: BaseViewController {
         
         var data = [[String: Any]]()
         
-        print(appDelegate.latestProductArray)
+        print(appDelegate.latestProductArray.count)
         
         for items in appDelegate.latestProductArray {
             if items["category_id"] as! String == categoryId {

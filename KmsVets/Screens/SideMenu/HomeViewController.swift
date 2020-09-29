@@ -100,6 +100,7 @@ class HomeViewController: BaseViewController {
         super.viewWillAppear(animated)
         self.setTitleForNavigation(title: "KMS Vets", isHidden: false)
         self.getCategory()
+        self.getProductList(categoryId:" ")
     }
     
     func fetchBannerImageFromServer() {
@@ -141,10 +142,8 @@ class HomeViewController: BaseViewController {
                 
                 self.latestProductArray.removeAll()
                 for info in self.catgoryData {
-                    self.getProductList(categoryId: info["id"] as? String)
                     self.productTitleArray.append(info["name"] as? String ?? "")
                 }
-                
                 DispatchQueue.main.async { () -> Void in
                 self.homeshopcategoryTblVw.reloadData()
                 }
@@ -157,7 +156,8 @@ class HomeViewController: BaseViewController {
     func getProductList(categoryId : String?) {
         
         self.showHud("")
-        ServiceClient.sendRequest(apiUrl: APIUrl.PRODUCT_CATEGORY_LIST,postdatadictionary: ["userId" : UserDefaults.standard.string(forKey: "id") ?? "", "id" : categoryId ?? ""], isArray: true) { (response) in
+        //"id"
+        ServiceClient.sendRequest(apiUrl: APIUrl.PRODUCT_CATEGORY_LIST,postdatadictionary: ["userId" : UserDefaults.standard.string(forKey: "id") ?? "", "search" : categoryId ?? ""], isArray: true) { (response) in
             
             print(response)
             if let res = response as? [[String : Any]] {
