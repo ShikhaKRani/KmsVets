@@ -150,15 +150,19 @@ class HomeViewController: BaseViewController {
         ServiceClient.sendRequest(apiUrl: APIUrl.GET_CATEGORY,postdatadictionary: ["" : ""], isArray: false) { (response) in
 
             if let res = response as? [String : Any] {
+                self.catgoryData = []
                 self.catgoryData = res["data"] as? [[String: Any]] ?? [[:]]
                 print(self.catgoryData)
                 
                 self.latestProductArray.removeAll()
+                self.productTitleArray.removeAll()
                 for info in self.catgoryData {
                     self.productTitleArray.append(info["name"] as? String ?? "")
                 }
                 DispatchQueue.main.async { () -> Void in
-                self.homeshopcategoryTblVw.reloadData()
+                    self.homeshopcategoryTblVw.reloadData()
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.catgoryData = self.catgoryData
                 }
                 self.hideHUD()
             }
@@ -182,10 +186,11 @@ class HomeViewController: BaseViewController {
                 
                 DispatchQueue.main.async { () -> Void in
                     print(self.latestProductArray)
-
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                appDelegate.latestProductArray = self.latestProductArray
+                    
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.latestProductArray = self.latestProductArray
                     appDelegate.contentSliderArray  = self.productTitleArray
+                    
                 }
                 
                 self.hideHUD()

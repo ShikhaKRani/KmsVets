@@ -19,9 +19,8 @@ class ProductContainerViewController: BaseViewController {
     @IBOutlet private var containerView: UIView!
     @IBOutlet private var scrollView: UIScrollView!
     
-    var catgoryData : [[String: Any]] = [[:]]
+    var catgoryData = [[String: Any]]()
     var controllerArray : [UIViewController] = []
-    var latestProductArray : [[String: Any]] = [[:]]
     var indexSelected = 0
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
@@ -41,7 +40,17 @@ class ProductContainerViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.getCategory()
+//        self.getCategory()
+        
+        
+        if appDelegate.catgoryData.count > 0 {
+            self.catgoryData = []
+            self.catgoryData = appDelegate.catgoryData
+            DispatchQueue.main.async { () -> Void in
+                self.setUpController()
+            }
+        }
+        
         
         switch segmentioStyle {
         case .onlyLabel, .imageBeforeLabel, .imageAfterLabel:
@@ -163,23 +172,3 @@ extension ProductContainerViewController: UIScrollViewDelegate {
     }
 }
 
-
-//MARK:-API calls
-extension ProductContainerViewController  {
-    
-    func getCategory() {
-        
-        self.showHud("Fetching Category")
-        ServiceClient.sendRequest(apiUrl: APIUrl.GET_CATEGORY,postdatadictionary: ["" : ""], isArray: false) { (response) in
-
-            if let res = response as? [String : Any] {
-                self.catgoryData = res["data"] as? [[String: Any]] ?? [[:]]
-                print(self.catgoryData)
-                DispatchQueue.main.async { () -> Void in
-                    self.setUpController()
-                }
-                self.hideHUD()
-            }
-       }
-    }
-}
