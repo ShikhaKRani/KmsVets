@@ -12,7 +12,8 @@ class ProdcutListViewController: BaseViewController {
     
     
     @IBOutlet weak var itemTableView: UITableView!
-    
+    @IBOutlet weak var bgImg: UIImageView!
+
     var categoryDict : [String : Any]?
     var productItemArray : [[String: Any]]?
     
@@ -44,11 +45,14 @@ class ProdcutListViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        bgImg.isHidden = false
         if let array = productItemArray {
             productItemArray = array
             
             productModelArray.removeAll()
             for item in array {
+                bgImg.isHidden = true
                 let model = ProductInfo(dict: item)
                 productModelArray.append(model)
             }

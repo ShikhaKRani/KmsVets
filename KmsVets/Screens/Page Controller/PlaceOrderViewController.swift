@@ -46,40 +46,7 @@ class PlaceOrderViewController: BaseViewController {
     
     
     @objc func updateBtnAtion() {
-           
-        /*
-         
-         person_name:alam
-         email:badre.alam1993@gmail.com
-         mobile:9873801962
-         address:noida seed
-         zipcode:110025
-         city:noida
-         totalitem:4
-         totalprice:30000
-         order_date:2020-04-11
-         user_id:61
-         cod:0
-         delivery_time:Morning
-         promoPrice:0
-         delivery_date:2020-04-11
-         delivery_charge:25
-         delivery_instant:0
-         apply_coupon:0
-         order_item[0]:9
-         order_item_type[0]:kg
-         order_item_gmqty[0]:1
-         order_item_qty[0]:2
-         order_item_price[0]:200
-         order_discount_id[0]:1
-         order_item[1]:5
-         order_item_type[1]:g
-         order_item_gmqty[1]:50
-         order_item_qty[1]:1
-         order_item_price[1]:300
-         order_discount_id[1]:2
-         **/
-        
+       
         let itemModelArray : [CartModel] = self.cartItemsArray ?? []
         var params: [String: Any] = [
             "person_name" : fullnameStr,
@@ -155,7 +122,7 @@ class PlaceOrderViewController: BaseViewController {
             paymentVC.order_id = self.order_id
             paymentVC.totalPriceAmount = "\(totalAmount ?? 0)"
             
-            paymentVC.screen = "CartScreen"
+            paymentVC.screen = "cart"
             self.navigationController?.pushViewController(paymentVC, animated: true)
         }
         

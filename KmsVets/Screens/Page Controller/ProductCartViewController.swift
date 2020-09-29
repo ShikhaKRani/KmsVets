@@ -48,14 +48,19 @@ class ProductCartViewController: BaseViewController {
     
     @objc func redirectToNextScreen() {
 
-        let storyBoard = UIStoryboard.init(name: "ProductHome", bundle: nil)
-        if let addressVc = storyBoard.instantiateViewController(withIdentifier: "ConfirmAddressViewController") as? ConfirmAddressViewController {
-            
-            addressVc.cartItemsArray = self.cartItemsArray
-            addressVc.totalAmount = self.totalPrice
+        if self.cartItemsArray.count > 0 {
+            let storyBoard = UIStoryboard.init(name: "ProductHome", bundle: nil)
+            if let addressVc = storyBoard.instantiateViewController(withIdentifier: "ConfirmAddressViewController") as? ConfirmAddressViewController {
+                
+                addressVc.cartItemsArray = self.cartItemsArray
+                addressVc.totalAmount = self.totalPrice
 
-            self.navigationController?.pushViewController(addressVc, animated: true)
+                self.navigationController?.pushViewController(addressVc, animated: true)
+            }
+        }else{
+            self.displayAlertView(alertType: "Alert", message: "Your Cart is empty. Please add items in your cart.")
         }
+        
     }
     
     @objc func backAction() {

@@ -116,10 +116,6 @@ class HomeViewController: BaseViewController {
                     print(responseDict)
                     self.bannerData = responseDict["data"] as! [[String : Any]]
                     self.pageControl.numberOfPages = self.bannerData.count
-                    
-//                    self.imgCollectionView.reloadData()
-//                    self.imgCollectionView.startScrolling()
-                    
                     self.scrollReload()
                 }
                 

@@ -28,11 +28,71 @@ class ProductHomeViewController: BaseViewController {
         self.title = "Products"
         
         self.getCartDetails()
+        self.setUpNav()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.methodOfReceivedNotification(notification:)), name: Notification.Name("NotificationHomeIdentifier"), object: nil)
 
         self.viewCartButton.addTarget(self, action: #selector(redirectToCart), for: .touchUpInside)
     }
+    
+    
+    func setUpNav() {
+        
+        let homebutton = UIButton(type: .custom)
+        homebutton.setImage(UIImage(named: "home22"), for: .normal)
+        homebutton.frame = CGRect(x: 0.0, y: 0.0, width: 25, height: 25)
+        homebutton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+        let barButtonItem2 = UIBarButtonItem(customView: homebutton)
+
+        let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        space.width = 20
+        self.navigationItem.leftBarButtonItems = [barButtonItem2,space]
+
+        
+        //right nav
+        let button = UIButton(type: .custom)
+        button.setBackgroundImage(UIImage(named: "cart22"), for: .normal)
+        button.frame = CGRect(x: 0.0, y: 0.0, width: 25, height: 25)
+        button.addTarget(self, action: #selector(redirectToCart), for: .touchUpInside)
+        let barButtonItem = UIBarButtonItem(customView: button)
+
+        let button2 = UIButton(type: .custom)
+        button2.setImage(UIImage(named: "search"), for: .normal)
+        button2.frame = CGRect(x: 0.0, y: 0.0, width: 25, height: 25)
+        let barButtonItemright = UIBarButtonItem(customView: button2)
+
+        let space2 = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        space2.width = 20
+        self.navigationItem.rightBarButtonItems = [barButtonItem,space2,barButtonItemright]
+   
+    }
+    
+    
+    @objc func backAction() {
+        self.navigationController?.popToRootViewController(animated: false)
+    }
+    
+    @objc func rightBarButtonAction() {
+        
+        self.openAlert(title: "Alert",
+                       message: "Are you sure you want to remove items from Cart?",
+                       alertStyle: .alert,
+                       actionTitles: ["Okay", "Cancel"],
+                       actionStyles: [.default, .cancel],
+                       actions: [
+                        {_ in
+                            print("okay click")
+                            
+                            
+                            
+                        },
+                        {_ in
+                            print("cancel click")
+                        }
+                       ])
+        
+    }
+    
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         return true
@@ -47,6 +107,7 @@ class ProductHomeViewController: BaseViewController {
 }
 
 extension ProductHomeViewController {
+   
     @objc func redirectToCart() {
         
         let storyBoard = UIStoryboard.init(name: "ProductHome", bundle: nil)

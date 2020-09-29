@@ -44,7 +44,10 @@ struct APIUrl {
     static let DELET_ALL_CART  = "\(BaseUrl.BASE)/index.php?component=json&action=delete_cart"
     static let BOOK_SERVICE  = "http://wisdompetclinic.xyz/visitapi/index.php/book_service"
     static let BOOK_ORDER    = "http://wisdompetclinic.xyz/index.php?component=json&action=add_order"
+    static let PAYMENT_STATUS    = "http://wisdompetclinic.xyz/index.php?component=json&action=check_payment_status"
 
+    
+    
     
 }
 

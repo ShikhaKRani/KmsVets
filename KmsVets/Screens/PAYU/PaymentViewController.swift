@@ -107,14 +107,12 @@ class PaymentViewController: BaseViewController, WKUIDelegate,WKNavigationDelega
     //MARK:- Extra
     func redirectToPaymentSuccessScreen() {
         //todo
-        if screen == "asking" {
             let storyBoard = UIStoryboard.init(name: "Payment", bundle: nil)
             if let successVc = storyBoard.instantiateViewController(withIdentifier: "TransactionSuccessViewController") as? TransactionSuccessViewController {
                 successVc.order_id = order_id
                 successVc.screen = screen
                 self.navigationController?.pushViewController(successVc, animated: true)
             }
-        }
     }
     
     
