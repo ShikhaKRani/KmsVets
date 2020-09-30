@@ -41,6 +41,11 @@
 		BF36194E2520B72F0013709C /* ServiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF36194D2520B72F0013709C /* ServiceDetailViewController.swift */; };
 		BF3619552520BCE90013709C /* ServiceDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3619542520BCE90013709C /* ServiceDetailTableViewCell.swift */; };
 		BF3619592520F5C80013709C /* ProductInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3619582520F5C80013709C /* ProductInfo.swift */; };
+		BF371E0725245A5500B6D018 /* BookServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF371E0625245A5500B6D018 /* BookServiceViewController.swift */; };
+		BF371E0A2524713600B6D018 /* BookServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF371E092524713600B6D018 /* BookServiceTableViewCell.swift */; };
+		BF371E0D2524BAB800B6D018 /* ServicePlaceOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF371E0C2524BAB800B6D018 /* ServicePlaceOrderViewController.swift */; };
+		BF371E232524E95B00B6D018 /* MyCalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF371E212524E95A00B6D018 /* MyCalenderViewController.swift */; };
+		BF371E242524E95B00B6D018 /* MyCalenderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF371E222524E95A00B6D018 /* MyCalenderViewController.xib */; };
 		BF42BC8E2515D8730064F0C9 /* down-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = BF42BC8D2515D8730064F0C9 /* down-arrow.png */; };
 		BF42BC902515E9430064F0C9 /* ServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF42BC8F2515E9430064F0C9 /* ServiceClient.swift */; };
 		BF527170250E1F1900BD60D2 /* GetOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52716F250E1F1900BD60D2 /* GetOTPViewController.swift */; };
@@ -125,6 +130,11 @@
 		BF36194D2520B72F0013709C /* ServiceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailViewController.swift; sourceTree = "<group>"; };
 		BF3619542520BCE90013709C /* ServiceDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailTableViewCell.swift; sourceTree = "<group>"; };
 		BF3619582520F5C80013709C /* ProductInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfo.swift; sourceTree = "<group>"; };
+		BF371E0625245A5500B6D018 /* BookServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookServiceViewController.swift; sourceTree = "<group>"; };
+		BF371E092524713600B6D018 /* BookServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookServiceTableViewCell.swift; sourceTree = "<group>"; };
+		BF371E0C2524BAB800B6D018 /* ServicePlaceOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicePlaceOrderViewController.swift; sourceTree = "<group>"; };
+		BF371E212524E95A00B6D018 /* MyCalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCalenderViewController.swift; sourceTree = "<group>"; };
+		BF371E222524E95A00B6D018 /* MyCalenderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCalenderViewController.xib; sourceTree = "<group>"; };
 		BF42BC8D2515D8730064F0C9 /* down-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down-arrow.png"; sourceTree = "<group>"; };
 		BF42BC8F2515E9430064F0C9 /* ServiceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceClient.swift; sourceTree = "<group>"; };
 		BF52716F250E1F1900BD60D2 /* GetOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOTPViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +246,8 @@
 				BF6C44B3251E367C00D85E58 /* ServicesListViewController.swift */,
 				BF36194D2520B72F0013709C /* ServiceDetailViewController.swift */,
 				BF2D595025237A3400AE0B2E /* OrderViewController.swift */,
+				BF371E0625245A5500B6D018 /* BookServiceViewController.swift */,
+				BF371E0C2524BAB800B6D018 /* ServicePlaceOrderViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -273,6 +285,7 @@
 				BF16BF79251F513500D6BE6F /* ServiceListTableViewCell.swift */,
 				BF3619542520BCE90013709C /* ServiceDetailTableViewCell.swift */,
 				BFE67A722521B66D0024FAA9 /* ProductItemCell.swift */,
+				BF371E092524713600B6D018 /* BookServiceTableViewCell.swift */,
 			);
 			path = CELL;
 			sourceTree = "<group>";
@@ -388,6 +401,8 @@
 				BF6C44D9251E48F800D85E58 /* Page Controller */,
 				BF02B5352511E61E0076B05E /* SideMenu */,
 				BF1D97EE250F8BA200446CA8 /* CELL */,
+				BF371E212524E95A00B6D018 /* MyCalenderViewController.swift */,
+				BF371E222524E95A00B6D018 /* MyCalenderViewController.xib */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -567,6 +582,7 @@
 				BFBA34F8250CE909004C37C2 /* Assets.xcassets in Resources */,
 				BFBA34F6250CE908004C37C2 /* Main.storyboard in Resources */,
 				BF786716250CF6C100D8D17E /* medicine.jpeg in Resources */,
+				BF371E242524E95B00B6D018 /* MyCalenderViewController.xib in Resources */,
 				BF2E139A252308D2009DB671 /* no_data_found.png in Resources */,
 				BF2EA0F2251F816900BAB963 /* Payment.storyboard in Resources */,
 				BF2E139425230634009DB671 /* empty_cart.png in Resources */,
@@ -640,6 +656,7 @@
 				BF17C21F25188F130000D5C3 /* BookingForSurgeryViewController.swift in Sources */,
 				BF6C450A251E521400D85E58 /* SegmentioBuilder.swift in Sources */,
 				BF2D594E25235FD900AE0B2E /* ProductDetailsModel.swift in Sources */,
+				BF371E0A2524713600B6D018 /* BookServiceTableViewCell.swift in Sources */,
 				BF3619592520F5C80013709C /* ProductInfo.swift in Sources */,
 				BFE67A702521AAF50024FAA9 /* CartModel.swift in Sources */,
 				BF2E139D252310B6009DB671 /* SearchProductViewController.swift in Sources */,
@@ -650,6 +667,7 @@
 				BF6C4494251C819D00D85E58 /* FAQViewController.swift in Sources */,
 				BFBA34F3250CE908004C37C2 /* BaseViewController.swift in Sources */,
 				BF42BC902515E9430064F0C9 /* ServiceClient.swift in Sources */,
+				BF371E0D2524BAB800B6D018 /* ServicePlaceOrderViewController.swift in Sources */,
 				BF6C4497251CBDC400D85E58 /* PrivacyPolicyViewController.swift in Sources */,
 				BF6C4506251E510200D85E58 /* ProductContainerViewController.swift in Sources */,
 				BF2EA0F5251F81E700BAB963 /* PaymentViewController.swift in Sources */,
@@ -671,6 +689,8 @@
 				BF3619552520BCE90013709C /* ServiceDetailTableViewCell.swift in Sources */,
 				BF6C44AA251DC33700D85E58 /* AskingQuestionViewController.swift in Sources */,
 				BF2D595125237A3400AE0B2E /* OrderViewController.swift in Sources */,
+				BF371E0725245A5500B6D018 /* BookServiceViewController.swift in Sources */,
+				BF371E232524E95B00B6D018 /* MyCalenderViewController.swift in Sources */,
 				BF6C44E3251E4CD700D85E58 /* EmbedContainerViewController.swift in Sources */,
 				BFBA3505250CEC13004C37C2 /* HomeViewController.swift in Sources */,
 				BF27A1E5251337E500F4AA65 /* ProfileViewController.swift in Sources */,

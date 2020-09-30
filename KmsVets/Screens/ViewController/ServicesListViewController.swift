@@ -46,7 +46,14 @@ class ServicesListViewController: BaseViewController {
        }
     }
     
-
+    @objc func booknowbuttonAction(){
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        if let bookServiceVC = storyBoard.instantiateViewController(withIdentifier: "BookServiceViewController") as? BookServiceViewController {
+            self.navigationController?.pushViewController(bookServiceVC, animated: true)
+        }
+        
+        
+    }
     
 
 }
@@ -66,8 +73,10 @@ extension ServicesListViewController : UITableViewDelegate, UITableViewDataSourc
         cell?.titleLabel.text = dict?["title"] as? String
         let urlString = dict?["image"] as? String
         cell?.titleImage.sd_setImage(with: URL(string: urlString ?? ""), placeholderImage: UIImage(named: "medicine.jpeg") ,options: .refreshCached, completed: nil)
-
         
+        
+
+        cell?.booknowButton.addTarget(self, action: #selector(booknowbuttonAction), for: .touchUpInside)
         
         cell?.selectionStyle = .none
         return cell!
