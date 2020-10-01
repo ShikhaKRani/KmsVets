@@ -10,6 +10,9 @@ import UIKit
 import SideMenu
 import Alamofire
 import SDWebImage
+import CoreLocation
+import MapKit
+
 
 class HomePageDogFoodCell: UITableViewCell {
     @IBOutlet var viewDog: UIView!
@@ -23,7 +26,7 @@ class HomePageServicesCell: UITableViewCell {
     @IBOutlet var serviceLabel: UILabel!
 }
 
-class HomeViewController: BaseViewController {
+class HomeViewController: BaseViewController , CLLocationManagerDelegate {
     
     @IBOutlet weak var collectionView: BJAutoScrollingCollectionView!
     @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
@@ -31,15 +34,23 @@ class HomeViewController: BaseViewController {
     @IBOutlet var homeshopcategoryTblVw: UITableView!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    var locationManager: CLLocationManager!
+
     var bannerData: [[String: Any]] = [[:]]
     var catgoryData = [[String: Any]]()
     var latestProductArray = [[String: Any]]()
     var productTitleArray = [String]()
-    private var timer = Timer()
+    
+    var latitude : Double?
+    var logitude : Double?
+    var fulladdressString : String = ""
 
+    
+    private var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.myLocation()
         self.setTitleForNavigation(title: "KMS Vets", isHidden: false)
         self.fetchBannerImageFromServer()
         self.pageControl.currentPage = 0
@@ -47,6 +58,95 @@ class HomeViewController: BaseViewController {
         initCollectionView()
         
     }
+    
+    func myLocation() {
+        if (CLLocationManager.locationServicesEnabled())
+        {
+            locationManager = CLLocationManager()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    // location Delegate
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        
+        let location = locations.last! as CLLocation
+        
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        
+        self.logitude = location.coordinate.longitude
+        self.latitude = location.coordinate.latitude
+
+        self.getAddressFromLatLon(pdblLatitude: "\(self.latitude ?? 0.0)", withLongitude: "\(self.logitude ?? 0.0)")
+        
+        
+//        self.map.setRegion(region, animated: true)
+    }
+    
+    
+    
+    func getAddressFromLatLon(pdblLatitude: String, withLongitude pdblLongitude: String) {
+        var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
+        let lat: Double = Double("\(pdblLatitude)")!
+        //21.228124
+        let lon: Double = Double("\(pdblLongitude)")!
+        //72.833770
+        let ceo: CLGeocoder = CLGeocoder()
+        center.latitude = lat
+        center.longitude = lon
+        
+        let loc: CLLocation = CLLocation(latitude:center.latitude, longitude: center.longitude)
+        
+        
+        ceo.reverseGeocodeLocation(loc, completionHandler:
+                                    {(placemarks, error) in
+                                        if (error != nil)
+                                        {
+                                            print("reverse geodcode fail: \(error!.localizedDescription)")
+                                        }
+                                        let pm = placemarks! as [CLPlacemark]
+                                        
+                                        if pm.count > 0 {
+                                            let pm = placemarks![0]
+                                            print(pm.country)
+                                            print(pm.locality)
+                                            print(pm.subLocality)
+                                            print(pm.thoroughfare)
+                                            print(pm.postalCode)
+                                            print(pm.subThoroughfare)
+                                            var addressString : String = ""
+                                            
+                                            if pm.subLocality != nil {
+                                                addressString = addressString + pm.subLocality! + ", "
+                                            }
+                                            if pm.thoroughfare != nil {
+                                                addressString = addressString + pm.thoroughfare! + ", "
+                                            }
+                                            if pm.locality != nil {
+                                                addressString = addressString + pm.locality! + ", "
+                                            }
+                                            if pm.country != nil {
+                                                addressString = addressString + pm.country! + ", "
+                                            }
+                                            if pm.postalCode != nil {
+                                                addressString = addressString + pm.postalCode! + " "
+                                            }
+                                            
+                                            
+                                            print(addressString)
+                                            self.fulladdressString = addressString
+                                            
+                                            self.title = self.fulladdressString
+                                        }
+                                    })
+        
+    }
+    
     
     func setUpNav() {
         
