@@ -12,11 +12,16 @@ import SideMenu
 class SideMenuTblCell: UITableViewCell {
     @IBOutlet var cellIcon: UIImageView!
     @IBOutlet var cellTitleLbl: UILabel!
+    
+    
 }
 
 
 class SideMenuImgCell: UITableViewCell {
     @IBOutlet var cellLargeIcon: UIImageView!
+    @IBOutlet var cellNameLbl: UILabel!
+    
+   // cellLargeIcon.image = UIImage(named: "medicine.jpeg")
 }
 
 
@@ -28,18 +33,18 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     
     var dataArr : Array<Dictionary<String,AnyObject>> = [
-        ["title":"My Profile" as AnyObject,"image": "home" as AnyObject]
-        ,["title":"My Order" as AnyObject,"image": "userprofile" as AnyObject]
-        ,["title":"My Service Order" as AnyObject,"image": "history" as AnyObject]
-        ,["title":"Booking for a new Puppy" as AnyObject,"image": "aboutus" as AnyObject]
-        ,["title":"New puppy history" as AnyObject,"image": "" as AnyObject]
-        ,["title":"Booking for a surgery" as AnyObject,"image": "faqs" as AnyObject]
-        ,["title":"Surgery History" as AnyObject,"image": "logout" as AnyObject]
-        ,["title":"Asking a Question" as AnyObject,"image": "logout" as AnyObject]
-        ,["title":"Question History" as AnyObject,"image": "logout" as AnyObject]
+        ["title":"My Profile" as AnyObject,"image": "profile" as AnyObject]
+        ,["title":"My Order" as AnyObject,"image": "myOrder" as AnyObject]
+        ,["title":"My Service Order" as AnyObject,"image": "serviceOrder" as AnyObject]
+        ,["title":"Booking for a new Puppy" as AnyObject,"image": "bookingForPuppy" as AnyObject]
+        ,["title":"New puppy history" as AnyObject,"image": "puppyhistory" as AnyObject]
+        ,["title":"Booking for a surgery" as AnyObject,"image": "bookingForSurgery" as AnyObject]
+        ,["title":"Surgery History" as AnyObject,"image": "surgeryHistory" as AnyObject]
+        ,["title":"Asking a Question" as AnyObject,"image": "askingQuestion" as AnyObject]
+        ,["title":"Question History" as AnyObject,"image": "questionHistory" as AnyObject]
         ,["title":"Contact Us" as AnyObject,"image": "phone" as AnyObject]
-        ,["title":"About Us" as AnyObject,"image": "logout" as AnyObject]
-        ,["title":"Suggestion/Complaint" as AnyObject,"image": "logout" as AnyObject]
+        ,["title":"About Us" as AnyObject,"image": "aboutus" as AnyObject]
+        ,["title":"Suggestion/Complaint" as AnyObject,"image": "complaint" as AnyObject]
         ,["title":"Logout" as AnyObject,"image": "logout" as AnyObject]]
     
     
@@ -55,7 +60,10 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        
         if section == 0 {
+            
+            
             return 1
         }
         
@@ -71,6 +79,19 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         if indexPath.section == 0 {
             //            imgcell.imageView?.image = UIImage(named: "")
+            
+            
+            imgcell.cellLargeIcon.layer.cornerRadius = (imgcell.cellLargeIcon?.frame.size.width ?? 0.0) / 2
+            imgcell.cellLargeIcon.clipsToBounds = true
+            imgcell.layer.borderWidth = 3.0
+            imgcell.layer.borderColor = UIColor.white.cgColor
+            
+            
+            
+            
+            let name = "\(UserDefaults.standard.string(forKey: "name") ?? "")"
+            imgcell.cellNameLbl.text = name.capitalized
+            
         }
         
         else {
@@ -185,6 +206,13 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
             }
             break
             
+            
+        case "Question History":
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+            if let askquestionVC = storyBoard.instantiateViewController(withIdentifier: "QuestionHistoryViewController") as? QuestionHistoryViewController {
+                self.navigationController?.pushViewController(askquestionVC, animated: true)
+            }
+            break
             
         case "Logout":
             

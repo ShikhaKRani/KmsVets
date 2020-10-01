@@ -334,26 +334,35 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medicine.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="Bbr-o6-o3N">
-                                                    <rect key="frame" x="132" y="25" width="150" height="150"/>
+                                                    <rect key="frame" x="167" y="15" width="80" height="80"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="150" id="1Nk-Gr-1FG"/>
-                                                        <constraint firstAttribute="height" constant="150" id="d1B-qW-1v3"/>
+                                                        <constraint firstAttribute="width" constant="80" id="1Nk-Gr-1FG"/>
+                                                        <constraint firstAttribute="height" constant="80" id="d1B-qW-1v3"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqJ-L9-o36">
+                                                    <rect key="frame" x="186" y="115" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="Bbr-o6-o3N" firstAttribute="centerX" secondItem="aao-vt-EOl" secondAttribute="centerX" id="5N1-yl-NWY"/>
-                                                <constraint firstItem="Bbr-o6-o3N" firstAttribute="centerY" secondItem="aao-vt-EOl" secondAttribute="centerY" id="6r5-Qm-YPG"/>
+                                                <constraint firstItem="qqJ-L9-o36" firstAttribute="centerX" secondItem="aao-vt-EOl" secondAttribute="centerX" id="5qR-nP-nC3"/>
+                                                <constraint firstItem="Bbr-o6-o3N" firstAttribute="centerX" secondItem="aao-vt-EOl" secondAttribute="centerX" id="YEO-lE-dIm"/>
+                                                <constraint firstItem="qqJ-L9-o36" firstAttribute="top" secondItem="Bbr-o6-o3N" secondAttribute="bottom" constant="20" id="hdQ-Bk-QGU"/>
+                                                <constraint firstItem="Bbr-o6-o3N" firstAttribute="top" secondItem="aao-vt-EOl" secondAttribute="top" constant="15" id="oB3-vp-uRL"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="cellLargeIcon" destination="Bbr-o6-o3N" id="rLB-Bb-foL"/>
+                                            <outlet property="cellNameLbl" destination="qqJ-L9-o36" id="CN0-8x-90b"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

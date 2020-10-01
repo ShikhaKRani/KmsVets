@@ -11,11 +11,6 @@ import UIKit
 
 class OrderDetailCell : UITableViewCell {
     
-    @IBOutlet weak var orderStatusLbl: UILabel!
-    @IBOutlet weak var youPaidLbl: UILabel!
-    @IBOutlet weak var youSavedLbl: UILabel!
-    @IBOutlet weak var repeatOrderBtn: UIButton!
-    @IBOutlet weak var cancelOrderBtn: UIButton!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var unitlbl: UILabel!
     @IBOutlet weak var pricelbl: UILabel!
@@ -26,55 +21,92 @@ class OrderDetailCell : UITableViewCell {
 
 class OrderDetailViewController: BaseViewController {
 
+    @IBOutlet weak var orderStatusLbl: UILabel!
+    @IBOutlet weak var youPaidLbl: UILabel!
+    @IBOutlet weak var youSavedLbl: UILabel!
+    @IBOutlet weak var repeatOrderBtn: UIButton!
+    @IBOutlet weak var cancelOrderBtn: UIButton!
     @IBOutlet weak var tblView: UITableView!
+    
     var orderModel : OrderModel?
+    var itemArray = [[String: Any]]()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Order Details"
+        self.getOrders()
+        self.setUp()
 
     }
     
+    func setUp() {
+        self.tblView.tableFooterView = UIView()
+        
+        youPaidLbl.text = "\(StringConstant.RuppeeSymbol)\((orderModel?.total_price ?? ""))"
+        youSavedLbl.text = "\(StringConstant.RuppeeSymbol)\((orderModel?.discount ?? ""))"
+        if orderModel?.order_status == "0" {
+            cancelOrderBtn.isHidden = true
+        }
+        else{
+            cancelOrderBtn.isHidden = false
+        }
+        
+        orderStatusLbl.textColor = .lightGray
+        if orderModel?.order_status == "0" {
+            orderStatusLbl.text = "Order Pending"
+        }
+        else if orderModel?.order_status == "1" {
+            orderStatusLbl.text = "Order Confirmed"
+        }
+        else if orderModel?.order_status == "2" {
+            orderStatusLbl.text = "Order Cancelled"
+        }
+        else  if orderModel?.order_status == "3" {
+            orderStatusLbl.text = "Order Delivered"
+        }
+        else if orderModel?.order_status == "4" {
+            orderStatusLbl.text = "Order Completed"
+        }
+        cancelOrderBtn.addTarget(self, action: #selector(cancelOrders), for: .touchUpInside)
+        repeatOrderBtn.addTarget(self, action: #selector(repeatOrders), for: .touchUpInside)
+    }
     
-    //order_id
-//    func getOrders() {
-//        self.showHud("")
-//        //182
-//        ServiceClient.sendRequest(apiUrl: APIUrl.ORDER_DETAIL,postdatadictionary: ["order_id" : "102"], isArray: false) { (response) in
-//
-//            print(response)
-//            if let res = response as? [[String : Any]] {
-//                print(res)
-//                if let lastObj = res.last {
-//                    if let data = lastObj["data"] as? [[String: Any]] {
-//                        for item in data {
-//
-//                        }
-//                    }
-//                }
-//
-//                DispatchQueue.main.async { () -> Void in
-//                    self.tblView.reloadData()
-//                }
-//                self.hideHUD()
-//            }
-//        }
-//    }
+    func getOrders() {
+        self.showHud("")
+        ServiceClient.sendRequest(apiUrl: APIUrl.ORDER_DETAIL,postdatadictionary: ["order_id" : "\(self.orderModel?.order_id ?? "")" ], isArray: false) { (response) in
+
+            print(response)
+            if let res = response as? [String : Any] {
+                print(res)
+                    if let data = res["data"] as? [[String: Any]] {
+                        for item in data {
+                            self.itemArray.append(item)
+                        }
+                    }
+
+                DispatchQueue.main.async { () -> Void in
+                    self.tblView.reloadData()
+                }
+                self.hideHUD()
+            }
+        }
+    }
     
     
-    func repeatOrders() {
+    @objc  func repeatOrders() {
         
         self.showHud("")
 
-        ServiceClient.sendRequest(apiUrl: APIUrl.REPEAT_ORDER,postdatadictionary: ["order_id" : "102","userId": UserDefaults.standard.string(forKey: "id") ?? ""], isArray: false) { (response) in
+        ServiceClient.sendRequest(apiUrl: APIUrl.REPEAT_ORDER,postdatadictionary: ["orderid" : "102","userId": UserDefaults.standard.string(forKey: "id") ?? ""], isArray: false) { (response) in
             
             print(response)
             if let res = response as? [String : Any] {
                 print(res)
                 let responce = res["responce"] as? String
                 if responce == "success" {
-                    self.displayAlertView(alertType: "Success", message: res["data"] as? String ?? "")
                     self.redirectToCart()
+                    self.displayMessage(message: res["data"] as? String ?? "")
                 }
                 DispatchQueue.main.async { () -> Void in
                     self.tblView.reloadData()
@@ -85,7 +117,7 @@ class OrderDetailViewController: BaseViewController {
     }
     
     
-    func cancelOrders() {
+    @objc func cancelOrders() {
         
         self.showHud("")
 
@@ -122,31 +154,21 @@ class OrderDetailViewController: BaseViewController {
 
 extension OrderDetailViewController : UITableViewDelegate, UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        }
-        
-        return 10
+        return self.itemArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tblView.dequeueReusableCell(withIdentifier: "OrderDetailCell1") as? OrderDetailCell
-        if indexPath.section == 0 {
-            let cell1 = self.tblView.dequeueReusableCell(withIdentifier: "OrderDetailCell1") as? OrderDetailCell
+        let cell = self.tblView.dequeueReusableCell(withIdentifier: "order") as? OrderDetailCell
             
-            return cell1!
-        }
-        else if indexPath.section == 1 {
-            let cell2 = self.tblView.dequeueReusableCell(withIdentifier: "OrderDetailCell2") as? OrderDetailCell
-            
-            return cell2!
-        }
+        let dict = self.itemArray[indexPath.row]
         
+        let urlString  =  "\(AppURL.ICON_URL)\(dict["image"] as? String ?? "")"
+        cell?.img.sd_setImage(with: URL(string: urlString), placeholderImage: UIImage(named: "medicine.jpeg") ,options: .refreshCached, completed: nil)
+        cell?.titleLbl.text = dict["title"] as? String
+        cell?.unitlbl.text = "\(dict["title"] as? String ?? "") Unit"
+        cell?.pricelbl.text = "\(StringConstant.RuppeeSymbol)\(dict["price"] as? String ?? "")"
+
         return cell!
     }
     

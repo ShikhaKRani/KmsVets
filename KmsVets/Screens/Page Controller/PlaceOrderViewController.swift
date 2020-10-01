@@ -47,6 +47,9 @@ class PlaceOrderViewController: BaseViewController {
     
     @objc func updateBtnAtion() {
        
+
+        let todayDate = Date().string(format: "yyyy-MM-dd")
+        
         let itemModelArray : [CartModel] = self.cartItemsArray ?? []
         var params: [String: Any] = [
             "person_name" : fullnameStr,
@@ -60,9 +63,9 @@ class PlaceOrderViewController: BaseViewController {
             "user_id" : "\(userID)",
             "cod" : "\(COD)",
             "delivery_time": "Morning",
-            "order_date":"2020-09-29",
+            "order_date":"\(todayDate)",
             "promoPrice":"0",
-            "delivery_date": "2020-09-29",
+            "delivery_date": "\(todayDate)",
             "delivery_charge": "25",
             "delivery_instant" : "0",
             "apply_coupon" : "0",

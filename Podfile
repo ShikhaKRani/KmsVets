@@ -15,13 +15,12 @@ target 'KmsVets' do
   pod 'FSCalendar'
   pod 'DropDown'
   pod 'EzPopup'
-  pod 'MBProgressHUD', '~> 1.2.0'
   pod ‘SDWebImage’, ‘~> 4.0’
   pod 'Segmentio'
   pod 'PayUmoney_PnP'
   pod 'FAPaginationLayout'
+  pod 'SVProgressHUD'
 
-  
   # Pods for KmsVets
 
 end

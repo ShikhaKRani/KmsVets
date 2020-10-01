@@ -24,6 +24,7 @@
 		BF2D279C2525A25800A492FD /* ServiceOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D279B2525A25800A492FD /* ServiceOrderModel.swift */; };
 		BF2D279F2525A6BB00A492FD /* ServiceOrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D279E2525A6BB00A492FD /* ServiceOrderDetailViewController.swift */; };
 		BF2D27A22525B59A00A492FD /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D27A12525B59A00A492FD /* OrderDetailViewController.swift */; };
+		BF2D27B72525F9FF00A492FD /* QuestionHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D27B62525F9FF00A492FD /* QuestionHistoryViewController.swift */; };
 		BF2D594B252355C800AE0B2E /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D594A252355C800AE0B2E /* ProductDetailViewController.swift */; };
 		BF2D594E25235FD900AE0B2E /* ProductDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D594D25235FD900AE0B2E /* ProductDetailsModel.swift */; };
 		BF2D595125237A3400AE0B2E /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D595025237A3400AE0B2E /* OrderViewController.swift */; };
@@ -115,6 +116,7 @@
 		BF2D279B2525A25800A492FD /* ServiceOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceOrderModel.swift; sourceTree = "<group>"; };
 		BF2D279E2525A6BB00A492FD /* ServiceOrderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceOrderDetailViewController.swift; sourceTree = "<group>"; };
 		BF2D27A12525B59A00A492FD /* OrderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
+		BF2D27B62525F9FF00A492FD /* QuestionHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionHistoryViewController.swift; sourceTree = "<group>"; };
 		BF2D594A252355C800AE0B2E /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		BF2D594D25235FD900AE0B2E /* ProductDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsModel.swift; sourceTree = "<group>"; };
 		BF2D595025237A3400AE0B2E /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				BF2D279825259D2200A492FD /* ServiceOrderViewController.swift */,
 				BF2D279E2525A6BB00A492FD /* ServiceOrderDetailViewController.swift */,
 				BF2D27A12525B59A00A492FD /* OrderDetailViewController.swift */,
+				BF2D27B62525F9FF00A492FD /* QuestionHistoryViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -651,6 +654,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFE67A732521B66D0024FAA9 /* ProductItemCell.swift in Sources */,
+				BF2D27B72525F9FF00A492FD /* QuestionHistoryViewController.swift in Sources */,
 				BF1D97F0250F8BCA00446CA8 /* CustomerInformationCell.swift in Sources */,
 				BF16BF7A251F513500D6BE6F /* ServiceListTableViewCell.swift in Sources */,
 				BFF3561425221F82003C9E07 /* BJAutoScrollingCollectionView.swift in Sources */,

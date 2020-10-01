@@ -39,8 +39,7 @@ class OrderViewController: BaseViewController {
     func getOrder() {
         
         self.showHud("Fetching Order")
-        //["user_id": UserDefaults.standard.string(forKey: "id") ?? ""]
-        ServiceClient.sendRequest(apiUrl: APIUrl.GET_ORDER,postdatadictionary: ["user_id": "184"], isArray: false) { (response) in
+        ServiceClient.sendRequest(apiUrl: APIUrl.GET_ORDER,postdatadictionary: ["user_id": UserDefaults.standard.string(forKey: "id") ?? ""], isArray: false) { (response) in
             if let res = response as? [String : Any] {
                 print(res)
                 if let data = res["data"] as? [[String: Any]] {
@@ -54,6 +53,8 @@ class OrderViewController: BaseViewController {
                 DispatchQueue.main.async { () -> Void in
                     self.tblView.reloadData()
                 }
+                self.hideHUD()
+            }else{
                 self.hideHUD()
             }
         }

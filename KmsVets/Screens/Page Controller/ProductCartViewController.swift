@@ -253,14 +253,12 @@ class ProductCartViewController: BaseViewController {
             if let res = response as? [String : Any] {
                 print(res)
                 self.hideHUD()
-                self.cartItemsArray = []
-                self.totalLbl.text = "Total Price: \(StringConstant.RuppeeSymbol)\("0")"
-                self.deliveryChargeLbl.text = "Delivery Charge: \(StringConstant.RuppeeSymbol)\("0")"
-                self.grandTotalLbl.text = "Grand Total: \(StringConstant.RuppeeSymbol)\("0")"
-
-                
+                self.cartItemsArray = []                
                 DispatchQueue.main.async { () -> Void in
                     self.cartTableView.reloadData()
+                    self.totalLbl.text = "Total Price: \(StringConstant.RuppeeSymbol)\("0")"
+                    self.deliveryChargeLbl.text = "Delivery Charge: \(StringConstant.RuppeeSymbol)\("0")"
+                    self.grandTotalLbl.text = "Grand Total: \(StringConstant.RuppeeSymbol)\("0")"
                     self.bgImgView.isHidden = false
 
                 }

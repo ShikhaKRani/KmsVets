@@ -38,6 +38,7 @@ class OrderModel: NSObject {
         self.currency = dict["currency"] as? String
         self.order_date = dict["order_date"] as? String
         self.cod = dict["cod"] as? Bool
+        self.order_status = dict["order_status"] as? String
         self.payment_status = dict["payment_status"] as? Bool
         self.discount = dict["discount"] as? String
         self.delivery_date = dict["delivery_date"] as? String

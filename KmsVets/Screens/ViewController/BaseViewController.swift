@@ -9,7 +9,7 @@
 import UIKit
 import SideMenu
 import Toast_Swift
-import MBProgressHUD
+import SVProgressHUD
 
 
 class BaseViewController: UIViewController {
@@ -70,17 +70,26 @@ class BaseViewController: UIViewController {
     
     func showHud(_ message: String) {
         DispatchQueue.main.async { () -> Void in
-        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-        hud.label.text = message
-        
-        hud.isUserInteractionEnabled = false
+//            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+//            hud.label.text = message
+//
+            SVProgressHUD.show()
         }
     }
     
+    func showHudwithDelay(_ message: String) {
+        DispatchQueue.main.async { () -> Void in
+//            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+//            hud.label.text = message
+            SVProgressHUD.showProgress(3)
+        }
+    }
+    
+    
     func hideHUD() {
         DispatchQueue.main.async { () -> Void in
-
-        MBProgressHUD.hide(for: self.view, animated: true)
+            SVProgressHUD.dismiss()
+//        MBProgressHUD.hide(for: self.view, animated: true)
             
         }
     }

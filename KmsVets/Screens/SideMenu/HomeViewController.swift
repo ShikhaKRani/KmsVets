@@ -146,7 +146,7 @@ class HomeViewController: BaseViewController {
     func getCategory() {
         
         
-        self.showHud("")
+        self.showHudwithDelay("")
         ServiceClient.sendRequest(apiUrl: APIUrl.GET_CATEGORY,postdatadictionary: ["" : ""], isArray: false) { (response) in
 
             if let res = response as? [String : Any] {
@@ -172,7 +172,7 @@ class HomeViewController: BaseViewController {
     
     func getProductList(categoryId : String?) {
         
-        self.showHud("")
+        self.showHudwithDelay("")
         //"id"
         ServiceClient.sendRequest(apiUrl: APIUrl.PRODUCT_CATEGORY_LIST,postdatadictionary: ["userId" : UserDefaults.standard.string(forKey: "id") ?? "", "search" : categoryId ?? ""], isArray: true) { (response) in
             
