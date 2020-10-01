@@ -86,6 +86,26 @@ class BaseViewController: UIViewController {
     }
     
     
+    func returnDateFormat(dateString : String, dateFormatInServer : String, expectedFormat : String) -> String {
+        
+        var  dateStr = ""
+        
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = dateFormatInServer
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = expectedFormat
+
+        if let date = dateFormatterGet.date(from: dateString) {
+            print(dateFormatterPrint.string(from: date))
+            dateStr = dateFormatterPrint.string(from: date)
+        } else {
+           print("There was an error decoding the string")
+        }
+        return dateStr
+    }
+    
+    
+    
 //    func setUpNav() {
 //        
 //        let button = UIButton(type: .custom)

@@ -16,6 +16,9 @@ class ServicesListViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Services"
+
+        
         self.servicelistTableView.tableFooterView = UIView()
         getServiceList()
 

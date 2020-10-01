@@ -37,6 +37,8 @@ class BookServiceViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Book Services"
         self.fetchPetList()
         petRegistered = ""
         mobileString = UserDefaults.standard.string(forKey: "mobile") ?? ""

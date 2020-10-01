@@ -20,6 +20,9 @@
 		BF1D97F3250F8D5900446CA8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D97F2250F8D5900446CA8 /* Constant.swift */; };
 		BF1D97F7250F9EFA00446CA8 /* MyChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D97F6250F9EFA00446CA8 /* MyChartViewController.swift */; };
 		BF27A1E5251337E500F4AA65 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF27A1E4251337E500F4AA65 /* ProfileViewController.swift */; };
+		BF2D279925259D2200A492FD /* ServiceOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D279825259D2200A492FD /* ServiceOrderViewController.swift */; };
+		BF2D279C2525A25800A492FD /* ServiceOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D279B2525A25800A492FD /* ServiceOrderModel.swift */; };
+		BF2D279F2525A6BB00A492FD /* ServiceOrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D279E2525A6BB00A492FD /* ServiceOrderDetailViewController.swift */; };
 		BF2D594B252355C800AE0B2E /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D594A252355C800AE0B2E /* ProductDetailViewController.swift */; };
 		BF2D594E25235FD900AE0B2E /* ProductDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D594D25235FD900AE0B2E /* ProductDetailsModel.swift */; };
 		BF2D595125237A3400AE0B2E /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D595025237A3400AE0B2E /* OrderViewController.swift */; };
@@ -107,6 +110,9 @@
 		BF1D97F2250F8D5900446CA8 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		BF1D97F6250F9EFA00446CA8 /* MyChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChartViewController.swift; sourceTree = "<group>"; };
 		BF27A1E4251337E500F4AA65 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BF2D279825259D2200A492FD /* ServiceOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceOrderViewController.swift; sourceTree = "<group>"; };
+		BF2D279B2525A25800A492FD /* ServiceOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceOrderModel.swift; sourceTree = "<group>"; };
+		BF2D279E2525A6BB00A492FD /* ServiceOrderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceOrderDetailViewController.swift; sourceTree = "<group>"; };
 		BF2D594A252355C800AE0B2E /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		BF2D594D25235FD900AE0B2E /* ProductDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsModel.swift; sourceTree = "<group>"; };
 		BF2D595025237A3400AE0B2E /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
@@ -248,6 +254,8 @@
 				BF2D595025237A3400AE0B2E /* OrderViewController.swift */,
 				BF371E0625245A5500B6D018 /* BookServiceViewController.swift */,
 				BF371E0C2524BAB800B6D018 /* ServicePlaceOrderViewController.swift */,
+				BF2D279825259D2200A492FD /* ServiceOrderViewController.swift */,
+				BF2D279E2525A6BB00A492FD /* ServiceOrderDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -307,6 +315,7 @@
 				BFE67A6F2521AAF50024FAA9 /* CartModel.swift */,
 				BF2D594D25235FD900AE0B2E /* ProductDetailsModel.swift */,
 				BF2D59532523819200AE0B2E /* OrderModel.swift */,
+				BF2D279B2525A25800A492FD /* ServiceOrderModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -662,6 +671,7 @@
 				BF2E139D252310B6009DB671 /* SearchProductViewController.swift in Sources */,
 				BF36194E2520B72F0013709C /* ServiceDetailViewController.swift in Sources */,
 				BF527173250E39D900BD60D2 /* APIClient.swift in Sources */,
+				BF2D279F2525A6BB00A492FD /* ServiceOrderDetailViewController.swift in Sources */,
 				BF02B5372511E62C0076B05E /* SideMenuViewController.swift in Sources */,
 				BF6C44AD251DCB3900D85E58 /* AskQuestionTableViewCell.swift in Sources */,
 				BF6C4494251C819D00D85E58 /* FAQViewController.swift in Sources */,
@@ -671,7 +681,9 @@
 				BF6C4497251CBDC400D85E58 /* PrivacyPolicyViewController.swift in Sources */,
 				BF6C4506251E510200D85E58 /* ProductContainerViewController.swift in Sources */,
 				BF2EA0F5251F81E700BAB963 /* PaymentViewController.swift in Sources */,
+				BF2D279C2525A25800A492FD /* ServiceOrderModel.swift in Sources */,
 				BF8D0D1F2514C05300373096 /* NewPuppyHistoryViewController.swift in Sources */,
+				BF2D279925259D2200A492FD /* ServiceOrderViewController.swift in Sources */,
 				BF2D594B252355C800AE0B2E /* ProductDetailViewController.swift in Sources */,
 				BF17C2212518944E0000D5C3 /* BookinfForSurgeryTableViewCell.swift in Sources */,
 				BF1D97F7250F9EFA00446CA8 /* MyChartViewController.swift in Sources */,

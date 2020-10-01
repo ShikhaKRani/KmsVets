@@ -18,12 +18,20 @@ class ServiceDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "Service Detail"
         self.servicedetailTableView.tableFooterView = UIView()
         self.servicedetailTableView.separatorStyle = .none
         // Do any additional setup after loading the view.
     }
     
-
+    @objc func booknowbuttonAction(){
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        if let bookServiceVC = storyBoard.instantiateViewController(withIdentifier: "BookServiceViewController") as? BookServiceViewController {
+            self.navigationController?.pushViewController(bookServiceVC, animated: true)
+        }
+        
+        
+    }
     
 
 }
@@ -47,6 +55,8 @@ extension ServiceDetailViewController : UITableViewDelegate, UITableViewDataSour
             let urlString  =  "\(dict["image"] ?? "")"
             cell?.titleImage.sd_setImage(with: URL(string: urlString), placeholderImage: UIImage(named: "medicine.jpeg") ,options: .refreshCached, completed: nil)
             cell?.titleLabel.text = dict["title"] as? String
+            
+            cell?.booknowButton.addTarget(self, action: #selector(booknowbuttonAction), for: .touchUpInside)
             return cell!
         }
 

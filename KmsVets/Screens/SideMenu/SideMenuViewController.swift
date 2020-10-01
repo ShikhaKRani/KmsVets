@@ -72,7 +72,7 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
         if indexPath.section == 0 {
             //            imgcell.imageView?.image = UIImage(named: "")
         }
-            
+        
         else {
             let cell:SideMenuTblCell! = tableView.dequeueReusableCell(withIdentifier: "SideMenuTblCell") as? SideMenuTblCell
             
@@ -122,15 +122,14 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
             break
             
         case "My Service Order":
-            //            let vc = self.storyboard?.instantiateViewController(withIdentifier: "HistoryVC") as! HistoryVC
-            //            //        navigationController?.pushViewController(vc, animated: true)
-            //            //        self.present(vc, animated: true, completion: nil)
-            //            self.navigationController?.pushViewController(vc, animated: true)
-            //
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+            if let vc = storyBoard.instantiateViewController(withIdentifier: "ServiceOrderViewController") as? ServiceOrderViewController {
+            self.navigationController?.pushViewController(vc, animated: true)
+            }
             
             break
         case "Booking for a new Puppy":
-               
+            
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
             if let getbookingpuppy = storyBoard.instantiateViewController(withIdentifier: "BookingNewPuppyViewController") as? BookingNewPuppyViewController {
                 self.navigationController?.pushViewController(getbookingpuppy, animated: true)
@@ -144,46 +143,46 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
             break
             
         case "Booking for a surgery":
-                    let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-                    if let bookForSurgery = storyBoard.instantiateViewController(withIdentifier: "BookingForSurgeryViewController") as? BookingForSurgeryViewController {
-                        self.navigationController?.pushViewController(bookForSurgery, animated: true)
-                    }
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+            if let bookForSurgery = storyBoard.instantiateViewController(withIdentifier: "BookingForSurgeryViewController") as? BookingForSurgeryViewController {
+                self.navigationController?.pushViewController(bookForSurgery, animated: true)
+            }
             break
             
         case "Surgery History":
-                    let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-                    if let bookForSurgeryHistory = storyBoard.instantiateViewController(withIdentifier: "BookingSurgeryHistoryViewController") as? BookingSurgeryHistoryViewController {
-                        self.navigationController?.pushViewController(bookForSurgeryHistory, animated: true)
-                    }
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+            if let bookForSurgeryHistory = storyBoard.instantiateViewController(withIdentifier: "BookingSurgeryHistoryViewController") as? BookingSurgeryHistoryViewController {
+                self.navigationController?.pushViewController(bookForSurgeryHistory, animated: true)
+            }
             break
         case "Contact Us":
-                    let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-                    if let getcontact = storyBoard.instantiateViewController(withIdentifier: "ContactUsViewController") as? ContactUsViewController {
-                        self.navigationController?.pushViewController(getcontact, animated: true)
-                    }
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+            if let getcontact = storyBoard.instantiateViewController(withIdentifier: "ContactUsViewController") as? ContactUsViewController {
+                self.navigationController?.pushViewController(getcontact, animated: true)
+            }
             break
         case "About Us":
-                    let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-                    if let aboutus = storyBoard.instantiateViewController(withIdentifier: "AboutUsViewController") as? AboutUsViewController {
-                        self.navigationController?.pushViewController(aboutus, animated: true)
-                    }
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+            if let aboutus = storyBoard.instantiateViewController(withIdentifier: "AboutUsViewController") as? AboutUsViewController {
+                self.navigationController?.pushViewController(aboutus, animated: true)
+            }
             break
             
         case "Suggestion/Complaint":
-                    let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-                    if let suggestion = storyBoard.instantiateViewController(withIdentifier: "SuggestionViewController") as? SuggestionViewController {
-                        self.navigationController?.pushViewController(suggestion, animated: true)
-                    }
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+            if let suggestion = storyBoard.instantiateViewController(withIdentifier: "SuggestionViewController") as? SuggestionViewController {
+                self.navigationController?.pushViewController(suggestion, animated: true)
+            }
             break
             
             
             
             
         case "Asking a Question":
-                    let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-                    if let askquestionVC = storyBoard.instantiateViewController(withIdentifier: "AskingQuestionViewController") as? AskingQuestionViewController {
-                        self.navigationController?.pushViewController(askquestionVC, animated: true)
-                    }
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+            if let askquestionVC = storyBoard.instantiateViewController(withIdentifier: "AskingQuestionViewController") as? AskingQuestionViewController {
+                self.navigationController?.pushViewController(askquestionVC, animated: true)
+            }
             break
             
             
