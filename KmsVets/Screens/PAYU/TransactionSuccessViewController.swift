@@ -65,6 +65,11 @@ class TransactionSuccessViewController: BaseViewController {
                         }else{
                             self.msg =  "Payment Status Failed !!"
                         }
+                        
+                        DispatchQueue.main.async { () -> Void in
+                            self.tblView.reloadData()
+                        }
+                        
                     }
                 }
                 
@@ -75,6 +80,11 @@ class TransactionSuccessViewController: BaseViewController {
                 if self.screen == "cart" {
                     self.clearCart()
                 }
+                
+                DispatchQueue.main.async { () -> Void in
+                    self.tblView.reloadData()
+                }
+                
             }
         }
     }
@@ -127,15 +137,12 @@ extension TransactionSuccessViewController : UITableViewDelegate, UITableViewDat
             
             return cell!
         }
-        if screen == "asking" {
+        else{
+            
             let cell = self.tblView.dequeueReusableCell(withIdentifier: "askingCell") as? TransactionSuccessCell
             cell?.msgLbl.text = self.msg
             cell?.goToHome.addTarget(self, action: #selector(redirectToHome), for: .touchUpInside)
-            
-            
-            
             return cell!
-            
         }
         
         

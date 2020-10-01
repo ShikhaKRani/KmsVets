@@ -52,13 +52,15 @@ class PaymentViewController: BaseViewController, WKUIDelegate,WKNavigationDelega
     //MARK:- initPayment
     func initPayment() {
         
-        if ((totalPriceAmount?.isEmpty) == nil) {
+        if ((totalPriceAmount?.isEmpty) == nil)  || totalPriceAmount == "" {
             totalPriceAmount = "0"
         }
-        if ((firstName?.isEmpty) == nil) {
+        
+        
+        if ((firstName?.isEmpty) == nil) || firstName == "" {
             firstName = UserDefaults.standard.string(forKey: "name") ?? ""
         }
-        if ((email?.isEmpty) == nil) {
+        if ((email?.isEmpty) == nil) || email == "" {
             email = UserDefaults.standard.string(forKey: "email") ?? ""
         }
         

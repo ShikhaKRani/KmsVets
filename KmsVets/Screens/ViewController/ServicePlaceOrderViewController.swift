@@ -9,11 +9,14 @@
 import UIKit
 import DropDown
 import EzPopup
+import Alamofire
 
 
 class ServicePlaceOrderViewController: BaseViewController, MyCalenderProtocol {
    
     @IBOutlet weak var tblView: UITableView!
+    
+    var order_id :String?
     
     var dogsCatStr : String?
     var zipcodeFieldStr : String?
@@ -205,16 +208,82 @@ class ServicePlaceOrderViewController: BaseViewController, MyCalenderProtocol {
         }
         self.dropDown.show()
     }
+   
+    
+    
     
     
     @objc func placeOrderAction(sender : UIButton) {
-        
-        
+       
+        let params: [String: Any] = [
+            "key" : AppConstant.UserKey,
+            "cat_service" : "\(dogsCatStr ?? "")",
+            "name" : "\(UserDefaults.standard.string(forKey: "name") ?? "")",
+            "mobile" : "\(UserDefaults.standard.string(forKey: "mobile") ?? "")",
+            "address" : "\(UserDefaults.standard.string(forKey: "address") ?? "")",
+            "email" : "\(UserDefaults.standard.string(forKey: "email") ?? "")",
+            "petname":"\(petnameString ?? "")",
+            "pet_bride": "\(petbreedString ?? "")",
+            "pet_age" : "\(petageyearString ?? "")",
+            "pet_id" : "\(self.petCategoryChargeDict["id"] ?? "")",
+            "dog_cat": "\(self.petCategoryChargeDict["pet_house_street"] ?? "")",
+            "pincode":"\(zipcodeFieldStr ?? "")",
+            "bookdate":"\(selectDateFieldsStr ?? "")",
+            "service": "\(self.petCategoryChargeDict["service"] ?? "")",
+            "time": "\(selecttimeFieldStr ?? "")",
+            "visit_charge" : "\(self.petCategoryChargeDict["visit_charge"] ?? "")",
+            "delivery_charge" : "\(deliveryChargesStr ?? "")",
+            "total_charge" : "\(totalChargesStr ?? "")",
+            "user_id" : UserDefaults.standard.string(forKey: "id") ?? "",
+            "pettype" : "\(self.petCategoryChargeDict["pettype"] ?? "")",
+            "petmonth" : "\(petagemonthString ?? "")"
+        ]
+     
+        bookItem(json: params)
+    }
+
+    
+    func bookItem(json:[String : Any]) {
+        self.showHud("Booking Service")
+        AF.request(APIUrl.PET_BOOK_SERVICE, method: .post, parameters: json, encoding: URLEncoding.default).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                self.hideHUD()
+                if let responseArray = value as? [[String : Any]] {
+                    print(responseArray)
+                    if let lastObj = responseArray.last{
+                    UserDefaults.standard.set(lastObj["id"], forKey: "payment_order_id")
+                    self.order_id = UserDefaults.standard.string(forKey: "payment_order_id") ?? ""
+                    }
+                    DispatchQueue.main.async { () -> Void in
+                        self.redirectToPaymentScreen()
+                    }
+                    
+                
+                }
+            case .failure(let error):
+                print(error)
+                self.hideHUD()
+            }
+        }
     }
     
+
     
     
-    
+    func redirectToPaymentScreen() {
+        
+        let storyBoard = UIStoryboard.init(name: "Payment", bundle: nil)
+        if let paymentVC = storyBoard.instantiateViewController(withIdentifier: "PaymentViewController") as? PaymentViewController {
+            self.order_id = UserDefaults.standard.string(forKey: "payment_order_id") ?? ""
+            paymentVC.firstName = "\(UserDefaults.standard.string(forKey: "name") ?? "")"
+            paymentVC.email = "\(UserDefaults.standard.string(forKey: "email") ?? "")"
+            paymentVC.order_id = "\(self.order_id ?? "")"
+            paymentVC.totalPriceAmount = "\(totalChargesStr ?? "")"
+            paymentVC.screen = "service"
+            self.navigationController?.pushViewController(paymentVC, animated: true)
+        }
+    }
     
     
 }
@@ -249,8 +318,9 @@ extension ServicePlaceOrderViewController : UITableViewDelegate,UITableViewDataS
         }
            
         
+        self.totalChargesStr = "\(totalCount)"
         
-        cell?.totalChargeLbl.text = "\(StringConstant.RuppeeSymbol)\(totalCount)"
+        cell?.totalChargeLbl.text = "\(StringConstant.RuppeeSymbol)\(totalChargesStr ?? "")"
 
         
         
@@ -258,7 +328,7 @@ extension ServicePlaceOrderViewController : UITableViewDelegate,UITableViewDataS
         cell?.selectDate.addTarget(self, action: #selector(selectDateAction(sender:)), for: .touchUpInside)
         cell?.selectTime.addTarget(self, action: #selector(selectTimeAction(sender:)), for: .touchUpInside)
         cell?.zipcodeBtn.addTarget(self, action: #selector(selectZipcodeAction(sender:)), for: .touchUpInside)
-        cell?.placeOrderbtn.addTarget(self, action: #selector(selectZipcodeAction(sender:)), for: .touchUpInside)
+        cell?.placeOrderbtn.addTarget(self, action: #selector(placeOrderAction(sender:)), for: .touchUpInside)
 
         return cell!
     }
