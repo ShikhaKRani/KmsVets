@@ -117,5 +117,14 @@ extension OrderViewController : UITableViewDelegate,UITableViewDataSource {
         return cell!
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        if let serviceVC = storyBoard.instantiateViewController(withIdentifier: "OrderDetailViewController") as? OrderDetailViewController {
+            let model = self.orderDataArray[indexPath.row]
+            serviceVC.orderModel = model
+            self.navigationController?.pushViewController(serviceVC, animated: true)
+        }
+
+    }
     
 }

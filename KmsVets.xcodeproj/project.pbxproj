@@ -23,6 +23,7 @@
 		BF2D279925259D2200A492FD /* ServiceOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D279825259D2200A492FD /* ServiceOrderViewController.swift */; };
 		BF2D279C2525A25800A492FD /* ServiceOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D279B2525A25800A492FD /* ServiceOrderModel.swift */; };
 		BF2D279F2525A6BB00A492FD /* ServiceOrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D279E2525A6BB00A492FD /* ServiceOrderDetailViewController.swift */; };
+		BF2D27A22525B59A00A492FD /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D27A12525B59A00A492FD /* OrderDetailViewController.swift */; };
 		BF2D594B252355C800AE0B2E /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D594A252355C800AE0B2E /* ProductDetailViewController.swift */; };
 		BF2D594E25235FD900AE0B2E /* ProductDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D594D25235FD900AE0B2E /* ProductDetailsModel.swift */; };
 		BF2D595125237A3400AE0B2E /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D595025237A3400AE0B2E /* OrderViewController.swift */; };
@@ -113,6 +114,7 @@
 		BF2D279825259D2200A492FD /* ServiceOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceOrderViewController.swift; sourceTree = "<group>"; };
 		BF2D279B2525A25800A492FD /* ServiceOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceOrderModel.swift; sourceTree = "<group>"; };
 		BF2D279E2525A6BB00A492FD /* ServiceOrderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceOrderDetailViewController.swift; sourceTree = "<group>"; };
+		BF2D27A12525B59A00A492FD /* OrderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
 		BF2D594A252355C800AE0B2E /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		BF2D594D25235FD900AE0B2E /* ProductDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsModel.swift; sourceTree = "<group>"; };
 		BF2D595025237A3400AE0B2E /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				BF371E0C2524BAB800B6D018 /* ServicePlaceOrderViewController.swift */,
 				BF2D279825259D2200A492FD /* ServiceOrderViewController.swift */,
 				BF2D279E2525A6BB00A492FD /* ServiceOrderDetailViewController.swift */,
+				BF2D27A12525B59A00A492FD /* OrderDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 				BF17C2212518944E0000D5C3 /* BookinfForSurgeryTableViewCell.swift in Sources */,
 				BF1D97F7250F9EFA00446CA8 /* MyChartViewController.swift in Sources */,
 				BF556926251A08D600C3E4BA /* BookingSurgeryHistoryViewController.swift in Sources */,
+				BF2D27A22525B59A00A492FD /* OrderDetailViewController.swift in Sources */,
 				BF32E92F25147FA600E154D3 /* ProfileViewTableViewCell.swift in Sources */,
 				BFF3561325221F82003C9E07 /* CustomImageCollectionViewCell.swift in Sources */,
 				BFBA34EF250CE908004C37C2 /* AppDelegate.swift in Sources */,
