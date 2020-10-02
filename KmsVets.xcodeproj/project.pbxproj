@@ -32,6 +32,7 @@
 		BF2D8F7C251B8B3100641058 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D8F7B251B8B3100641058 /* AboutUsViewController.swift */; };
 		BF2D8F7F251B9D9D00641058 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D8F7E251B9D9D00641058 /* SuggestionViewController.swift */; };
 		BF2D8F82251B9DBB00641058 /* SuggestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D8F81251B9DBB00641058 /* SuggestionTableViewCell.swift */; };
+		BF2DE44B2526E72D00F807A9 /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2DE44A2526E72D00F807A9 /* appstore.png */; };
 		BF2E139425230634009DB671 /* empty_cart.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2E139325230634009DB671 /* empty_cart.png */; };
 		BF2E13972523063D009DB671 /* splashlogoimg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BF2E13962523063D009DB671 /* splashlogoimg.jpeg */; };
 		BF2E139A252308D2009DB671 /* no_data_found.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2E1399252308D2009DB671 /* no_data_found.png */; };
@@ -124,6 +125,7 @@
 		BF2D8F7B251B8B3100641058 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		BF2D8F7E251B9D9D00641058 /* SuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
 		BF2D8F81251B9DBB00641058 /* SuggestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionTableViewCell.swift; sourceTree = "<group>"; };
+		BF2DE44A2526E72D00F807A9 /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appstore.png; sourceTree = "<group>"; };
 		BF2E139325230634009DB671 /* empty_cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty_cart.png; sourceTree = "<group>"; };
 		BF2E13962523063D009DB671 /* splashlogoimg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = splashlogoimg.jpeg; path = ../../../../../Downloads/splashlogoimg.jpeg; sourceTree = "<group>"; };
 		BF2E1399252308D2009DB671 /* no_data_found.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_data_found.png; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 		BF786714250CF37900D8D17E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BF2DE44A2526E72D00F807A9 /* appstore.png */,
 				BF2E13962523063D009DB671 /* splashlogoimg.jpeg */,
 				BF2E139325230634009DB671 /* empty_cart.png */,
 				BF42BC8D2515D8730064F0C9 /* down-arrow.png */,
@@ -593,6 +596,7 @@
 				BFBA34FB250CE909004C37C2 /* LaunchScreen.storyboard in Resources */,
 				BF42BC8E2515D8730064F0C9 /* down-arrow.png in Resources */,
 				BF2E13972523063D009DB671 /* splashlogoimg.jpeg in Resources */,
+				BF2DE44B2526E72D00F807A9 /* appstore.png in Resources */,
 				BF02B5342511E42A0076B05E /* SideMenu.storyboard in Resources */,
 				BFBA34F8250CE909004C37C2 /* Assets.xcassets in Resources */,
 				BFBA34F6250CE908004C37C2 /* Main.storyboard in Resources */,

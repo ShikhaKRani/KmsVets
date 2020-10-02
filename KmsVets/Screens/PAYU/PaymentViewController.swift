@@ -152,10 +152,10 @@ class PaymentViewController: BaseViewController, WKUIDelegate,WKNavigationDelega
         if((webView.url?.absoluteString.contains("https://checkout.citruspay.com/payu/checkout"))! && navigationAction.navigationType.rawValue == -1){
             print("user click the button")
             
-            self.redirectToPaymentSuccessScreen()
+//            self.redirectToPaymentSuccessScreen()
             //once success page completes delete above line and uncomment below line
   ////////////-------------->
-//            self.navigationController?.popToRootViewController(animated: false)
+            self.navigationController?.popToRootViewController(animated: false)
         }
         
         decisionHandler(WKNavigationActionPolicy.allow)

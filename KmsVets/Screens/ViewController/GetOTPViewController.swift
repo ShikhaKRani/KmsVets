@@ -47,8 +47,13 @@ class GetOTPViewController: BaseViewController {
 
         self.getOtpApi()
         
+        resendButton.addTarget(self, action: #selector(resendButtonAction(sender:)), for: .touchUpInside)
+        
+        
     }
-    
+    @objc func resendButtonAction(sender : UIButton) {
+        self.getOtpApi()
+    }
     
     @objc func doneButtonAction(sender : UIButton) {
         
