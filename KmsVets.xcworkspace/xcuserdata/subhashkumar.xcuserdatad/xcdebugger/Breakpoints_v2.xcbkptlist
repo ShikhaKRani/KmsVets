@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F6B0DFBE-62C3-41FE-9301-EA3A32F3A3FE"
+            uuid = "B47A7291-6C21-40BB-9F7D-408B7D3FA270"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KmsVets/Screens/ViewController/SuggestionViewController.swift"
+            filePath = "KmsVets/Screens/ViewController/GetOTPViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "saveBtnAtion()"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "getOtpApi()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

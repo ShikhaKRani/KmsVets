@@ -23,7 +23,9 @@ class GetOTPViewController: BaseViewController {
     @IBOutlet weak var doneButton: UIButton!
     var mobileNumber:String?
     var randomNumber:String?
-    
+    var demoMobileNumber = "8767854111"
+    var demorandomNumber = "1212"
+
     override func viewDidLoad() {
         super.viewDidLoad()
         roundView.layer.cornerRadius = 20
@@ -45,22 +47,40 @@ class GetOTPViewController: BaseViewController {
         
         doneButton.addTarget(self, action: #selector(doneButtonAction), for: .touchUpInside)
 
-        self.getOtpApi()
+        if mobileNumber == demoMobileNumber {
+            
+        }else{
+            self.getOtpApi()
+        }
         
         resendButton.addTarget(self, action: #selector(resendButtonAction(sender:)), for: .touchUpInside)
         
         
     }
     @objc func resendButtonAction(sender : UIButton) {
+        if mobileNumber == demoMobileNumber {
+        }else{
         self.getOtpApi()
+        }
     }
     
     @objc func doneButtonAction(sender : UIButton) {
         
-        if randomNumber == self.otpTextfield.text {
-            self.fetchUserDetails(mobile: mobileNumber)
+        if mobileNumber == demoMobileNumber {
+            
+            if demorandomNumber == self.otpTextfield.text {
+                self.fetchUserDetails(mobile: demoMobileNumber)
+            }
+            else{
+                self.displayMessage(message: "Please enter demo OTP provided ")
+            }
         }else{
-            self.displayMessage(message: "Please enter correct OTP")
+            if randomNumber == self.otpTextfield.text {
+                self.fetchUserDetails(mobile: mobileNumber)
+            }else{
+                self.displayMessage(message: "Please enter correct OTP")
+            }
+            
         }
     }
     
