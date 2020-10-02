@@ -20,6 +20,8 @@ class NewPuppyHistoryViewController: BaseViewController {
         self.getNewPuppyList()
         newppuppyHistoryTableView.backgroundColor = .clear
         self.view.backgroundColor = .groupTableViewBackground
+        self.title = "Pet History"
+
     }
     
     

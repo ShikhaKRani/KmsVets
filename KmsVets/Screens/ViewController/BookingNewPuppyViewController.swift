@@ -39,6 +39,7 @@ class BookingNewPuppyViewController: BaseViewController {
         name = UserDefaults.standard.string(forKey: "name") ?? ""
 
         address = UserDefaults.standard.string(forKey: "address") ?? ""
+        self.title = "Booking Pet"
 
         
     }

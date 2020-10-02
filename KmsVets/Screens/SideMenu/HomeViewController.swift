@@ -51,13 +51,14 @@ class HomeViewController: BaseViewController , CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.myLocation()
-        self.setTitleForNavigation(title: "KMS Vets", isHidden: false)
+        self.setTitleForNavigation(title: fulladdressString, isHidden: false)
         self.fetchBannerImageFromServer()
         self.pageControl.currentPage = 0
         self.setUpNav()
         initCollectionView()
         
     }
+    
     
     func myLocation() {
         if (CLLocationManager.locationServicesEnabled())
@@ -214,6 +215,8 @@ class HomeViewController: BaseViewController , CLLocationManagerDelegate {
         self.setTitleForNavigation(title: "KMS Vets", isHidden: false)
         self.getCategory()
         self.getProductList(categoryId:" ")
+        self.title = self.fulladdressString
+
     }
     
     func fetchBannerImageFromServer() {

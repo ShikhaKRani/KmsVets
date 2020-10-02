@@ -33,6 +33,13 @@
 		BF2D8F7F251B9D9D00641058 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D8F7E251B9D9D00641058 /* SuggestionViewController.swift */; };
 		BF2D8F82251B9DBB00641058 /* SuggestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D8F81251B9DBB00641058 /* SuggestionTableViewCell.swift */; };
 		BF2DE44B2526E72D00F807A9 /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2DE44A2526E72D00F807A9 /* appstore.png */; };
+		BF2DE4552526F03600F807A9 /* ChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2DE4532526F03600F807A9 /* ChatController.m */; };
+		BF2DE4562526F03600F807A9 /* JivoSdk.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2DE4542526F03600F807A9 /* JivoSdk.m */; };
+		BF2DE4652526F2AE00F807A9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF2DE4612526F2AE00F807A9 /* Localizable.strings */; };
+		BF2DE4662526F2AE00F807A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF2DE4632526F2AE00F807A9 /* InfoPlist.strings */; };
+		BF2DE46D2526F2CE00F807A9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF2DE4692526F2CE00F807A9 /* Localizable.strings */; };
+		BF2DE46E2526F2CE00F807A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF2DE46B2526F2CE00F807A9 /* InfoPlist.strings */; };
+		BF2DE48C2527062300F807A9 /* html in Resources */ = {isa = PBXBuildFile; fileRef = BF2DE48B2527062300F807A9 /* html */; };
 		BF2E139425230634009DB671 /* empty_cart.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2E139325230634009DB671 /* empty_cart.png */; };
 		BF2E13972523063D009DB671 /* splashlogoimg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BF2E13962523063D009DB671 /* splashlogoimg.jpeg */; };
 		BF2E139A252308D2009DB671 /* no_data_found.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2E1399252308D2009DB671 /* no_data_found.png */; };
@@ -126,6 +133,15 @@
 		BF2D8F7E251B9D9D00641058 /* SuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
 		BF2D8F81251B9DBB00641058 /* SuggestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionTableViewCell.swift; sourceTree = "<group>"; };
 		BF2DE44A2526E72D00F807A9 /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appstore.png; sourceTree = "<group>"; };
+		BF2DE4512526F03600F807A9 /* ChatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatController.h; sourceTree = "<group>"; };
+		BF2DE4522526F03600F807A9 /* JivoSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JivoSdk.h; sourceTree = "<group>"; };
+		BF2DE4532526F03600F807A9 /* ChatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatController.m; sourceTree = "<group>"; };
+		BF2DE4542526F03600F807A9 /* JivoSdk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JivoSdk.m; sourceTree = "<group>"; };
+		BF2DE4622526F2AE00F807A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		BF2DE4642526F2AE00F807A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		BF2DE46A2526F2CE00F807A9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = Localizable.strings; sourceTree = "<group>"; };
+		BF2DE46C2526F2CE00F807A9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = InfoPlist.strings; sourceTree = "<group>"; };
+		BF2DE48B2527062300F807A9 /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
 		BF2E139325230634009DB671 /* empty_cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty_cart.png; sourceTree = "<group>"; };
 		BF2E13962523063D009DB671 /* splashlogoimg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = splashlogoimg.jpeg; path = ../../../../../Downloads/splashlogoimg.jpeg; sourceTree = "<group>"; };
 		BF2E1399252308D2009DB671 /* no_data_found.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_data_found.png; sourceTree = "<group>"; };
@@ -309,11 +325,43 @@
 		BF1D97F1250F8D4C00446CA8 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BF2DE4502526F00400F807A9 /* CHAT */,
 				BFF3561025221F82003C9E07 /* sc */,
 				BF1D97F2250F8D5900446CA8 /* Constant.swift */,
 				BF5569182519C88000C3E4BA /* AppExtension.swift */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		BF2DE4502526F00400F807A9 /* CHAT */ = {
+			isa = PBXGroup;
+			children = (
+				BF2DE4602526F2AE00F807A9 /* en.lproj */,
+				BF2DE4682526F2CE00F807A9 /* ru.lproj */,
+				BF2DE4512526F03600F807A9 /* ChatController.h */,
+				BF2DE4532526F03600F807A9 /* ChatController.m */,
+				BF2DE4522526F03600F807A9 /* JivoSdk.h */,
+				BF2DE4542526F03600F807A9 /* JivoSdk.m */,
+			);
+			path = CHAT;
+			sourceTree = "<group>";
+		};
+		BF2DE4602526F2AE00F807A9 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				BF2DE4612526F2AE00F807A9 /* Localizable.strings */,
+				BF2DE4632526F2AE00F807A9 /* InfoPlist.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		BF2DE4682526F2CE00F807A9 /* ru.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				BF2DE4692526F2CE00F807A9 /* Localizable.strings */,
+				BF2DE46B2526F2CE00F807A9 /* InfoPlist.strings */,
+			);
+			path = ru.lproj;
 			sourceTree = "<group>";
 		};
 		BF3619572520F5A20013709C /* Model */ = {
@@ -371,6 +419,7 @@
 		BFBA34E2250CE907004C37C2 = {
 			isa = PBXGroup;
 			children = (
+				BF2DE48B2527062300F807A9 /* html */,
 				BFBA34ED250CE908004C37C2 /* KmsVets */,
 				BFBA34EC250CE907004C37C2 /* Products */,
 				64F66F173EDD724A750FEEE1 /* Pods */,
@@ -592,17 +641,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF2DE4652526F2AE00F807A9 /* Localizable.strings in Resources */,
 				BF6C44DB251E491C00D85E58 /* ProductHome.storyboard in Resources */,
 				BFBA34FB250CE909004C37C2 /* LaunchScreen.storyboard in Resources */,
 				BF42BC8E2515D8730064F0C9 /* down-arrow.png in Resources */,
 				BF2E13972523063D009DB671 /* splashlogoimg.jpeg in Resources */,
 				BF2DE44B2526E72D00F807A9 /* appstore.png in Resources */,
+				BF2DE4662526F2AE00F807A9 /* InfoPlist.strings in Resources */,
+				BF2DE48C2527062300F807A9 /* html in Resources */,
 				BF02B5342511E42A0076B05E /* SideMenu.storyboard in Resources */,
+				BF2DE46E2526F2CE00F807A9 /* InfoPlist.strings in Resources */,
 				BFBA34F8250CE909004C37C2 /* Assets.xcassets in Resources */,
 				BFBA34F6250CE908004C37C2 /* Main.storyboard in Resources */,
 				BF786716250CF6C100D8D17E /* medicine.jpeg in Resources */,
 				BF371E242524E95B00B6D018 /* MyCalenderViewController.xib in Resources */,
 				BF2E139A252308D2009DB671 /* no_data_found.png in Resources */,
+				BF2DE46D2526F2CE00F807A9 /* Localizable.strings in Resources */,
 				BF2EA0F2251F816900BAB963 /* Payment.storyboard in Resources */,
 				BF2E139425230634009DB671 /* empty_cart.png in Resources */,
 			);
@@ -675,6 +729,7 @@
 				BF786711250CEF8900D8D17E /* LoginViewController.swift in Sources */,
 				BF17C21F25188F130000D5C3 /* BookingForSurgeryViewController.swift in Sources */,
 				BF6C450A251E521400D85E58 /* SegmentioBuilder.swift in Sources */,
+				BF2DE4562526F03600F807A9 /* JivoSdk.m in Sources */,
 				BF2D594E25235FD900AE0B2E /* ProductDetailsModel.swift in Sources */,
 				BF371E0A2524713600B6D018 /* BookServiceTableViewCell.swift in Sources */,
 				BF3619592520F5C80013709C /* ProductInfo.swift in Sources */,
@@ -705,6 +760,7 @@
 				BFBA34EF250CE908004C37C2 /* AppDelegate.swift in Sources */,
 				BF2D8F82251B9DBB00641058 /* SuggestionTableViewCell.swift in Sources */,
 				BF02B53A2511EF1A0076B05E /* BannerCollCell.swift in Sources */,
+				BF2DE4552526F03600F807A9 /* ChatController.m in Sources */,
 				BF527170250E1F1900BD60D2 /* GetOTPViewController.swift in Sources */,
 				BF2D59542523819200AE0B2E /* OrderModel.swift in Sources */,
 				BF2EA12C251FB7A400BAB963 /* PayUServiceHelper.m in Sources */,
@@ -737,6 +793,38 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		BF2DE4612526F2AE00F807A9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF2DE4622526F2AE00F807A9 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		BF2DE4632526F2AE00F807A9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF2DE4642526F2AE00F807A9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BF2DE4692526F2CE00F807A9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF2DE46A2526F2CE00F807A9 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		BF2DE46B2526F2CE00F807A9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF2DE46C2526F2CE00F807A9 /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		BFBA34F4250CE908004C37C2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -878,7 +966,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9TA9SAVC4B;
+				DEVELOPMENT_TEAM = TQSNJXDVPJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/KmsVets/Resource/AutoScroll/Desktop/Paysfer_ecommerce26sept/Paysfer/Pods/GooglePlaces/Frameworks",
@@ -897,7 +985,7 @@
 					"$(PROJECT_DIR)/KmsVets/Resource/AutoScroll/Desktop/StripeGateway/Pods/Stripe/InternalFrameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.Shikha.KmsVets;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Doctor.kmsvets;
 				PRODUCT_NAME = "KMS Vets";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KmsVets/Screens/PAYU/KmsVets-Bridging-Header.h";
@@ -915,7 +1003,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9TA9SAVC4B;
+				DEVELOPMENT_TEAM = TQSNJXDVPJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/KmsVets/Resource/AutoScroll/Desktop/Paysfer_ecommerce26sept/Paysfer/Pods/GooglePlaces/Frameworks",
@@ -934,7 +1022,7 @@
 					"$(PROJECT_DIR)/KmsVets/Resource/AutoScroll/Desktop/StripeGateway/Pods/Stripe/InternalFrameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.Shikha.KmsVets;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Doctor.kmsvets;
 				PRODUCT_NAME = "KMS Vets";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KmsVets/Screens/PAYU/KmsVets-Bridging-Header.h";

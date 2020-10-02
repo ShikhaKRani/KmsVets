@@ -23,11 +23,13 @@ class SuggestionViewController: BaseViewController {
         mobileString = UserDefaults.standard.string(forKey: "mobile") ?? ""
         nameString = UserDefaults.standard.string(forKey: "name") ?? ""
         // Do any additional setup after loading the view.
+        self.title = "Suggestion/ Complaint"
+
     }
     
     @objc func saveBtnAtion() {
         
-        
+        self.view.endEditing(true)
         var count = 0
         if ((nameString?.isEmpty) == nil) {
             count = count + 1
@@ -43,7 +45,7 @@ class SuggestionViewController: BaseViewController {
         }
         
         
-        if ((descString?.isEmpty) == nil) {
+        if ((descString?.isEmpty) == nil) || descString == "Description" {
             
             count = count + 1
             self.displayMessage(message: "Please enter description")
@@ -51,6 +53,11 @@ class SuggestionViewController: BaseViewController {
         }
         
         if count == 0 {
+            self.showHudwithDelay("")
+            
+            self.hideHUD()
+            self.displayAlertView(alertType: "Success", message: "Your Information is successfully submitted")
+            
 //            self.submitSuggestionApi()
         }
     }
@@ -121,6 +128,7 @@ extension SuggestionViewController : UITableViewDelegate, UITableViewDataSource 
 //            cell?.descriptionTextView.layer.borderWidth = 0.4
 //            cell?.descriptionTextView.layer.borderColor = UIColor.darkGray.cgColor
 //            cell?.descriptionTextView.layer.cornerRadius = 10.0
+            cell?.submitButton.addTarget(self, action: #selector(saveBtnAtion), for: .touchUpInside)
             
             cell?.nameField.text = nameString
             cell?.mobileField.text = mobileString

@@ -21,6 +21,8 @@ class BookingForSurgeryViewController: BaseViewController {
         mobileString = UserDefaults.standard.string(forKey: "mobile") ?? ""
         nameString = UserDefaults.standard.string(forKey: "name") ?? ""
         addressString = UserDefaults.standard.string(forKey: "address") ?? ""
+        self.title = "Booking Surgery"
+
     }
     
     

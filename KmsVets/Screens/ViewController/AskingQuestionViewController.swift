@@ -24,7 +24,7 @@ class AskingQuestionViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "Asking Question"
         
         pricelabelApi()
         
@@ -159,11 +159,17 @@ class AskingQuestionViewController: BaseViewController {
         
         
     }
-    
-    //MARK:- Pay U Money
-    
-    
-    
+        
+    //ChatController
+    @objc func redirectToChatScreen() {
+        
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        if let chat = storyBoard.instantiateViewController(withIdentifier: "ChatController") as? ChatController {
+            self.navigationController?.pushViewController(chat, animated: true)
+        }
+        
+        
+    }
 }
 
 //MARK:- Table View Delegate
@@ -205,6 +211,8 @@ extension AskingQuestionViewController : UITableViewDelegate, UITableViewDataSou
         cell?.chatButton.contentEdgeInsets =  UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         cell?.chatButton.titleLabel?.lineBreakMode = .byWordWrapping
         
+        cell?.chatButton.addTarget(self, action: #selector(redirectToChatScreen), for: .touchUpInside)
+
         cell?.submitButton.layer.cornerRadius = 5
         cell?.submitButton.addTarget(self, action: #selector(submitBtnAtion), for: .touchUpInside)
         

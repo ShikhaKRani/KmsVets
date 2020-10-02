@@ -21,6 +21,8 @@ class BookingSurgeryHistoryViewController: BaseViewController {
         self.view.backgroundColor = .tertiarySystemGroupedBackground
         self.bookingSurgeryHistoryTableView.separatorStyle = .none
 
+        self.title = "Surgery History"
+
         // Do any additional setup after loading the view.
     }
     

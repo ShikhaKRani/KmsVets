@@ -27,13 +27,16 @@ class OrderCell : UITableViewCell {
 class OrderViewController: BaseViewController {
     
     @IBOutlet weak var tblView: UITableView!
-    
+    @IBOutlet weak var img: UIImageView!
+
     var orderDataArray = [OrderModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        img.isHidden = true
         self.getOrder()
         tblView.tableFooterView = UIView()
+        self.title = "My Orders"
+
     }
     
     func getOrder() {
@@ -52,6 +55,11 @@ class OrderViewController: BaseViewController {
                 
                 DispatchQueue.main.async { () -> Void in
                     self.tblView.reloadData()
+                    if self.orderDataArray.count > 0 {
+                        self.img.isHidden = true
+                    }else{
+                        self.img.isHidden = false
+                    }
                 }
                 self.hideHUD()
             }else{

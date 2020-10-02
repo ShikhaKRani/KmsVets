@@ -13,6 +13,8 @@ class QuestionHistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "Question History"
+
         // Do any additional setup after loading the view.
     }
 

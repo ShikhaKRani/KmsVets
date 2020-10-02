@@ -31,7 +31,8 @@ class ProfileViewController: BaseViewController {
         zipcode = UserDefaults.standard.string(forKey: "zipcode") ?? ""
         city = UserDefaults.standard.string(forKey: "city") ?? ""
         
-        
+        self.title = "My Profile"
+
     }
     
     

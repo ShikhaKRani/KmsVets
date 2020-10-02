@@ -46,7 +46,8 @@ class AboutUsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        self.title = "About us"
+
         self.view.backgroundColor = .tertiarySystemGroupedBackground
         // Do any additional setup after loading the view.
     }
