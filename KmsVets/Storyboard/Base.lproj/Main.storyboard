@@ -2200,22 +2200,23 @@
                                                     <rect key="frame" x="1" y="1" width="412" height="152"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6pw-6X-Bec">
-                                                            <rect key="frame" x="2" y="5" width="130" height="139"/>
+                                                            <rect key="frame" x="2" y="5" width="120" height="139"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="120" id="jDA-WG-Mrj"/>
                                                                 <constraint firstAttribute="height" constant="100" id="zJP-9T-LW6"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qd1-Zu-rkF">
-                                                            <rect key="frame" x="142" y="5" width="260" height="21"/>
+                                                            <rect key="frame" x="132" y="5" width="270" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmN-bC-PZ7">
-                                                            <rect key="frame" x="312" y="76" width="90" height="30"/>
+                                                            <rect key="frame" x="312" y="76" width="90" height="35"/>
                                                             <color key="backgroundColor" red="0.1406454573" green="0.4489213198" blue="0.1135835454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
+                                                                <constraint firstAttribute="height" constant="35" id="X1B-o7-N57"/>
                                                                 <constraint firstAttribute="width" constant="90" id="YtA-wI-nvL"/>
                                                             </constraints>
                                                             <state key="normal" title="Book Now">
@@ -2226,7 +2227,6 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="KmN-bC-PZ7" firstAttribute="top" secondItem="qd1-Zu-rkF" secondAttribute="bottom" constant="50" id="7S3-Vm-Vb3"/>
-                                                        <constraint firstItem="KmN-bC-PZ7" firstAttribute="leading" secondItem="6pw-6X-Bec" secondAttribute="trailing" constant="180" id="8kG-xU-Vw8"/>
                                                         <constraint firstAttribute="trailing" secondItem="qd1-Zu-rkF" secondAttribute="trailing" constant="10" id="Bma-6t-OwS"/>
                                                         <constraint firstItem="6pw-6X-Bec" firstAttribute="top" secondItem="3KS-Dg-cFk" secondAttribute="top" constant="5" id="VQ0-CC-2Ja"/>
                                                         <constraint firstAttribute="trailing" secondItem="KmN-bC-PZ7" secondAttribute="trailing" constant="10" id="VoE-aK-o1j"/>
