@@ -33,14 +33,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medicine.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="0m6-md-Db4">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="0m6-md-Db4">
                                 <rect key="frame" x="20" y="148" width="374" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="bal-8Y-h12"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAa-Qt-eC4">
-                                <rect key="frame" x="20" y="388" width="374" height="40"/>
+                                <rect key="frame" x="20" y="448" width="374" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="q03-Je-394"/>
@@ -49,34 +49,29 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwc-nG-LC8">
-                                <rect key="frame" x="157" y="772" width="100" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="ZS2-iQ-NTy"/>
-                                    <constraint firstAttribute="width" constant="100" id="ibe-DB-zM3"/>
-                                </constraints>
-                                <state key="normal" title="Chart">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright @2020, KMS Vets Pet Care Services." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWB-vX-my9">
+                                <rect key="frame" x="5" y="835.5" width="404" height="16.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0m6-md-Db4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="MCk-mI-s9a"/>
+                            <constraint firstItem="XWB-vX-my9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="PjL-TG-vId"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XWB-vX-my9" secondAttribute="trailing" constant="5" id="T8d-xJ-Lwq"/>
                             <constraint firstItem="0m6-md-Db4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ZJh-k4-w09"/>
                             <constraint firstItem="aAa-Qt-eC4" firstAttribute="leading" secondItem="0m6-md-Db4" secondAttribute="leading" id="dME-tG-jMi"/>
                             <constraint firstItem="aAa-Qt-eC4" firstAttribute="trailing" secondItem="0m6-md-Db4" secondAttribute="trailing" id="hZ5-bN-FJx"/>
-                            <constraint firstItem="zwc-nG-LC8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="j1x-Eg-zX9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zwc-nG-LC8" secondAttribute="bottom" constant="50" id="kq4-BO-Oe1"/>
-                            <constraint firstItem="aAa-Qt-eC4" firstAttribute="top" secondItem="0m6-md-Db4" secondAttribute="bottom" constant="40" id="oqH-5M-IsZ"/>
+                            <constraint firstItem="aAa-Qt-eC4" firstAttribute="top" secondItem="0m6-md-Db4" secondAttribute="bottom" constant="100" id="kmI-gA-ACY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XWB-vX-my9" secondAttribute="bottom" constant="10" id="liH-d5-QYf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0m6-md-Db4" secondAttribute="trailing" constant="20" id="pZt-C9-mNH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zL2-NV-FXk"/>
                     <connections>
-                        <outlet property="chartBtn" destination="zwc-nG-LC8" id="Pef-bK-AqC"/>
                         <outlet property="loginBtn" destination="aAa-Qt-eC4" id="Gyc-mI-b36"/>
                         <outlet property="medicineImageView" destination="0m6-md-Db4" id="FAf-4y-87T"/>
                     </connections>
@@ -191,13 +186,22 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright @2020, KMS Vets Pet Care Services." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxz-Cz-0bD">
+                                <rect key="frame" x="10" y="835.5" width="394" height="16.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BzK-ny-EOr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="47o-xC-VMZ" firstAttribute="top" secondItem="nS7-NK-t8B" secondAttribute="bottom" constant="-15" id="09s-d0-Tg2"/>
                             <constraint firstItem="nS7-NK-t8B" firstAttribute="leading" secondItem="BzK-ny-EOr" secondAttribute="leading" constant="20" id="48b-G2-99U"/>
+                            <constraint firstItem="kxz-Cz-0bD" firstAttribute="leading" secondItem="BzK-ny-EOr" secondAttribute="leading" constant="10" id="5rQ-81-eWS"/>
+                            <constraint firstItem="BzK-ny-EOr" firstAttribute="bottom" secondItem="kxz-Cz-0bD" secondAttribute="bottom" constant="10" id="SC2-FU-ZxB"/>
                             <constraint firstItem="nS7-NK-t8B" firstAttribute="top" secondItem="BzK-ny-EOr" secondAttribute="top" constant="50" id="UC1-Zg-9mb"/>
+                            <constraint firstItem="BzK-ny-EOr" firstAttribute="trailing" secondItem="kxz-Cz-0bD" secondAttribute="trailing" constant="10" id="ZT8-wm-nax"/>
                             <constraint firstItem="47o-xC-VMZ" firstAttribute="leading" secondItem="nS7-NK-t8B" secondAttribute="leading" id="agP-94-aoI"/>
                             <constraint firstItem="BzK-ny-EOr" firstAttribute="trailing" secondItem="nS7-NK-t8B" secondAttribute="trailing" constant="20" id="gak-Yv-51j"/>
                             <constraint firstItem="nS7-NK-t8B" firstAttribute="centerX" secondItem="BzK-ny-EOr" secondAttribute="centerX" id="iit-d0-zgA"/>
@@ -303,6 +307,12 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright @2020, KMS Vets Pet Care Services." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4p-0a-ba5">
+                                <rect key="frame" x="10" y="835.5" width="394" height="16.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5fS-1s-dem"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -312,7 +322,10 @@
                             <constraint firstItem="qD7-M2-Vf0" firstAttribute="leading" secondItem="BHU-Wr-en6" secondAttribute="leading" id="M03-8f-oaA"/>
                             <constraint firstItem="qD7-M2-Vf0" firstAttribute="top" secondItem="BHU-Wr-en6" secondAttribute="bottom" constant="-15" id="M2g-tK-kV4"/>
                             <constraint firstItem="BHU-Wr-en6" firstAttribute="top" secondItem="5fS-1s-dem" secondAttribute="top" constant="50" id="MUq-LE-wrw"/>
+                            <constraint firstItem="z4p-0a-ba5" firstAttribute="leading" secondItem="5fS-1s-dem" secondAttribute="leading" constant="10" id="YH2-TB-wNI"/>
+                            <constraint firstItem="5fS-1s-dem" firstAttribute="bottom" secondItem="z4p-0a-ba5" secondAttribute="bottom" constant="10" id="iwl-pS-SBk"/>
                             <constraint firstItem="qD7-M2-Vf0" firstAttribute="trailing" secondItem="BHU-Wr-en6" secondAttribute="trailing" id="pm9-mj-UmH"/>
+                            <constraint firstAttribute="trailing" secondItem="z4p-0a-ba5" secondAttribute="trailing" constant="10" id="vEJ-cw-JLn"/>
                         </constraints>
                     </view>
                     <connections>
@@ -3884,6 +3897,7 @@
         <image name="cancellation" width="100" height="100"/>
         <image name="down-arrow.png" width="392.17022705078125" height="392.17022705078125"/>
         <image name="faq" width="100" height="100"/>
+        <image name="logo.png" width="653" height="145"/>
         <image name="mail" width="512" height="512"/>
         <image name="medicine.jpeg" width="540" height="360.75"/>
         <image name="nexticon" width="100" height="100"/>

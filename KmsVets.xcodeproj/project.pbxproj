@@ -86,6 +86,7 @@
 		BF786711250CEF8900D8D17E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF786710250CEF8900D8D17E /* LoginViewController.swift */; };
 		BF786713250CEFBE00D8D17E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF786712250CEFBE00D8D17E /* SplashViewController.swift */; };
 		BF786716250CF6C100D8D17E /* medicine.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BF786715250CF6C100D8D17E /* medicine.jpeg */; };
+		BF7C7DC8253F2467001B9D0F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7C7DC7253F2467001B9D0F /* logo.png */; };
 		BF8D0D1F2514C05300373096 /* NewPuppyHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D0D1E2514C05300373096 /* NewPuppyHistoryViewController.swift */; };
 		BF8D0D212514C16800373096 /* NewPuppyHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D0D202514C16800373096 /* NewPuppyHistoryTableViewCell.swift */; };
 		BFBA34EF250CE908004C37C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA34EE250CE908004C37C2 /* AppDelegate.swift */; };
@@ -189,6 +190,7 @@
 		BF786710250CEF8900D8D17E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BF786712250CEFBE00D8D17E /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		BF786715250CF6C100D8D17E /* medicine.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = medicine.jpeg; sourceTree = "<group>"; };
+		BF7C7DC7253F2467001B9D0F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		BF8D0D1E2514C05300373096 /* NewPuppyHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPuppyHistoryViewController.swift; sourceTree = "<group>"; };
 		BF8D0D202514C16800373096 /* NewPuppyHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPuppyHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		BFBA34EB250CE907004C37C2 /* KMS Vets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KMS Vets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -323,6 +325,7 @@
 		BF1D97F1250F8D4C00446CA8 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BF7C7DC7253F2467001B9D0F /* logo.png */,
 				BF2DE4502526F00400F807A9 /* CHAT */,
 				BFF3561025221F82003C9E07 /* sc */,
 				BF1D97F2250F8D5900446CA8 /* Constant.swift */,
@@ -640,6 +643,7 @@
 			files = (
 				BF2DE4652526F2AE00F807A9 /* Localizable.strings in Resources */,
 				BF6C44DB251E491C00D85E58 /* ProductHome.storyboard in Resources */,
+				BF7C7DC8253F2467001B9D0F /* logo.png in Resources */,
 				BFBA34FB250CE909004C37C2 /* LaunchScreen.storyboard in Resources */,
 				BF42BC8E2515D8730064F0C9 /* down-arrow.png in Resources */,
 				BF2DE44B2526E72D00F807A9 /* appstore.png in Resources */,
@@ -890,7 +894,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -944,7 +948,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -962,7 +966,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TQSNJXDVPJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -982,7 +986,7 @@
 					"$(PROJECT_DIR)/KmsVets/Resource/AutoScroll/Desktop/StripeGateway/Pods/Stripe/InternalFrameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Doctor.kmsvets;
+				PRODUCT_BUNDLE_IDENTIFIER = com.msharma.kmsvets;
 				PRODUCT_NAME = "KMS Vets";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KmsVets/Screens/PAYU/KmsVets-Bridging-Header.h";
@@ -1000,7 +1004,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TQSNJXDVPJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1020,7 +1024,7 @@
 					"$(PROJECT_DIR)/KmsVets/Resource/AutoScroll/Desktop/StripeGateway/Pods/Stripe/InternalFrameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Doctor.kmsvets;
+				PRODUCT_BUNDLE_IDENTIFIER = com.msharma.kmsvets;
 				PRODUCT_NAME = "KMS Vets";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KmsVets/Screens/PAYU/KmsVets-Bridging-Header.h";
