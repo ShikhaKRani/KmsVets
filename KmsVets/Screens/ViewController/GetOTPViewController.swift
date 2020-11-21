@@ -124,7 +124,6 @@ class GetOTPViewController: BaseViewController {
                 DispatchQueue.main.async { () -> Void in
                     self.redirectToCustomerInfoScreen()
                 }
-                
             }
         }
      }

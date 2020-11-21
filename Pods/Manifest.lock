@@ -19,6 +19,7 @@ PODS:
   - Segmentio (4.1)
   - SideMenu (6.4.9)
   - SVProgressHUD (2.2.5)
+  - SwiftPhoneNumberFormatter (1.5)
   - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - Segmentio
   - SideMenu
   - SVProgressHUD
+  - SwiftPhoneNumberFormatter
   - Toast-Swift (~> 5.0.0)
 
 SPEC REPOS:
@@ -52,6 +54,7 @@ SPEC REPOS:
     - Segmentio
     - SideMenu
     - SVProgressHUD
+    - SwiftPhoneNumberFormatter
     - Toast-Swift
 
 SPEC CHECKSUMS:
@@ -69,8 +72,9 @@ SPEC CHECKSUMS:
   Segmentio: ab29def64e1bff6e6e9b97671788a99bed3f1d9f
   SideMenu: 8ef57a3cfc024a2d3fc1c036c7fe98537baec9e0
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftPhoneNumberFormatter: 0cc91f4daa06dd606a9defb21048a75c36a771a2
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 42975eff2db56e07f6657e7bafcf38d9d28fc4f0
+PODFILE CHECKSUM: 0576fb7fee8e7b78a6fac52cad48fe26cba9dad2
 
 COCOAPODS: 1.10.0.beta.2

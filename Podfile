@@ -20,6 +20,7 @@ target 'KmsVets' do
   pod 'PayUmoney_PnP'
   pod 'FAPaginationLayout'
   pod 'SVProgressHUD'
+  pod "SwiftPhoneNumberFormatter"
 
   # Pods for KmsVets
 

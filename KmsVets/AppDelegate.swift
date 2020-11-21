@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if USERID == nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "SplashViewController") as! SplashViewController
+            let vc = storyboard.instantiateViewController(withIdentifier: "NewLoginViewController") as! NewLoginViewController
             let navController = UINavigationController.init(rootViewController: vc)
             self.window?.rootViewController = navController
         }

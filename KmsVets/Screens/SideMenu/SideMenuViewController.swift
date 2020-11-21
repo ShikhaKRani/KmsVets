@@ -223,7 +223,7 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 UIAlertAction in
                 UserDefaults.standard.removeObject(forKey: "id")
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                let newViewController = storyBoard.instantiateViewController(withIdentifier: "SplashViewController") as! SplashViewController
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "NewLoginViewController") as! NewLoginViewController
                 let navigationController = UINavigationController(rootViewController: newViewController)
                 let appdelegate = UIApplication.shared.delegate as! AppDelegate
                 appdelegate.window!.rootViewController = navigationController

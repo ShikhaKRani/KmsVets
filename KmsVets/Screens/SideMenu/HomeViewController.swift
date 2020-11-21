@@ -277,7 +277,7 @@ class HomeViewController: BaseViewController , CLLocationManagerDelegate {
         
         self.showHudwithDelay("")
         //"id"
-        ServiceClient.sendRequest(apiUrl: APIUrl.PRODUCT_CATEGORY_LIST,postdatadictionary: ["userId" : UserDefaults.standard.string(forKey: "id") ?? "", "search" : categoryId ?? ""], isArray: true) { (response) in
+        ServiceClient.sendRequest(apiUrl: APIUrl.PRODUCT_CATEGORY_LIST,postdatadictionary: ["userId" : UserDefaults.standard.string(forKey: "id") ?? "190", "search" : categoryId ?? ""], isArray: true) { (response) in
             
             print(response)
             if let res = response as? [[String : Any]] {
