@@ -25,6 +25,7 @@ struct APIUrl {
     
     static let LOGIN_URL  = "\(BaseUrl.BASE)?component=json&action=get_search_password"
     static let LOGIN  = "\(BaseUrl.BASE)?component=json&action=login"
+    static let FORGOT_PASSWORD  = "\(BaseUrl.BASE)?component=json&action=forgot"
     static let GET_CONTACT  = "\(BaseUrl.BASE)?component=json&action=get_contact"
     static let ORDER_DETAILS  = "\(BaseUrl.BASE)?component=json&action=order_detail"
     static let GET_SLIDER_IMAGE  = "\(BaseUrl.BASE)?component=json&action=get_slider_image"
@@ -60,6 +61,10 @@ struct APIUrl {
     static let ORDER_DETAIL    = "http://wisdompetclinic.xyz/index.php?component=json&action=order_detail"
     
     static let REPEAT_ORDER   = "http://wisdompetclinic.xyz/index.php?component=json&action=repeat_order"
+    static let RESET_PASSWORD   = "http://wisdompetclinic.xyz/index.php?component=json&action=get_password"
+    static let SIGN_UP   = "http://wisdompetclinic.xyz/index.php?component=json&action=signup"
+
+    
     
 }
 

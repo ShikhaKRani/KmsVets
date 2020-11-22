@@ -3221,6 +3221,10 @@
                             <constraint firstItem="zM3-Js-Yhr" firstAttribute="leading" secondItem="5or-jr-5j3" secondAttribute="leading" constant="20" id="run-sO-Uul"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="phoneTextField" destination="lcZ-Wx-Ag5" id="euu-yO-6pm"/>
+                        <outlet property="submitButton" destination="wNO-ZY-O78" id="6lu-Gx-I2Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gNp-jJ-6RT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3352,6 +3356,12 @@
                             <constraint firstItem="1XR-DA-r1v" firstAttribute="leading" secondItem="dOT-1c-xFr" secondAttribute="leadingMargin" id="uo8-FW-brB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="Hjk-Ac-ISz" id="wmd-9O-N9n"/>
+                        <outlet property="otpTextField" destination="yYw-UZ-78P" id="Nto-L5-d3K"/>
+                        <outlet property="passwordTextField" destination="Fzu-bO-NuU" id="kov-Ja-ILx"/>
+                        <outlet property="submitButton" destination="Wum-pz-sO7" id="JeA-LM-Uaa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0D-yF-UIk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
