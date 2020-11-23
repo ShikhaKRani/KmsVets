@@ -986,7 +986,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TQSNJXDVPJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1005,8 +1005,8 @@
 					"$(PROJECT_DIR)/KmsVets/Resource/AutoScroll/Desktop/Paysfer_ecommerce26sept/Paysfer/Pods/Stripe/InternalFrameworks",
 					"$(PROJECT_DIR)/KmsVets/Resource/AutoScroll/Desktop/StripeGateway/Pods/Stripe/InternalFrameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.msharma.kmsvets;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wisdomclinic.kmsvets;
 				PRODUCT_NAME = "KMS Vets";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KmsVets/Screens/PAYU/KmsVets-Bridging-Header.h";
@@ -1024,7 +1024,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TQSNJXDVPJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1043,8 +1043,8 @@
 					"$(PROJECT_DIR)/KmsVets/Resource/AutoScroll/Desktop/Paysfer_ecommerce26sept/Paysfer/Pods/Stripe/InternalFrameworks",
 					"$(PROJECT_DIR)/KmsVets/Resource/AutoScroll/Desktop/StripeGateway/Pods/Stripe/InternalFrameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.msharma.kmsvets;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wisdomclinic.kmsvets;
 				PRODUCT_NAME = "KMS Vets";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KmsVets/Screens/PAYU/KmsVets-Bridging-Header.h";

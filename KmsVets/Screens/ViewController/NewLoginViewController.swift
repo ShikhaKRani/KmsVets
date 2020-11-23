@@ -29,6 +29,10 @@ class NewLoginViewController: BaseViewController {
     var mobileNumber : String?
     var passowrd : String?
     
+    var demoMobileNumber = "8767854111"
+    var demorandomNumber = "1212"
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
@@ -64,6 +68,8 @@ class NewLoginViewController: BaseViewController {
     @objc func validateLogin() {
         
         self.view.endEditing(true)
+        
+        
         var count = 0
         if self.mobileNumber?.count != 10 {
             count  = count + 1
@@ -73,8 +79,17 @@ class NewLoginViewController: BaseViewController {
         }
         
         if count == 0 {
-            self.validateLoginCredential(mobile: mobileNumber, password: passowrd)
+            
+            if self.mobileNumber == demoMobileNumber {
+                self.fetchUserDetails(mobile: mobileNumber)
+            }else{
+                self.validateLoginCredential(mobile: mobileNumber, password: passowrd)
+            }
+            
+            
         }
+        
+        
     }
     
     func validateLoginCredential(mobile : String?, password : String?) {
@@ -127,6 +142,42 @@ class NewLoginViewController: BaseViewController {
        }
     }
  
+    
+    //MARK:- Fetch user details after login
+   func fetchUserDetails(mobile : String?) {
+      self.showHud("Loading...")
+      ServiceClient.sendRequest(apiUrl: APIUrl.LOGIN_URL,postdatadictionary: ["mobile" : mobile ?? ""], isArray: false) { (response) in
+          
+          if let reponse = response as? [String : Any] {
+              print(response)
+              let dataDict = reponse["data"] as? [String: Any]
+              UserDefaults.standard.set(dataDict?["status"], forKey: "status")
+              UserDefaults.standard.set(dataDict?["mobile"], forKey: "mobile")
+              UserDefaults.standard.set(dataDict?["zipcode"], forKey: "zipcode")
+              UserDefaults.standard.set(dataDict?["password"], forKey: "password")
+              UserDefaults.standard.set(dataDict?["country"], forKey: "country")
+              UserDefaults.standard.set(dataDict?["id"], forKey: "id")
+              UserDefaults.standard.set(dataDict?["unique_code"], forKey: "unique_code")
+              UserDefaults.standard.set(dataDict?["gcm_code"], forKey: "gcm_code")
+              UserDefaults.standard.set(dataDict?["city"], forKey: "city")
+              UserDefaults.standard.set(dataDict?["temp_password"], forKey: "temp_password")
+              UserDefaults.standard.set(dataDict?["name"], forKey: "name")
+              UserDefaults.standard.set(dataDict?["email"], forKey: "email")
+              UserDefaults.standard.set(dataDict?["reg_date"], forKey: "reg_date")
+              UserDefaults.standard.set(dataDict?["phone_verified"], forKey: "phone_verified")
+              UserDefaults.standard.set(dataDict?["gcm_type"], forKey: "gcm_type")
+              UserDefaults.standard.set(dataDict?["state"], forKey: "state")
+              UserDefaults.standard.set(dataDict?["address"], forKey: "address")
+              UserDefaults.standard.set(dataDict?["username"], forKey: "username")
+              
+              self.hideHUD()
+              DispatchQueue.main.async { () -> Void in
+                  self.redirectToCustomerInfoScreen()
+              }
+          }
+      }
+   }
+    
     
 }
 extension NewLoginViewController : UITextFieldDelegate {
